@@ -1,0 +1,42 @@
+$black: #000;
+$white: #fff;
+$gray: #c0c0c0;
+$light-gray: #f8f8f8;
+$dark-gray: #45494e;
+
+$theme-color: $white;
+
+$red: #d9534f;
+$green: #5cb85c;
+$blue: #428bca;
+
+/*** UIkit Overrides ***/
+$global-color: $black;
+$global-font-family: $sans-serif;
+$base-em-color: $global-color;
+$global-link-color: $gray;
+$global-link-hover-color: darken($global-link-color, 10%);
+$base-heading-color: $black;
+
+$global-font-size: 20px;
+$global-line-height: 1.5;
+$global-small-font-size: 18px;
+$base-h1-font-size-m: 42px;
+//$container-xlarge-max-width: 1920px;
+
+$button-default-color: $black;
+$button-default-hover-background: $black;
+$button-default-hover-color: $white;
+$button-default-active-background: $black;
+$button-default-active-color: $white;
+
+//$navbar-color-mode: none !default;
+//$navbar-nav-gap: 0px !default;
+$navbar-nav-item-height: 0;
+$navbar-nav-item-padding-horizontal: 12.5px;
+$navbar-nav-item-color: $black;
+$navbar-nav-item-font-size: 20px;
+$navbar-dropdown-nav-item-color: $black;
+//$navbar-nav-item-hover-color: $global-color !default;
+//$navbar-nav-item-onclick-color: $global-emphasis-color !default;
+//$navbar-nav-item-active-color: $global-emphasis-color !default;

@@ -1,0 +1,30 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+textarea {
+	resize: none;
+}
+
+
+select::-ms-expand {
+	display: none;
+}
+
+button {
+	font-size: 100%;
+	font-family: inherit;
+	color: currentColor;
+}
+
+a {
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+label {
+	cursor: pointer;
+}

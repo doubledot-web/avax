@@ -1,0 +1,109 @@
+/**************
+ *** COMMON STYLES ***
+ **************/
+.modal-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(255, 255, 255, 0.85);
+
+	.top-wrapper {
+		position: sticky;
+		top: 0;
+		padding: 10px 0;
+		z-index: 1;
+
+		.close-search-form {
+			display: none;
+		}
+	}
+
+	.uk-modal-dialog {
+		background: transparent;
+
+		> div {
+			padding-top: 20px;
+		}
+	}
+
+	.accordion-wrapper {
+		.accordion {
+			display: flex;
+			flex-direction: column;
+			margin: 0;
+
+			> li {
+				> a {
+					font-size: 40px;
+					@media (min-width: $breakpoint-small) {
+						font-size: 50px;
+					}
+				}
+			}
+
+			&.open {
+				padding-bottom: 100px;
+			}
+		}
+
+		ul {
+			list-style: none;
+			padding: 0;
+
+			&.sub-menu {
+				display: none;
+				margin-top: 20px;
+			}
+		}
+
+		li {
+			&.contract-division {
+				background: transparent;
+			}
+
+			&.open {
+				> a {
+					text-shadow: 0 0 1px $black, 0 0 1px $black;
+					border-bottom: 3px solid $black;
+				}
+			}
+		}
+
+		a {
+			color: $black;
+			font-size: 30px;
+			font-weight: 300;
+			@media (min-width: $breakpoint-small) {
+				font-size: 40px;
+			}
+		}
+	}
+
+	.search-form {
+		display: none;
+		margin-top: 100px;
+
+		@include placeholder() {
+			color: $black;
+		}
+	}
+
+	.bottom-wrapper {
+		position: fixed;
+		bottom: 40px;
+		left: 0;
+		width: 100%;
+		z-index: 1;
+
+		.socials,
+		[class*="uk-modal-close-"] {
+			position: static;
+		}
+
+		[class*="uk-modal-close-"] {
+			padding: 0;
+		}
+	}
+}

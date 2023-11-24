@@ -1,0 +1,20 @@
+/****************************
+*** INPUTS ***
+*****************************/
+.uk-input {
+	border: none;
+	border-bottom: 3px solid $black;
+	color: $black;
+	height: auto;
+	padding: 0 0 5px 0;
+	font-weight: 300;
+	@include placeholder() {
+		color: rgba(0, 0, 0, 0.5);
+	}
+
+	&,
+	&:focus {
+		background-color: transparent;
+		border-color: $black;
+	}
+}

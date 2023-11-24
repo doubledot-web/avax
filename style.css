@@ -1,0 +1,27 @@
+/*
+Theme Name: AAVAX
+Theme URI: https://wearedoubledot.com/
+Author: double dot
+Author URI: https://wearedoubledot.com/
+Description: This is a blank WordPress theme to start with. Think of it as a blank canvas. Something with no content, upon which you can easily impose your point of view. By analogy with artists having a blank canvas and thus being able to do what they want with it.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags:
+Text Domain: wpcanvas
+Domain Path: /languages
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+.wp-caption,
+.wp-caption-text,
+.sticky,
+.screen-reader-text,
+.gallery-caption,
+.bypostauthor,
+.alignright,
+.alignleft,
+.aligncenter {
+}

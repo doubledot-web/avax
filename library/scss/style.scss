@@ -1,0 +1,65 @@
+// @import "partials/grid";
+
+@import "partials/typography";
+@import "partials/variables";
+
+@import "../../node_modules/uikit/src/scss/variables-theme.scss";
+@import "../../node_modules/uikit/src/scss/mixins-theme.scss";
+@import "../../node_modules/uikit/src/scss/uikit-theme.scss";
+
+// breakpoints
+@import "partials/reset";
+@import "partials/mixins";
+@import "partials/utility";
+@import "partials/form";
+@import "partials/header";
+@import "partials/footer";
+@import "partials/modal";
+@import "breakpoints/base";
+
+/****************************
+*** LARGER MOBILE DEVICES ***
+*****************************/
+@media only screen and (min-width: 640px) {
+	@import "breakpoints/640up";
+}
+
+/*******************************
+*** TABLET & SMALLER LAPTOPS ***
+********************************/
+@media only screen and (min-width: 960px) {
+	@import "breakpoints/960up";
+}
+
+/**************
+*** DESKTOP ***
+***************/
+@media only screen and (min-width: 1200px) {
+	@import "breakpoints/1200up";
+}
+
+/*************************
+*** LARGE VIEWING SIZE ***
+**************************/
+@media only screen and (min-width: 1600px) {
+	@import "breakpoints/1600up";
+}
+
+/*************************************
+*** RETINA (2x RESOLUTION DEVICES) ***
+**************************************/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+	only screen and (min--moz-device-pixel-ratio: 1.5),
+	only screen and (min-device-pixel-ratio: 1.5) {
+	@import "breakpoints/2x";
+}
+
+/*********************
+PRINT STYLESHEET
+Add things that won't make sense to print atthe
+bottom. Things like nav, ads, and forms should
+be set to display none.
+*********************/
+@media print {
+	@import "breakpoints/print";
+}

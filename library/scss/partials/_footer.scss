@@ -1,0 +1,90 @@
+.site-footer {
+	.wp-block-heading {
+		color: $white;
+		text-transform: uppercase;
+	}
+
+	ul {
+		@extend %list-base;
+
+		li + li {
+			margin-top: 10px;
+		}
+	}
+
+	a {
+		@extend %text-white-gray-hover;
+	}
+
+	.newsletter-wrapper {
+		max-width: 600px;
+		@media (min-width: $breakpoint-small) and (max-width: $breakpoint-large-max) {
+			//max-width: 450px;
+		}
+	}
+
+	.yikes-easy-mc-form {
+		position: relative;
+
+		label {
+			margin: 0;
+		}
+
+		input[type="email"] {
+			padding: 0;
+			border: none;
+			margin: 0;
+			color: $white;
+			background: none;
+			border-bottom: 3px solid $white;
+			@include self-placeholder() {
+				color: $white;
+			}
+		}
+
+		.yikes-easy-mc-submit-button {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			width: 14px;
+			height: 24px;
+			margin: 0;
+			min-width: 0;
+			min-height: 0;
+			transform: translateY(-50%);
+		}
+	}
+
+	.footer-bottom {
+		padding: 1rem 0;
+
+		.policy-credits {
+			text-align: center;
+			flex-direction: column;
+			@media (min-width: $breakpoint-large) {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+		}
+
+		.credits {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			@media (min-width: $breakpoint-medium) {
+				flex-direction: row;
+				justify-content: center;
+				align-items: flex-start;
+			}
+		}
+
+		.recaptcha {
+			margin-top: 5px;
+			@media (max-width: $breakpoint-medium-max) {
+				text-align: center;
+			}
+		}
+	}
+}

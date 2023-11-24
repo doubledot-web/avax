@@ -1,0 +1,147 @@
+/**************
+ *** FONTS RESPONSIVE ***
+ **************/
+
+/*------------------------------------*\
+  PRELOADER
+\*------------------------------------*/
+
+/**************
+ *** UIKIT OVERRIDES ***
+ **************/
+.uk-navbar-nav {
+	@media (min-width: $breakpoint-medium) {
+		gap: 5px;
+	}
+	@media (min-width: $breakpoint-xlarge) {
+		gap: 25px;
+	}
+}
+
+.uk-navbar-dropdown {
+	box-shadow: none;
+}
+
+.uk-navbar-dropdown-nav {
+	font-size: $navbar-nav-item-font-size;
+}
+
+.uk-button-default {
+	font-size: 20px;
+	line-height: 44px;
+	padding: 0 15px;
+	border: 3px solid $black;
+	text-transform: uppercase;
+
+	&:hover,
+	&:active {
+		border-color: $black;
+	}
+}
+
+/**************
+ *** BUTTONS ***
+ **************/
+
+/**************
+ *** SECTIONS ***
+ **************/
+.section {
+	&-text {
+		h1,
+		h2 {
+			font-weight: 100;
+		}
+	}
+
+	&-mosaic-gallery {
+		.img1,
+		.img2,
+		.img3 {
+		}
+	}
+}
+
+/**************
+ *** PAGE TEMPLATES
+ **************/
+.home {
+	.section {
+		&-brands {
+			img {
+				@media (max-width: $breakpoint-small-max) {
+					max-width: 200px;
+				}
+			}
+		}
+	}
+}
+
+.page-template {
+	&-brands {
+		.section {
+			&-brands {
+				.brand {
+					padding: 10px;
+
+					img {
+					}
+				}
+
+				.uk-grid-medium > .uk-grid-margin {
+					@media (min-width: $breakpoint-medium) {
+						margin-top: 70px;
+					}
+				}
+			}
+		}
+	}
+}
+
+/**************
+ *** OTHER ***
+ **************/
+.socials {
+	position: fixed;
+	left: 15px;
+	bottom: 40px;
+	z-index: 1;
+	@media (min-width: $breakpoint-small) {
+		left: 30px;
+	}
+	@media (min-width: $breakpoint-medium) {
+		left: 40px;
+	}
+
+	a:not(:last-child) {
+		margin-right: 4px;
+	}
+}
+
+.slider-arrows {
+	.slider {
+		&-prev {
+			@media (max-width: $breakpoint-small-max) {
+				right: calc(100% - 15px);
+			}
+			@media (max-width: $breakpoint-xsmall-max) {
+				left: 0;
+				right: auto;
+			}
+		}
+
+		&-next {
+			@media (max-width: $breakpoint-small-max) {
+				left: calc(100% - 15px);
+			}
+			@media (max-width: $breakpoint-xsmall-max) {
+				right: 0;
+				left: auto;
+			}
+		}
+	}
+}
+
+/**************
+ *** SHORTCODES ***
+ **************/

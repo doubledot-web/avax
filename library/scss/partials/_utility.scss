@@ -1,0 +1,63 @@
+.list-base,
+%list-base {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.text-white-gray-hover,
+%text-white-gray-hover {
+	color: $white;
+	transition: color 0.3s;
+
+	&:hover {
+		color: $gray;
+	}
+}
+
+.btn-base {
+	cursor: pointer;
+	background: transparent;
+	border: none;
+}
+
+.divider-circle {
+	margin: 0 6px;
+}
+
+.font-weight-100 {
+	font-weight: 100;
+}
+
+.invisible {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.object-fit-cover {
+	object-fit: cover;
+}
+
+[src$=".jpg"][loading="lazy"],
+.bg-lazy {
+	background-color: $gray;
+}
+
+.remove-margin-from-last-el {
+	*:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.plr-uikit-grid {
+	padding-left: 15px;
+	padding-right: 15px;
+	@media (min-width: $breakpoint-small) {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	@media (min-width: $breakpoint-medium) {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+}
