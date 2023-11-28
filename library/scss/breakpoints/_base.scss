@@ -9,6 +9,10 @@
 /**************
  *** UIKIT OVERRIDES ***
  **************/
+.uk-dropbar-top {
+	box-shadow: none;
+}
+
 .uk-navbar-nav {
 	@media (min-width: $breakpoint-medium) {
 		gap: 5px;
@@ -147,7 +151,17 @@
 
 		img {
 			object-fit: cover;
-			background: red;
+		}
+	}
+
+	&-project-types {
+		padding: 25px 0;
+
+		.types {
+			gap: 20px;
+			@media (min-width: $breakpoint-small) {
+				gap: 40px;
+			}
 		}
 	}
 }

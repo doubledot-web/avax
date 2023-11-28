@@ -5,8 +5,8 @@ $header_color_white = $hero_fields['header_color_white'];
 $slides             = $hero_fields['slides'];
 ?>
 
-<section class="section section-hero uk-margin-large-bottom">
-	<div uk-slideshow>
+<section class="section section-hero">
+	<div uk-slideshow="ratio: false">
 		<ul class="uk-slideshow-items" uk-height-viewport>
 			<?php
 			foreach ( $slides as $slide ) :
@@ -21,7 +21,7 @@ $slides             = $hero_fields['slides'];
 						$mob_img     = $image_info['mobile_image'];
 						$mob_img_pos = str_replace( ' ', '-', $image_info['mobile_image_position'] );
 						?>
-						<div uk-height-viewport>
+						<div class="uk-position-relative" uk-height-viewport>
 							<?php if ( $mob_img ) : ?>
 								<div class="bg-lazy uk-position-cover uk-background-cover uk-background-norepeat uk-background-<?php echo esc_attr( $mob_img_pos ); ?> uk-hidden@s" data-src="<?php echo esc_url( $mob_img ); ?>" uk-img></div>
 								<div class="bg-lazy uk-position-cover uk-background-cover uk-background-norepeat uk-background-<?php echo esc_attr( $img_pos ); ?> uk-visible@s" data-src="<?php echo esc_url( $img ); ?>" uk-img></div>

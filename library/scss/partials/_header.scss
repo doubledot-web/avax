@@ -34,8 +34,16 @@
 		/*DESKTOP ONLY*/
 		.main-menu {
 			> li {
-				> a {
-					color: $white;
+				&:not(.contract-division) {
+					> a {
+						color: $white;
+					}
+				}
+
+				&.contract-division {
+					> a {
+						color: $black;
+					}
 				}
 			}
 
@@ -52,7 +60,8 @@
 			}
 
 			.contract-division {
-				background: $black;
+				color: $black;
+				background: $white;
 			}
 		}
 
@@ -160,16 +169,24 @@
 				}
 			}
 
-			> li:not(.contract-division) {
-				> a {
-					@include line-animation();
+			> li {
+				&.contract-division {
+					> a {
+						color: $white;
+					}
+				}
 
-					&[aria-expanded="true"] {
-						text-shadow: 0 0 1px $black, 0 0 1px $black;
+				&:not(.contract-division) {
+					> a {
+						@include line-animation();
 
-						&::before {
-							transform-origin: 0% 50%;
-							transform: scale3d(1, 1, 1);
+						&[aria-expanded="true"] {
+							text-shadow: 0 0 1px $black, 0 0 1px $black;
+
+							&::before {
+								transform-origin: 0% 50%;
+								transform: scale3d(1, 1, 1);
+							}
 						}
 					}
 				}

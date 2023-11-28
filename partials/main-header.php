@@ -1,5 +1,5 @@
 <?php
-if ( is_front_page() || is_page_template( array( 'page-templates/brands.php' ) ) ) :
+if ( is_front_page() || is_singular( array( 'project' ) ) || is_page_template( array( 'page-templates/brands.php', 'page-templates/contract-division.php' ) ) ) :
 	$header_position_class = ' header-fixed with-transition';
 else :
 	$header_position_class = '';

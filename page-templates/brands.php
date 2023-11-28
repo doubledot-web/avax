@@ -23,7 +23,7 @@ $query = get_terms( 'product_brand', $args );
 				get_template_part( 'partials/content-blocks/hero-slider' );
 				?>
 
-				<section class="section section-text uk-margin-large-bottom">
+				<section class="section section-text uk-margin-large-top uk-margin-large-bottom">
 					<div class="uk-container uk-container-large">
 						<div class="remove-margin-from-last-el uk-text-center uk-text-light">
 							<?php the_content(); ?>
@@ -58,8 +58,6 @@ $query = get_terms( 'product_brand', $args );
 						</div>
 					</section>
 				<?php endif; ?>
-
-				<?php //get_template_part( 'partials/template-parts/common/newsletter' ); ?>
 			</article>
 
 			<?php

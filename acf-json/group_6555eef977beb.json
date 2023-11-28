@@ -321,6 +321,20 @@
                 "operator": "==",
                 "value": "page-templates\/brands.php"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/contract-division.php"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "project"
+            }
         ]
     ],
     "menu_order": 0,
@@ -332,5 +346,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1700826931
+    "modified": 1701185790
 }
