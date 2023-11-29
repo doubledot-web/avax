@@ -40,7 +40,7 @@
                     "label": "Brands",
                     "name": "brands",
                     "aria-label": "",
-                    "type": "post_object",
+                    "type": "page_link",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -54,12 +54,25 @@
                     ],
                     "post_status": "",
                     "taxonomy": "",
-                    "return_format": "id",
+                    "allow_archives": 0,
                     "multiple": 0,
-                    "allow_null": 0,
-                    "bidirectional": 0,
-                    "ui": 1,
-                    "bidirectional_target": []
+                    "allow_null": 0
+                },
+                {
+                    "key": "field_65673e07e8a42",
+                    "label": "Projects",
+                    "name": "projects",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url"
                 }
             ]
         },
@@ -186,5 +199,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1700640277
+    "modified": 1701265582
 }

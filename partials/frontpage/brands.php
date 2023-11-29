@@ -49,7 +49,7 @@ $brands_page   = $options_pages['brands'];
 
 		</div>
 		<div class="uk-margin-large-top uk-text-center">
-			<a href="<?php echo esc_url( get_permalink( $brands_page ) ); ?>" class="uk-button uk-button-default">
+			<a href="<?php echo esc_url( $brands_page ); ?>" class="uk-button uk-button-default">
 				<?php esc_html_e( 'View All', 'wpcanvas' ); ?>
 			</a>
 		</div>

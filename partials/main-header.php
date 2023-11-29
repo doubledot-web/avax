@@ -1,8 +1,8 @@
 <?php
-if ( is_front_page() || is_singular( array( 'project' ) ) || is_page_template( array( 'page-templates/brands.php', 'page-templates/contract-division.php' ) ) ) :
-	$header_position_class = ' header-fixed with-transition';
+if ( is_front_page() || ( is_tax( 'product_cat' ) && 0 === get_queried_object()->parent ) || is_page_template( array( 'page-templates/brands.php', 'page-templates/contract-division.php' ) ) ) :
+	$header_position_class = 'header-fixed';
 else :
-	$header_position_class = '';
+	$header_position_class = 'header-sticky';
 endif;
 $hero_fields          = get_field( 'hero_fields' );
 $header_color_white   = $hero_fields['header_color_white'];
@@ -10,11 +10,11 @@ $header_color_class   = isset( $header_color_white ) && ! empty( $header_color_w
 $header_extra_classes = $header_position_class . $header_color_class;
 ?>
 
-<header class="site-header<?php echo esc_attr( $header_extra_classes ); ?>">
-	<nav class="main-nav uk-navbar-container uk-navbar-transparent">
-		<div class="uk-container uk-container-expand">
+<header class="site-header uk-flex <?php echo esc_attr( $header_extra_classes ); ?>">
+	<nav class="main-nav uk-flex uk-width-1-1 uk-navbar-container uk-navbar-transparent">
+		<div class="uk-container uk-container-expand uk-flex uk-width-1-1">
 
-			<div id="mobile-navbar" class="mobile-navbar navbar uk-flex uk-flex-middle uk-flex-between uk-hidden@l">
+			<div id="mobile-navbar" class="mobile-navbar navbar uk-width-1-1 uk-flex uk-flex-middle uk-flex-between uk-hidden@l">
 				<a class="logo uk-display-inline-block uk-navbar-left" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'AVAX logo', 'wpcanvas' ); ?>">
 					<svg width="160" height="72" role="img">
 						<use xlink:href="#logo"></use>
@@ -28,8 +28,8 @@ $header_extra_classes = $header_position_class . $header_color_class;
 			</div>
 
 
-			<div id="desktop-navbar" class="desktop-navbar navbar uk-visible@l" uk-navbar="dropbar: true; target: .main-menu; mode: click; dropbar-transparent-mode: behind">
-				<a class="logo uk-display-inline-block uk-navbar-left" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'AVAX logo', 'wpcanvas' ); ?>">
+			<div id="desktop-navbar" class="uk-flex uk-width-1-1 desktop-navbar navbar uk-visible@l" uk-navbar="dropbar: true; target: .main-menu; mode: click; dropbar-transparent-mode: behind">
+				<a class="logo uk-flex uk-navbar-left" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'AVAX logo', 'wpcanvas' ); ?>">
 					<svg width="179" height="80" role="img">
 						<use xlink:href="#logo"></use>
 					</svg>

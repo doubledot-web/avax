@@ -1,5 +1,17 @@
 .site-header {
-	transition: background 0.1s;
+	position: fixed;
+	top: 0;
+	left: 0;
+		right: 0;
+	z-index: 111;
+	height: 80px;
+	transition: all 0.1s;
+	@media (min-width: $breakpoint-small) {
+		height: 100px;
+	}
+	@media (min-width: $breakpoint-large) {
+		height: 160px;
+	}
 
 	/**************
  	*** COMMON ***
@@ -23,11 +35,23 @@
 	}
 
 	&.header-fixed {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		z-index: 1;
+
+
+	}
+
+	&.header-sticky {
+		//position: sticky;
+		background: $white;
+
+		& ~ .site-main {
+			margin-top: 80px;
+			@media (min-width: $breakpoint-small) {
+			margin-top: 100px;
+			}
+			@media (min-width: $breakpoint-large) {
+			margin-top: 160px;
+			}
+		}
 	}
 
 	&.header-white:not(.header-open):not(.header-search-form-open) {
@@ -111,11 +135,15 @@
 	}
 
 	&.header-on-scroll {
+		//height: 100px;
 		background: $white;
+		@media (min-width: $breakpoint-large) {
+			height: 100px;
+		}
 
 		/*DESKTOP ONLY*/
 		.desktop-navbar {
-			padding: 10px 0;
+			//padding: 10px 0;
 
 			.main-menu {
 				.contract-division {
@@ -135,7 +163,7 @@
 	.desktop-navbar {
 		//padding: 20px 0;
 		transition: padding 0.1s;
-		padding: 40px 0;
+		//padding: 40px 0;
 
 		.uk-navbar-dropdown-nav {
 			gap: 40px;

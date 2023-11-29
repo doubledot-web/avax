@@ -44,6 +44,16 @@
 	object-fit: cover;
 }
 
+.color-inherit {
+	color: inherit;
+}
+
+.text-right\@m {
+	@media (min-width: $breakpoint-medium) {
+		text-align: right;
+	}
+}
+
 [src$=".jpg"][loading="lazy"],
 .bg-lazy {
 	background-color: $gray;

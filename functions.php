@@ -169,6 +169,30 @@ function cnvs_shortcodes_to_exempt_from_wptexturize( $shortcodes ) {
 // add_filter( 'no_texturize_shortcodes', 'cnvs_shortcodes_to_exempt_from_wptexturize' );
 
 
+/**
+ * ADD IMAGE INSTRUCTIONS
+ */
+function add_featured_image_instruction( $content ) {
+	global $post;
+	$post_type = $post->post_type;
+	if ( 'project' === $post_type ) :
+		return $content .= '<p>Image dimensions should be 1200px x 595px.</p>';
+	else :
+		return $content;
+	endif;
+}
+add_filter( 'admin_post_thumbnail_html', 'add_featured_image_instruction' );
+
+
+/**
+ * ENQUEUEING ADMIN SCRIPTS & STYLES
+ */
+function cnvs_admin_scripts_and_styles( $hook ) {
+	$theme_uri = get_stylesheet_directory_uri();
+	//wp_enqueue_script( 'wpcanvas-admin', $theme_uri . '/library/js/admin-scripts-dist.js', array( 'jquery' ), '', true );
+	wp_enqueue_style( 'wpcanvas-admin', $theme_uri . '/library/css/admin-style.css' );
+}
+add_action( 'admin_enqueue_scripts', 'cnvs_admin_scripts_and_styles' );
 
 /**
  * ENQUEUEING SCRIPTS & STYLES
@@ -367,26 +391,32 @@ function cnvs_custom_oembed_function( $cache, $url, $attr, $post_id ) {
 }
 // add_filter( 'embed_oembed_html', 'cnvs_custom_oembed_function', 10, 4 );
 
-
-
-
-
-
-function add_extra_menu_items( $items, $args ) {
-	if ( 'main-nav' === $args->theme_location ) :
-		ob_start();
-
-		?>
-		<li>
-			<button class="open-search-form btn-base" aria-label="<?php esc_attr_e( 'Open search form', 'wpcanvas' ); ?>" uk-toggle="target: #modal-search" type="button">
-					<svg width="29" height="30" aria-hidden="true">
-						<use xlink:href="#search"></use>
-					</svg>
-				</button>
-		</li>
-		<?php
-		$items .= ob_get_clean();
+/**
+ * MODIFY MAIN QUERY
+ */
+function filter_posts( $query ) {
+	if ( ! is_admin() && $query->is_main_query() ) :
+		if ( is_tax( 'project_type' ) ) :
+			$query->set( 'posts_per_page', 4 );
+		endif;
 	endif;
-	return $items;
 }
-//add_filter( 'wp_nav_menu_items', 'add_extra_menu_items', 10, 2 );
+add_action( 'pre_get_posts', 'filter_posts' );
+
+
+/*****************************
+ ***** GET ALL POSTS *****
+ *****************************/
+function get_all_posts() {
+	global $wp_query;
+	return $wp_query->found_posts;
+}
+
+
+/*****************************
+ ***** GET ALL POSTS CURRENT PAGE *****
+ *****************************/
+function get_all_posts_current_page() {
+	global $wp_query;
+	return $wp_query->post_count;
+}

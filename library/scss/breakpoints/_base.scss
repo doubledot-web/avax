@@ -164,6 +164,30 @@
 			}
 		}
 	}
+
+
+		&-alternative-blocks {
+			article + article {
+				margin-top: $global-medium-margin;
+				@media (min-width: $breakpoint-medium) {
+					margin-top: $global-large-margin;
+				}
+			}
+
+			.post-title-wrapper {
+
+				* {
+					transition: text-shadow 0.1s;
+				}
+
+				&:hover {
+					> * {
+						text-shadow: 0 0 1px $black, 0 0 1px $black;
+					}
+				}
+			}
+		}
+
 }
 
 /**************
@@ -200,6 +224,14 @@
 			}
 		}
 	}
+}
+
+.tax-project_type{
+
+}
+
+.single {
+
 }
 
 /**************
@@ -243,6 +275,35 @@
 				left: auto;
 			}
 		}
+	}
+}
+
+/*------------------------------------*\
+    PAGINATION
+\*------------------------------------*/
+.pagination {
+	.nav-links {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 20px;
+	}
+
+
+	.page-numbers:not(.prev):not(.next):not(.current):not(.dots) {
+		color: $black;
+ 	}
+
+	.current {
+		color: $gray;
+ 	}
+
+	.page-numbers:not(.prev):not(.next):not(.dots) {
+		transition: color 0.2s;
+
+		&:hover {
+			color: $global-link-hover-color;
+ 		}
 	}
 }
 
