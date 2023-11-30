@@ -25,8 +25,8 @@ $current_page_url = get_term_link( $current_term_id );
 			</div>
 		</div>
 	</section>
-	<section class="section section-alternative-blocks section-projects">
-		<div class="uk-container uk-container-xlarge uk-margin-large-bottom">
+	<section class="section section-alternative-blocks section-projects uk-margin-large-bottom">
+		<div class="uk-container uk-container-xlarge">
 			<?php
 			if ( have_posts() ) :
 				$key = 0;

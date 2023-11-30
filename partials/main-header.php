@@ -1,5 +1,5 @@
 <?php
-if ( is_front_page() || ( is_tax( 'product_cat' ) && 0 === get_queried_object()->parent ) || is_page_template( array( 'page-templates/brands.php', 'page-templates/contract-division.php' ) ) ) :
+if ( is_front_page() || ( is_tax( 'product_cat' ) && 0 === get_queried_object()->parent ) || is_page_template( array( 'page-templates/brands.php', 'page-templates/contract-division.php', 'page-templates/about.php', 'page-templates/contact.php', 'page-templates/showroom.php' ) ) ) :
 	$header_position_class = 'header-fixed';
 else :
 	$header_position_class = 'header-sticky';

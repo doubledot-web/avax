@@ -142,3 +142,38 @@ jQuery(document).ready(function ($) {
 		});
 	}
 });
+
+// onload
+jQuery(window).on("load", function ($) {
+	jQuery.ready.then(function ($) {
+		navigateToCertainPageSectionBasedOnHash($);
+
+		function navigateToCertainPageSectionBasedOnHash($) {
+			if (location.hash) {
+				$("html, body").animate(
+					{
+						scrollTop:
+							$(":target").offset().top -
+							$(".site-header").height(),
+					},
+					{ duration: 400 }
+				);
+
+				$(".contains-hash-link a").on("click", function (e) {
+					e.preventDefault();
+					const target = "#" + $(this).attr("href").split("#")[1];
+					if (target.length) {
+						$("html, body").animate(
+							{
+								scrollTop:
+									$(target).offset().top -
+									$(".site-header").outerHeight(),
+							},
+							800
+						);
+					}
+				});
+			}
+		}
+	});
+});

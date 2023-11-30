@@ -5,10 +5,17 @@ For more info: http://codex.wordpress.org/Page_Templates
 */
 
 get_header();
-$args          = array(
+$args                  = array(
 	'hide_empty' => false,
 );
-$project_types = get_terms( 'project_type', $args );
+$project_types         = get_terms( 'project_type', $args );
+$first_section         = get_field( 'first_section_contract_division' );
+$second_section        = get_field( 'second_section_contract_division' );
+$second_section_text   = $second_section['text'];
+$second_section_img_id = $second_section['image'];
+$third_section         = get_field( 'third_section_contract_division' );
+$third_section_text    = $third_section['text'];
+$third_section_img_id  = $third_section['image'];
 ?>
 
 <main class="site-main">
@@ -22,6 +29,7 @@ $project_types = get_terms( 'project_type', $args );
 				<?php
 				get_template_part( 'partials/content-blocks/hero-slider' );
 				?>
+
 				<section class="section section-project-types bg-black">
 					<div class="uk-container uk-text-center uk-text-uppercase">
 						<div class="types uk-flex uk-flex-wrap uk-flex-center">
@@ -34,35 +42,30 @@ $project_types = get_terms( 'project_type', $args );
 					</div>
 				</section>
 
-				<section class="section uk-margin-large-top uk-margin-large-bottom">
+				<?php echo content_block_text_image_image( $first_section ); ?>
+
+				<section class="section section-text section-second section-bg-gray uk-padding-large uk-padding-remove-horizontal uk-margin-large-bottom">
 					<div class="uk-container uk-container-xlarge">
-						<h2 class="font-weight-100 uk-h1">Customized Design</h2>
-						<div class="remove-margin-from-last-el uk-text-light uk-margin-bottom">
-						Our Contract Division can engage in productive and vibrant
-partnerships with designers, construction firms, and shipbuilders to conceive and build interior fixtures and decor. Our designs are tailored to meet particular requests and we offer all of the necessary support to ensure the success of the project.
+						<div class="max-width-740 remove-margin-from-last-el uk-text-light uk-margin-medium-bottom">
+							<?php echo wp_kses_post( $second_section_text ); ?>
 						</div>
 						<figure class="uk-margin-remove">
-							<img src="http://localhost/avax/wp-content/uploads/2023/11/contract-division-img-3.jpg" alt="">
+							<?php echo wp_get_attachment_image( $second_section_img_id, 'full' ); ?>
 						</figure>
 					</div>
 				</section>
 
-				<section class="section uk-margin-large-top uk-margin-large-bottom">
+				<section class="section section-text section-third uk-margin-large-top uk-margin-large-bottom">
 					<div class="uk-container uk-container-xlarge">
-						<div class="uk-flex-bottom uk-grid-large" uk-grid>
-							<div class="uk-width-1-2@s uk-margin-medium-bottom">
-								<h2 class="font-weight-100 uk-h1">
-									Request Our Tailor Made Technical Service
-								</h2>
-								<div class="remove-margin-from-last-el uk-text-light uk-margin-bottom">
-								Depending on the project, our team is able to take on various
-aspects of project management, including interior design, product development, logistics, and installation. We possess a strong drive for innovation, a legacy which has been a part of our company's DNA for 40 years. Thanks to our experience and know-how, our product proposal aims to satisfy our customers’ demand for customized, refined and timeless solutions.
+						<div class="uk-grid-large" uk-grid>
+							<div class="uk-width-1-2@m uk-margin-auto-top">
+								<div class="max-width-740 remove-margin-from-last-el uk-text-light uk-margin-bottom">
+									<?php echo wp_kses_post( $third_section_text ); ?>
 								</div>
-								<a class="uk-button uk-button-default uk-text-uppercase" href=""><?php esc_html_e( 'Contact us', 'wpcanvas' ); ?></a>
 							</div>
-							<div class="uk-width-1-2@s">
-								<figure class="uk-margin-remove">
-									<img src="http://localhost/avax/wp-content/uploads/2023/11/contract-division-img-4.jpg" alt="">
+							<div class="uk-width-1-2@m uk-flex">
+								<figure class="uk-flex uk-margin-remove">
+									<?php echo wp_get_attachment_image( $third_section_img_id, 'full', false, array( 'class' => 'object-fit-cover' ) ); ?>
 								</figure>
 							</div>
 						</div>

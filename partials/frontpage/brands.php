@@ -8,7 +8,7 @@ $brands_page   = $options_pages['brands'];
 ?>
 
 <section class="section section-brands uk-margin-large-bottom">
-	<div class="uk-container uk-container-xlarge">
+	<div class="max-width-1600 uk-container">
 		<h2 class="font-weight-100 uk-h1 uk-margin-remove-top uk-margin-medium-bottom">
 			<?php esc_html_e( 'Brands', 'wpcanvas' ); ?>
 		</h2>

@@ -6,7 +6,7 @@ if ( ! empty( $gallery_images ) ) :
 	?>
 	<section class="section section-mosaic-gallery">
 		<div class="uk-container">
-			<h2 class="font-weight-100 uk-margin-medium-bottom uk-text-center">
+			<h2 class="font-weight-100 uk-h1 uk-margin-medium-bottom uk-text-center">
 				<?php echo esc_html( $gallery_title ); ?>
 			</h2>
 		</div>

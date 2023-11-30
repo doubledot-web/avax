@@ -26,8 +26,8 @@ $sub_cats          = get_terms(
 		</div>
 	</section>
 
-	<section class="section section-alternative-blocks section-sub-categories">
-		<div class="uk-container uk-container-xlarge uk-margin-large-bottom">
+	<section class="section section-alternative-blocks section-sub-categories uk-margin-large-bottom">
+		<div class="uk-container uk-container-xlarge">
 			<?php
 			foreach ( $sub_cats as $key => $sub_cat ) :
 				$sub_cat_id   = $sub_cat->term_id;

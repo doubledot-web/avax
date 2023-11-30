@@ -51,10 +51,23 @@
  *** SECTIONS ***
  **************/
 .section {
+	&-bg-gray {
+		background: $bg-gray;
+	}
+
 	&-text {
 		h1,
-		h2 {
+		h2,
+		h3 {
 			font-weight: 100;
+		}
+
+		h2,
+		h3 {
+			font-size: $base-h1-font-size;
+			@media (min-width: $breakpoint-medium) {
+				font-size: $base-h1-font-size-m;
+			}
 		}
 	}
 
@@ -165,29 +178,40 @@
 		}
 	}
 
-
-		&-alternative-blocks {
-			article + article {
-				margin-top: $global-medium-margin;
-				@media (min-width: $breakpoint-medium) {
-					margin-top: $global-large-margin;
-				}
-			}
-
-			.post-title-wrapper {
-
-				* {
-					transition: text-shadow 0.1s;
-				}
-
-				&:hover {
-					> * {
-						text-shadow: 0 0 1px $black, 0 0 1px $black;
-					}
-				}
+	&-alternative-blocks {
+		article + article {
+			margin-top: $global-medium-margin;
+			@media (min-width: $breakpoint-medium) {
+				margin-top: $global-large-margin;
 			}
 		}
 
+		.post-title-wrapper {
+			transition: text-shadow 0.1s;
+
+			&:hover {
+				text-shadow: 0 0 1px $black, 0 0 1px $black;
+			}
+		}
+	}
+
+	&-form {
+		.form-wrapper {
+			.wpcf7 {
+				max-width: 860px;
+				@media (min-width: $breakpoint-large) {
+					padding-left: 80px;
+					border-left: 3px solid $black;
+				}
+			}
+		}
+	}
+
+	&-text-form {
+		h1 {
+			//margin-bottom: $margin-medium-margin;
+		}
+	}
 }
 
 /**************
@@ -226,17 +250,25 @@
 	}
 }
 
-.tax-project_type{
-
+.tax-project_type {
 }
 
 .single {
-
 }
 
 /**************
  *** OTHER ***
  **************/
+ .showroom-info {
+	a {
+		color: $black;
+
+		&:hover {
+			color: $global-link-hover-color;
+		}
+	}
+ }
+
 .socials {
 	position: fixed;
 	left: 15px;
@@ -289,21 +321,20 @@
 		gap: 20px;
 	}
 
-
 	.page-numbers:not(.prev):not(.next):not(.current):not(.dots) {
 		color: $black;
- 	}
+	}
 
 	.current {
 		color: $gray;
- 	}
+	}
 
 	.page-numbers:not(.prev):not(.next):not(.dots) {
 		transition: color 0.2s;
 
 		&:hover {
 			color: $global-link-hover-color;
- 		}
+		}
 	}
 }
 

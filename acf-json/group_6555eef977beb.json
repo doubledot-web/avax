@@ -342,6 +342,27 @@
                 "operator": "==",
                 "value": "product_cat"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/about.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/contact.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/showroom.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -353,5 +374,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701265887
+    "modified": 1701358671
 }

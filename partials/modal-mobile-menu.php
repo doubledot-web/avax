@@ -1,9 +1,3 @@
-<?php
-$options_contact = get_field( 'contact', 'options' );
-$options_emails  = $options_contact['emails'];
-$options_socials = $options_contact['socials'];
-?>
-
 <div id="modal-menu" class="modal-menu bg-blue uk-modal-full uk-hidden@l" uk-modal="bg-close: false">
 	<div class="top-wrapper uk-flex">
 		<div class="uk-container uk-container-expand uk-width-1-1 uk-flex uk-flex-middle uk-flex-between">

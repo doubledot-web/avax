@@ -1,7 +1,7 @@
 /**
  * MIXIN FOR CENTERING
  */
- @mixin center($horizontal: true, $vertical: true) {
+@mixin center($horizontal: true, $vertical: true) {
 	position: absolute;
 	@if ($horizontal and $vertical) {
 		top: 50%;
@@ -37,7 +37,7 @@ $transition-list: color, fill, stroke, background, transform, all;
 
 /*COLOR LIST*/
 $color-list: white $white, black $black, darkgray $dark-gray, gray $gray,
-	lightgray $light-gray, red $red;
+	lightgray $light-gray, bggray $bg-gray red $red;
 @each $value in $color-list {
 	.text-#{nth($value, 1)} {
 		color: nth($value, 2);

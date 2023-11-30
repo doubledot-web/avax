@@ -1,20 +1,78 @@
 /****************************
 *** INPUTS ***
 *****************************/
-.uk-input {
-	border: none;
-	border-bottom: 3px solid $black;
-	color: $black;
-	height: auto;
-	padding: 0 0 5px 0;
-	font-weight: 300;
-	@include placeholder() {
-		color: rgba(0, 0, 0, 0.5);
+.uk {
+	&-input,
+	&-textarea {
+		font-weight: 300;
+		@include placeholder() {
+			color: rgba(0, 0, 0, 0.5);
+		}
+
+		&,
+		&:focus {
+			background-color: transparent;
+			border-color: $black;
+		}
 	}
 
-	&,
-	&:focus {
-		background-color: transparent;
-		border-color: $black;
+	&-input {
+		padding: 0 0 5px 0;
+		border: none;
+		border-bottom: 3px solid $black;
+		height: auto;
+	}
+
+	&-textarea {
+		height: 295px;
+		border: 3px solid $black;
+	}
+}
+
+.wpcf7 {
+	.wpcf7-form {
+		&.invalid {
+			input.wpcf7-not-valid,
+			textarea.wpcf7-not-valid {
+				border-color: $red;
+			}
+		}
+
+		&.sent {
+			.wpcf7-response-output {
+				border: none;
+			}
+		}
+
+		.wpcf7-not-valid-tip {
+			display: none;
+		}
+
+		.wpcf7-response-output {
+			display: flex;
+			justify-content: center;
+			border: none;
+			padding: 6px;
+			margin: 30px 0 0;
+			color: $white;
+			background: $black;
+		}
+	}
+
+	.submit-wrapper {
+		p {
+			position: relative;
+		}
+	}
+
+	&-form-control-wrap {
+		display: block;
+	}
+
+	&-spinner {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		margin: 0;
 	}
 }

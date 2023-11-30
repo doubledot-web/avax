@@ -1,6 +1,5 @@
 <?php
 $options_contact = get_field( 'contact', 'options' );
-$options_emails  = $options_contact['emails'];
 $options_socials = $options_contact['socials'];
 $icon_colors     = $args['header_color_white'] ? 'fill-white fill-black-hover' : 'fill-black fill-white-hover';
 ?>

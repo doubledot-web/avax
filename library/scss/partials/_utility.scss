@@ -54,6 +54,12 @@
 	}
 }
 
+.pr-remove-horizontal\@l {
+	@media (min-width: $breakpoint-large) {
+		padding-right: 0;
+	}
+}
+
 [src$=".jpg"][loading="lazy"],
 .bg-lazy {
 	background-color: $gray;
@@ -63,6 +69,14 @@
 	*:last-child {
 		margin-bottom: 0;
 	}
+}
+
+.max-width-740 {
+	max-width: 740px;
+}
+
+.max-width-1600 {
+	max-width: 1600px;
 }
 
 .plr-uikit-grid {

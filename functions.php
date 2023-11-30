@@ -137,6 +137,7 @@ include_once get_theme_file_path( 'library/inc/class-submenu-wrapper.php' );
 include_once get_theme_file_path( 'asides/register-sidebars.php' );
 include_once get_theme_file_path( 'library/inc/shortcodes.php' );
 include_once get_theme_file_path( 'library/inc/plugins-list.php' );
+include_once get_theme_file_path( 'library/inc/utility-functions.php' );
 if ( class_exists( 'WooCommerce' ) ) {
 	include_once get_theme_file_path( 'woocommerce/wc-functions.php' );
 }
