@@ -46,7 +46,7 @@ $sub_cats          = get_terms(
 							</a>
 						</div>
 						<div class="uk-width-1-1 uk-width-1-3@m uk-flex <?php echo esc_attr( $order ); ?>">
-							<a class="post-title-wrapper text-black text-black-hover" href="<?php echo esc_url( get_term_link( $sub_cat_id ) ); ?>">
+							<a class="text-black text-black-hover text-shadow-hover" href="<?php echo esc_url( get_term_link( $sub_cat_id ) ); ?>">
 								<h2 class="font-weight-100 color-inherit uk-h1 uk-margin-remove">
 									<?php echo esc_html( $sub_cat->name ); ?>
 								</h2>

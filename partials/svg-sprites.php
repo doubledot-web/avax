@@ -36,11 +36,14 @@
 		<path d="M25.2812 9.33555H22.2812C22.2812 5.9371 19.5812 3.18353 16.2712 3.18353C12.9612 3.18353 10.2612 5.94734 10.2612 9.33555H7.26123C7.26123 4.24811 11.3012 0.11264 16.2712 0.11264C21.2412 0.11264 25.2812 4.24811 25.2812 9.33555Z"/>
 		<path d="M24.7112 27.1774H7.8313C7.2013 27.1774 6.62124 26.9624 6.15125 26.5632C5.72125 26.2254 5.38126 25.7033 5.23126 25.0789L0.53125 7.69772H32.0312L27.3313 25.0994C27.1813 25.7034 26.8413 26.2254 26.3713 26.5939C25.9213 26.9624 25.3412 27.1774 24.7112 27.1774ZM8.07129 24.1065H24.4713L28.0713 10.7686H4.46124L8.07129 24.1065Z"/>
 	</symbol>
-	<symbol id="slider-prev-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 24" fill="none">
+	<symbol id="chevron-prev-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 24" fill="none">
   		<path d="M11.8896 24L0 12L11.8896 0L14 2.13L4.22081 12L14 21.87L11.8896 24Z" fill="black"/>
 	</symbol>
-	<symbol id="slider-next-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 24" fill="none">
+	<symbol id="chevron-next-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 24" fill="none">
 		<path d="M2.1104 24L14 12L2.1104 0L0 2.13L9.77919 12L0 21.87L2.1104 24Z" fill="black"/>
+	</symbol>
+	<symbol id="chevron-down-arrow" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M6.17911 9.53801L0.679109 0.320007L2.32911 0.320007L6.61911 7.36001L10.9311 0.320007L12.5371 0.320007L6.99311 9.53801L6.17911 9.53801Z" fill="black"/>
 	</symbol>
 	<symbol id="close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17">
 		<path fill-rule="evenodd" clip-rule="evenodd" d="M6.45297 8.02786L-5.91966e-05 1.57483L1.57478 -6.3298e-07L8.0278 6.45303L14.4808 -6.88382e-08L16.0557 1.57483L9.60264 8.02786L16.0557 14.4809L14.4808 16.0557L8.0278 9.6027L1.57477 16.0557L-5.97608e-05 14.4809L6.45297 8.02786Z"/>

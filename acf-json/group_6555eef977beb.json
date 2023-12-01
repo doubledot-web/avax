@@ -363,6 +363,20 @@
                 "operator": "==",
                 "value": "page-templates\/showroom.php"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/downloads.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -374,5 +388,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701358671
+    "modified": 1701443805
 }

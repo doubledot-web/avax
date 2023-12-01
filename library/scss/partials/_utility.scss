@@ -61,7 +61,8 @@
 }
 
 [src$=".jpg"][loading="lazy"],
-.bg-lazy {
+.bg-lazy,
+iframe {
 	background-color: $gray;
 }
 
@@ -77,6 +78,18 @@
 
 .max-width-1600 {
 	max-width: 1600px;
+}
+
+.flex-grow-1 {
+	flex-grow: 1;
+}
+
+
+.no-text-shadow {
+	&,
+	&:hover {
+		text-shadow: none;
+	}
 }
 
 .plr-uikit-grid {

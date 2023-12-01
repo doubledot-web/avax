@@ -14,8 +14,8 @@ if ( $all_posts_count > $all_posts_current_page ) :
 				<?php
 				echo paginate_links(
 					array(
-						'prev_text' => '<span class="screen-reader-text">' . __( 'Newer Posts', 'wpcanvas' ) . '</span><svg width="14" height="24" aria-hidden="true"><use xlink:href="#slider-prev-arrow"></use></svg>',
-						'next_text' => '<span class="screen-reader-text">' . __( 'Older Posts', 'wpcanvas' ) . '</span><svg width="14" height="24" aria-hidden="true"><use xlink:href="#slider-next-arrow"></use></svg></span>',
+						'prev_text' => '<span class="screen-reader-text">' . __( 'Newer Posts', 'wpcanvas' ) . '</span><svg width="14" height="24" aria-hidden="true"><use xlink:href="#chevron-prev-arrow"></use></svg>',
+						'next_text' => '<span class="screen-reader-text">' . __( 'Older Posts', 'wpcanvas' ) . '</span><svg width="14" height="24" aria-hidden="true"><use xlink:href="#chevron-next-arrow"></use></svg></span>',
 					)
 				);
 				?>

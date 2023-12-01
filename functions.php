@@ -178,6 +178,8 @@ function add_featured_image_instruction( $content ) {
 	$post_type = $post->post_type;
 	if ( 'project' === $post_type ) :
 		return $content .= '<p>Image dimensions should be 1200px x 595px.</p>';
+	elseif ( 'post' === $post_type ) :
+		return $content .= '<p>Image dimensions should be 660px x 856px.</p>';
 	else :
 		return $content;
 	endif;
@@ -402,22 +404,45 @@ function filter_posts( $query ) {
 		endif;
 	endif;
 }
-add_action( 'pre_get_posts', 'filter_posts' );
+//add_action( 'pre_get_posts', 'filter_posts' );
 
-
-/*****************************
- ***** GET ALL POSTS *****
- *****************************/
+/**
+ * GET ALL POSTS
+ */
 function get_all_posts() {
 	global $wp_query;
 	return $wp_query->found_posts;
 }
 
 
-/*****************************
- ***** GET ALL POSTS CURRENT PAGE *****
- *****************************/
+/**
+ * GET ALL POSTS CURRENT PAGE
+ */
 function get_all_posts_current_page() {
 	global $wp_query;
 	return $wp_query->post_count;
 }
+
+
+/**
+ * GET ALL BLOG PAGE URL
+ */
+function get_blog_page_url() {
+	return get_permalink( get_option( 'page_for_posts' ) );
+}
+
+
+/**
+ * ADD INSTRUCTIONS CONTENT IMAGE GRID SHORTCODE SINGLE POST
+ */
+function add_shortcode_instructions( $post ) {
+	if ( 'post' === $post->post_type ) :
+		echo '<p class="shortcode-instructions">
+		<strong>Single Image:</strong> [image_grid ids="331"]: Image dimensions should be 1400px x xyz. <br>
+		<strong>Double Images:</strong> [image_grid ids="331, 327"]: Image dimensions should be 700px x xyz. <br>
+		<strong>Three Images:</strong> [image_grid ids="331, 327, 328"]: Image dimensions should be 700px x xyz. <br>
+		</p>
+		';
+	endif;
+}
+add_action( 'edit_form_after_title', 'add_shortcode_instructions' );

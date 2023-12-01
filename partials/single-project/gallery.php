@@ -4,7 +4,6 @@ $options_pages  = get_field( 'pages', 'option' );
 $projects_page  = $options_pages['projects'];
 ?>
 
-
 <section class="section section-images-grid uk-margin-large-bottom">
 	<div class="uk-container uk-container-large">
 		<?php
@@ -33,7 +32,7 @@ $projects_page  = $options_pages['projects'];
 	<div class="uk-container uk-container-xlarge uk-flex uk-flex-right uk-margin-large-top">
 		<a class="text-black uk-text-light uk-text-uppercase uk-flex uk-flex-middle" href="<?php echo esc_url( $projects_page ); ?>">
 			<svg width="14" height="24" class="uk-margin-right" aria-hidden="true">
-				<use xlink:href="#slider-prev-arrow"></use>
+				<use xlink:href="#chevron-prev-arrow"></use>
 			</svg>
 			<?php esc_html_e( 'Back to projects', 'wpcanvas' ); ?>
 		</a>

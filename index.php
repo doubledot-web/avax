@@ -1,69 +1,118 @@
-<?php get_header(); ?>
+<?php
+get_header();
+$other     = get_field( 'other', 'option' );
+$post_cats = get_categories(
+	array(
+		'hide_empty' => false,
+	)
+);
+if ( is_home() ) :
+	$show_all_posts = true;
+	$current_url    = get_blog_page_url();
+elseif ( is_category() ) :
+	$show_all_posts = false;
+	$current_url    = get_term_link( get_queried_object_id() );
+endif;
+?>
 
-<div id="content" class="uk-container">
-	<div id="inner-content" uk-grid>
+<main class="site-main">
+	<section class="section section-text uk-text-center uk-padding-large uk-padding-remove-horizontal">
+		<div class="uk-container uk-container-large">
+			<div class="remove-margin-from-last-el uk-text-center uk-text-light">
+				<?php echo wp_kses_post( $other['blog_text'] ); ?>
+			</div>
+		</div>
+	</section>
 
-		<main id="main" class="uk-width-2-3@m" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
-
-			<?php if ( get_option( 'page_for_posts', true ) ) : ?>
-				<h1 class="uk-heading-divider"><?php echo esc_html( get_the_title( get_option( 'page_for_posts', true ) ) ); ?></h1>
-			<?php endif; ?>
+	<section class="section uk-margin-xlarge-bottom">
+		<div class="uk-container uk-container-large">
+			<div class="uk-inline">
+				<button class="btn-base uk-text-uppercase uk-text-light uk-flex uk-flex-middle uk-margin-medium-bottom" type="button">
+					<?php esc_html_e( 'Apply filters', 'wpcanvas' ); ?>
+					<svg width="13" height="10" class="uk-margin-left" aria-hidden="true">
+						<use xlink:href="#chevron-down-arrow"></use>
+					</svg>
+				</button>
+				<div class="post-cats-dropdown" uk-dropdown="mode: click; pos: bottom-right">
+					<?php $active_class = $show_all_posts ? ' text-gray' : ''; ?>
+					<div class="filter<?php echo esc_attr( $active_class ); ?>">
+						<a class="text-black<?php echo esc_attr( $active_class ); ?> uk-text-light uk-display-inline-block uk-text-uppercase" href="<?php echo esc_url( get_blog_page_url() ); ?>">
+							<?php esc_html_e( 'All Categories', 'wpcanvas' ); ?>
+						</a>
+					</div>
+					<?php
+					foreach ( $post_cats as $cat ) :
+						$cat_id       = $cat->term_id;
+						$cat_slug     = $cat->slug;
+						$cat_name     = $cat->name;
+						$cat_link     = get_category_link( $cat_id );
+						$active_class = $cat_link === $current_url ? ' text-gray' : '';
+						if ( 'Uncategorized' === $cat_name ) :
+							continue;
+						endif;
+						?>
+						<div class="filter">
+							<a class="text-black<?php echo esc_attr( $active_class ); ?> uk-text-light uk-display-inline-block uk-text-uppercase" href="<?php echo esc_url( $cat_link ); ?>">
+								<?php echo esc_html( $cat_name ); ?>
+							</a>
+						</div>
+					<?php endforeach; ?>
+				</div>
+			</div>
 
 			<?php
 			if ( have_posts() ) :
-				while ( have_posts() ) :
-					the_post();
-					?>
-
-					<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
-						<header class="article-header">
-							<h2 class="post-title">
-								<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-							</h2>
-
-							<p class="post-meta">
-								<?php echo __( 'Posted ', 'wpcanvas' ); ?><time datetime="<?php echo get_the_time( 'Y-m-d' ); ?>" itemprop="datePublished"><?php echo get_the_time( get_option( 'date_format' ) ); ?></time>
-
-								<span><?php echo __( 'by', 'wpcanvas' ); ?></span> <span itemprop="author" itemscope itemptype="http://schema.org/Person"><?php echo get_the_author_link( get_the_author_meta( 'ID' ) ); ?></span>
-							</p>
-						</header>
-
-						<section class="article-body">
-							<?php // the_post_thumbnail( 'thumbnail' ); ?>
-							<?php the_excerpt(); ?>
-						</section>
-
-						<footer class="article-footer">
-							<p><?php comments_number( __( '<span>No</span> Comments', 'wpcanvas' ), __( '<span>One</span> Comment', 'wpcanvas' ), __( '<span>%</span> Comments', 'wpcanvas' ) ); ?></p>
-
-							<?php printf( '<p class="footer-category">' . __( 'filed under', 'wpcanvas' ) . ': %1$s</p>', get_the_category_list( ', ' ) ); ?>
-
-							<?php the_tags( '<p class="footer-tags tags"><span class="tags-title">' . __( 'Tags:', 'wpcanvas' ) . '</span> ', ', ', '</p>' ); ?>
-						</footer>
-					</article>
-
+				?>
+				<div class="uk-grid-large" uk-grid>
 					<?php
-				endwhile;
-
-				echo paginate_links();
-
+					while ( have_posts() ) :
+						the_post();
+						?>
+						<div class="uk-width-1-2@s">
+							<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+								<a class="text-shadow-hover" href="<?php the_permalink(); ?>">
+									<figure class="uk-margin-remove">
+										<?php
+										the_post_thumbnail(
+											'full',
+											array(
+												'loading' => 'lazy',
+												'class'   => 'object-fit-cover uk-width-1-1',
+											)
+										);
+										?>
+									</figure>
+									<div class="post-info uk-margin-top">
+										<time class="text-black no-text-shadow uk-display-inline-block uk-text-light uk-margin-small-bottom" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
+											<?php echo esc_html( get_the_date( 'd F Y' ) ); ?>
+										</time>
+										<h2 class="font-weight-100 uk-margin-remove">
+											<?php the_title(); ?>
+										</h2>
+									</div>
+								</a>
+							</article>
+						</div>
+						<?php
+					endwhile;
+					?>
+				</div>
+				<?php
+				get_template_part( 'partials/posts-pagination' );
+				?>
+				<?php
 			else :
 				?>
-				<article id="post-not-found" class="hentry cf">
-					<header class="article-header">
-						<h1><?php _e( 'Post Not Found!', 'wpcanvas' ); ?></h1>
-					</header>
-					<section class="article-body">
-						<p><?php _e( 'Something is missing. Try double checking things.', 'wpcanvas' ); ?></p>
-					</section>
-				</article>
-			<?php endif; ?>
+				<p class="uk-text-light uk-margin-large-top">
+					<?php esc_html_e( 'Sorry, but no posts found!', 'wpcanvas' ); ?>
+				</p>
+				<?php
+			endif;
+			?>
 
-		</main>
+		</div>
+	</section>
+</main>
 
-		<?php get_template_part( 'asides/sidebar' ); ?>
-
-	</div>
-</div>
-
-<?php get_footer(); ?>
+<?php
+get_footer();

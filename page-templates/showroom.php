@@ -22,7 +22,7 @@ get_header();
 				<section class="section section-text section-text-form section-form uk-margin-large-top uk-margin-large-bottom">
 					<div class="uk-container uk-container-xlarge">
 						<div class="uk-grid-large" uk-grid>
-							<div class="uk-width-1-2@m">
+							<div class="uk-width-1-2@l uk-flex uk-flex-column">
 								<div class="max-width-740">
 									<h1 class="font-weight-100">
 										<?php the_title(); ?>
@@ -31,10 +31,13 @@ get_header();
 										<?php the_content(); ?>
 									</div>
 								</div>
+								<div class="flex-grow-1 uk-margin-medium-top">
+									<?php the_field( 'map' ); ?>
+								</div>
 							</div>
-							<div class="uk-width-1-2@m uk-flex uk-flex-right@l">
-								<div class="form-wrapper">
-									<h2 class="font-weight-100 uk-h1">
+							<div class="uk-width-1-2@l uk-flex uk-flex-right@l">
+								<div class="form-wrapper uk-flex uk-flex-column">
+									<h2 class="title font-weight-100 uk-h1">
 										<?php esc_html_e( 'Send Us A Message', 'wpcanvas' ); ?>
 									</h2>
 									<?php echo do_shortcode( '[contact-form-7 id="aeb2f6d" title="Contact form"]' ); ?>

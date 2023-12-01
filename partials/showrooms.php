@@ -28,7 +28,7 @@ $showrooms        = get_pages(
 						</a>
 					</div>
 					<div class="uk-width-1-1 uk-width-1-3@m uk-flex uk-flex-column <?php echo esc_attr( $order ); ?>">
-						<a class="post-title-wrapper text-black text-black-hover" href="<?php echo esc_url( get_permalink( $showroom_id ) ); ?>">
+						<a class="text-black text-black-hover text-shadow-hover" href="<?php echo esc_url( get_permalink( $showroom_id ) ); ?>">
 							<h3 class="font-weight-100 color-inherit uk-h1 uk-margin-remove">
 								<?php echo esc_html( get_the_title( $showroom_id ) ); ?>
 							</h3>

@@ -36,12 +36,12 @@ $brands_page   = $options_pages['brands'];
 				<div class="slider-arrows">
 					<a class="slider-prev uk-position-center-left-out uk-position-small" href="#" uk-slider-item="previous" aria-label="<?php esc_attr_e( 'Previous Image', 'wpcanvas' ); ?>">
 						<svg width="14" height="24" aria-hidden="true">
-							<use xlink:href="#slider-prev-arrow"></use>
+							<use xlink:href="#chevron-prev-arrow"></use>
 						</svg>
 					</a>
 					<a class="slider-next uk-position-center-right-out uk-position-small" href="#" uk-slider-item="next" aria-label="<?php esc_attr_e( 'Next Image', 'wpcanvas' ); ?>">
 						<svg width="14" height="24" aria-hidden="true">
-							<use xlink:href="#slider-next-arrow"></use>
+							<use xlink:href="#chevron-next-arrow"></use>
 						</svg>
 					</a>
 				</div>

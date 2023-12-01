@@ -45,7 +45,7 @@ $current_page_url = get_term_link( $current_term_id );
 								</a>
 							</div>
 							<div class="uk-width-1-1 uk-width-1-3@m uk-flex <?php echo esc_attr( $order ); ?>">
-								<a class="post-title-wrapper text-black text-black-hover" href="<?php the_permalink(); ?>">
+								<a class="text-black text-black-hover text-shadow-hover" href="<?php the_permalink(); ?>">
 									<h2 class="font-weight-100 color-inherit uk-h1 uk-margin-remove"><?php the_title(); ?></h2>
 									<?php if ( has_excerpt() ) : ?>
 										<p class="font-weight-100 color-inherit uk-h2 uk-margin-remove">
