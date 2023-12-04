@@ -7,6 +7,8 @@
 @import "../../node_modules/uikit/src/scss/mixins-theme.scss";
 @import "../../node_modules/uikit/src/scss/uikit-theme.scss";
 
+@import "partials/wc-variables";
+
 // breakpoints
 @import "partials/reset";
 @import "partials/mixins";
@@ -16,12 +18,14 @@
 @import "partials/footer";
 @import "partials/modal";
 @import "breakpoints/base";
+@import "wc-breakpoints/base";
 
 /****************************
 *** LARGER MOBILE DEVICES ***
 *****************************/
 @media only screen and (min-width: 640px) {
 	@import "breakpoints/640up";
+	@import "wc-breakpoints/640up";
 }
 
 /*******************************
@@ -29,6 +33,7 @@
 ********************************/
 @media only screen and (min-width: 960px) {
 	@import "breakpoints/960up";
+	@import "wc-breakpoints/960up";
 }
 
 /**************
@@ -36,6 +41,7 @@
 ***************/
 @media only screen and (min-width: 1200px) {
 	@import "breakpoints/1200up";
+	@import "wc-breakpoints/1200up";
 }
 
 /*************************
@@ -43,6 +49,7 @@
 **************************/
 @media only screen and (min-width: 1600px) {
 	@import "breakpoints/1600up";
+	@import "wc-breakpoints/1600up";
 }
 
 /*************************************

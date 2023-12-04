@@ -25,7 +25,10 @@ get_header();
 						</div>
 					</div>
 				</section>
-				<?php get_template_part( 'partials/single-project/gallery' ); ?>
+				<?php
+				get_template_part( 'partials/single-project/gallery' );
+				get_template_part( 'partials/single-project/related' );
+				?>
 			</article>
 			<?php
 		endwhile;

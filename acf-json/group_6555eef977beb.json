@@ -377,6 +377,13 @@
                 "operator": "==",
                 "value": "page-templates\/downloads.php"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/brand.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -388,5 +395,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701443805
+    "modified": 1701689438
 }

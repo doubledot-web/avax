@@ -19,10 +19,12 @@ defined( 'ABSPATH' ) || exit;
 
 $current_term        = get_queried_object();
 $current_term_parent = $current_term->parent;
+$outdoor_id          = 42;
+$sales_id            = 47;
 
 /*Check if top level categories*/
-if ( 0 === $current_term_parent ) :
-	get_template_part( 'partials/woocommerce/archive-product', null, array( 'current_term' => $current_term ) );
+if ( 0 === $current_term_parent && get_queried_object_id() !== $outdoor_id && get_queried_object_id() !== $sales_id ) :
+	get_template_part( 'partials/archive-product', null, array( 'current_term' => $current_term ) );
 	return;
 endif;
 
@@ -109,6 +111,6 @@ do_action( 'woocommerce_after_main_content' );
  *
  * @hooked woocommerce_get_sidebar - 10
  */
-do_action( 'woocommerce_sidebar' );
+//do_action( 'woocommerce_sidebar' );
 
 get_footer( 'shop' );

@@ -8,7 +8,7 @@
             "name": "project_images",
             "aria-label": "",
             "type": "flexible_content",
-            "instructions": "Each row can have one or two images. <br>\r\nIf you put one image, image dimensions should be 1400px x xyz. <br>\r\nIf you put two images, all images should have the same height and a width of around 700px.",
+            "instructions": "Each row can have one or two images. <br>\r\nIf you put one image, image dimensions should be 1400px x xyz. <br>\r\nIf you put two images, all images should have the same dimensions (700px x xyz).",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -81,6 +81,32 @@
             "min": "",
             "max": "",
             "button_label": "Add Row"
+        },
+        {
+            "key": "field_656da72a6b08a",
+            "label": "Related Products",
+            "name": "related_products",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "product"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "object",
+            "multiple": 1,
+            "allow_null": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
         }
     ],
     "location": [
@@ -101,5 +127,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701258907
+    "modified": 1701699519
 }

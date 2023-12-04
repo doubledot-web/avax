@@ -12,7 +12,7 @@ $brands_page   = $options_pages['brands'];
 		<h2 class="font-weight-100 uk-h1 uk-margin-remove-top uk-margin-medium-bottom">
 			<?php esc_html_e( 'Brands', 'wpcanvas' ); ?>
 		</h2>
-		<div uk-slider="sets: true">
+		<div uk-slider="sets: true΄autoplay: true">
 			<div class="uk-position-relative">
 				<div class="uk-slider-container">
 					<ul class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-4@m uk-grid-medium uk-grid">
@@ -21,12 +21,15 @@ $brands_page   = $options_pages['brands'];
 							$brand_id      = $brand->term_id;
 							$acf_term      = 'product_brand_' . $brand_id;
 							$brand_logo_id = get_field( 'logo', $acf_term );
+							$related_page  = get_field( 'related_page', $acf_term );
 							?>
 							<li>
 								<figure class="uk-margin-remove uk-text-center">
-									<?php
-									echo wp_get_attachment_image( $brand_logo_id, 'full' );
-									?>
+									<a href="<?php echo esc_url( $related_page ); ?>">
+										<?php
+										echo wp_get_attachment_image( $brand_logo_id, 'full' );
+										?>
+									</a>
 								</figure>
 							</li>
 						<?php endforeach; ?>

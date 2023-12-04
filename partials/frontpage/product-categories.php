@@ -1,0 +1,44 @@
+<?php
+$args         = array(
+	'hide_empty' => false,
+	'parent'     => 0,
+	'exclude'    => 15, //uncategorized
+);
+$product_cats = get_terms( 'product_cat', $args );
+?>
+
+<section class="section section-product-categories uk-margin-large-top uk-margin-large-bottom">
+	<div class="uk-container uk-container-xlarge">
+		<h2 class="font-weight-100 uk-h1 uk-margin-remove-top uk-margin-medium-bottom">
+			<?php esc_html_e( 'Explore Our Collection', 'wpcanvas' ); ?>
+		</h2>
+		<div uk-slider>
+			<ul class="uk-slider-items uk-grid-medium uk-grid">
+				<?php
+				foreach ( $product_cats as $cat ) :
+					$cat_id     = $cat->term_id;
+					$cat_name   = $cat->name;
+					$acf_term   = 'product_cat_' . $cat_id;
+					$cat_img_id = get_field( 'featured_image_home', $acf_term );
+					?>
+					<li class="uk-width-3-4 uk-width-2-5@s uk-width-auto@l">
+						<a href="<?php echo esc_url( get_term_link( $cat_id ) ); ?>">
+							<figure class="uk-margin-remove">
+								<?php
+								echo wp_get_attachment_image( $cat_img_id, 'full' );
+								?>
+								<figcaption>
+									<h3 class="uk-h5 uk-text-light uk-text-uppercase uk-margin-small-top uk-margin-remove-bottom">
+										<?php echo esc_html( $cat_name ); ?>
+									</h3>
+								</figcaption>
+							</figure>
+						</a>
+					</li>
+				<?php endforeach; ?>
+			</ul>
+
+			<?php get_template_part( 'partials/slider-arrows' ); ?>
+		</div>
+	</div>
+</section>

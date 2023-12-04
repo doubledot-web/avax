@@ -1,10 +1,11 @@
 <?php
-if ( is_front_page() || is_singular( 'post' ) || ( is_tax( 'product_cat' ) && 0 === get_queried_object()->parent ) || is_page_template( array( 'page-templates/brands.php', 'page-templates/contract-division.php', 'page-templates/about.php', 'page-templates/contact.php', 'page-templates/showroom.php', 'page-templates/downloads.php' ) ) ) :
+if ( is_front_page() || is_singular( 'post' ) || ( is_tax( 'product_cat' ) && 0 === get_queried_object()->parent ) || is_page_template( array( 'page-templates/brands.php', 'page-templates/contract-division.php', 'page-templates/about.php', 'page-templates/contact.php', 'page-templates/showroom.php', 'page-templates/downloads.php', 'page-templates/brand.php' ) ) ) :
 	$header_position_class = 'header-fixed';
 else :
 	$header_position_class = 'header-sticky';
 endif;
-$hero_fields          = get_field( 'hero_fields' );
+$queried_id           = is_archive() ? get_queried_object()->taxonomy . '_' . get_queried_object()->term_id : '';
+$hero_fields          = get_field( 'hero_fields', $queried_id );
 $header_color_white   = $hero_fields['header_color_white'];
 $header_color_class   = isset( $header_color_white ) && ! empty( $header_color_white ) ? ' header-white' : '';
 $header_extra_classes = $header_position_class . $header_color_class;

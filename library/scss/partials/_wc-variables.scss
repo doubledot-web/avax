@@ -1,0 +1,20 @@
+/**************
+ *** BACK FRONT IMAGE
+ **************/
+.back-front-hover-effect {
+	.image-wrapper {
+		position: relative;
+	}
+
+	.img-back {
+		display: none;
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			.img-back {
+				display: block;
+			}
+		}
+	}
+}

@@ -439,8 +439,8 @@ function add_shortcode_instructions( $post ) {
 	if ( 'post' === $post->post_type ) :
 		echo '<p class="shortcode-instructions">
 		<strong>Single Image:</strong> [image_grid ids="331"]: Image dimensions should be 1400px x xyz. <br>
-		<strong>Double Images:</strong> [image_grid ids="331, 327"]: Image dimensions should be 700px x xyz. <br>
-		<strong>Three Images:</strong> [image_grid ids="331, 327, 328"]: Image dimensions should be 700px x xyz. <br>
+		<strong>Double Equal Images:</strong> [image_grid ids="331, 327"]: Images should have the same dimensions (700px x xyz). <br>
+		<strong>Three Images:</strong> [image_grid ids="331, 327, 328"]: The first image should be 1400px x xyz. The other two images should have the same dimensions (700px x xyz). <br>
 		</p>
 		';
 	endif;

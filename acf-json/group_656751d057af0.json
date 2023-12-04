@@ -3,6 +3,31 @@
     "title": "Product Category Fields",
     "fields": [
         {
+            "key": "field_656de249e4815",
+            "label": "Featured Image Home",
+            "name": "featured_image_home",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Fill this only for parent categories. <br>\r\nImage dimensions should be 525px x 737px.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
             "key": "field_656751d0cf72c",
             "label": "Featured Image",
             "name": "featured_image",
@@ -46,5 +71,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701270384
+    "modified": 1701702580
 }
