@@ -27,18 +27,25 @@ $product_cats = get_terms( 'product_cat', $args );
 								<?php
 								echo wp_get_attachment_image( $cat_img_id, 'full' );
 								?>
-								<figcaption>
-									<h3 class="uk-h5 uk-text-light uk-text-uppercase uk-margin-small-top uk-margin-remove-bottom">
-										<?php echo esc_html( $cat_name ); ?>
-									</h3>
-								</figcaption>
 							</figure>
+							<h3 class="uk-h5 uk-text-light uk-text-uppercase uk-margin-small-top uk-margin-remove-bottom">
+								<?php echo esc_html( $cat_name ); ?>
+							</h3>
 						</a>
 					</li>
 				<?php endforeach; ?>
 			</ul>
 
-			<?php get_template_part( 'partials/slider-arrows' ); ?>
+			<?php
+			get_template_part(
+				'partials/slider-arrows',
+				null,
+				array(
+					'label_prev' => __( 'Previous category', 'wpcanvas' ),
+					'label_next' => __( 'Next category', 'wpcanvas' ),
+				)
+			);
+			?>
 		</div>
 	</div>
 </section>

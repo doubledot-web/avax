@@ -8,14 +8,15 @@ $brands_page   = $options_pages['brands'];
 ?>
 
 <section class="section section-brands uk-margin-large-bottom">
-	<div class="max-width-1600 uk-container">
+	<div class="uk-container uk-container-xlarge">
 		<h2 class="font-weight-100 uk-h1 uk-margin-remove-top uk-margin-medium-bottom">
 			<?php esc_html_e( 'Brands', 'wpcanvas' ); ?>
 		</h2>
+
 		<div uk-slider="sets: true΄autoplay: true">
 			<div class="uk-position-relative">
-				<div class="uk-slider-container">
-					<ul class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-4@m uk-grid-medium uk-grid">
+				<div class="uk-width-5-6 uk-margin-auto-left uk-margin-auto-right uk-slider-container">
+					<ul class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-4@m uk-grid-large uk-grid">
 						<?php
 						foreach ( $brands as $brand ) :
 							$brand_id      = $brand->term_id;
@@ -25,7 +26,7 @@ $brands_page   = $options_pages['brands'];
 							?>
 							<li>
 								<figure class="uk-margin-remove uk-text-center">
-									<a href="<?php echo esc_url( $related_page ); ?>">
+									<a class="uk-display-block" href="<?php echo esc_url( $related_page ); ?>">
 										<?php
 										echo wp_get_attachment_image( $brand_logo_id, 'full' );
 										?>
@@ -36,21 +37,19 @@ $brands_page   = $options_pages['brands'];
 					</ul>
 				</div>
 
-				<div class="slider-arrows">
-					<a class="slider-prev uk-position-center-left-out uk-position-small" href="#" uk-slider-item="previous" aria-label="<?php esc_attr_e( 'Previous Image', 'wpcanvas' ); ?>">
-						<svg width="14" height="24" aria-hidden="true">
-							<use xlink:href="#chevron-prev-arrow"></use>
-						</svg>
-					</a>
-					<a class="slider-next uk-position-center-right-out uk-position-small" href="#" uk-slider-item="next" aria-label="<?php esc_attr_e( 'Next Image', 'wpcanvas' ); ?>">
-						<svg width="14" height="24" aria-hidden="true">
-							<use xlink:href="#chevron-next-arrow"></use>
-						</svg>
-					</a>
-				</div>
+				<?php
+				get_template_part(
+					'partials/slider-arrows-centered',
+					null,
+					array(
+						'label_prev' => __( 'Previous set of brands', 'wpcanvas' ),
+						'label_next' => __( 'Next set of brands', 'wpcanvas' ),
+					)
+				);
+				?>
 			</div>
-
 		</div>
+
 		<div class="uk-margin-large-top uk-text-center">
 			<a href="<?php echo esc_url( $brands_page ); ?>" class="uk-button uk-button-default">
 				<?php esc_html_e( 'View All', 'wpcanvas' ); ?>

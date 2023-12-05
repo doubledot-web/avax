@@ -12,6 +12,9 @@ get_header();
 				<?php
 				get_template_part( 'partials/content-blocks/hero-slider' );
 				get_template_part( 'partials/frontpage/product-categories' );
+				get_template_part( 'partials/frontpage/markers' );
+				get_template_part( 'partials/frontpage/trending' );
+				get_template_part( 'partials/frontpage/two-column-slider-image' );
 				get_template_part( 'partials/frontpage/brands' );
 				get_template_part( 'partials/content-blocks/mosaic-gallery' );
 				?>

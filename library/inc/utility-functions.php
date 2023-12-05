@@ -6,7 +6,7 @@ function content_block_text_image_image( $block, $id = false ) {
 	$block_img2_id = $block['image2'];
 	?>
 	<section <?php echo $section_id; ?>class="section section-text section-first uk-margin-large-top uk-margin-large-bottom">
-		<div class="uk-container uk-container-expand pr-remove-horizontal@l">
+		<div class="uk-container uk-container-xlarge pr-remove-horizontal@l">
 			<div uk-grid>
 				<div class="uk-width-1-2@l uk-width-expand@xl uk-flex">
 					<div class="uk-flex uk-flex-column uk-flex-between@l uk-width-1-1">

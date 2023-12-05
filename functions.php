@@ -192,7 +192,7 @@ add_filter( 'admin_post_thumbnail_html', 'add_featured_image_instruction' );
  */
 function cnvs_admin_scripts_and_styles( $hook ) {
 	$theme_uri = get_stylesheet_directory_uri();
-	//wp_enqueue_script( 'wpcanvas-admin', $theme_uri . '/library/js/admin-scripts-dist.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'wpcanvas-admin', $theme_uri . '/library/js/admin-scripts-dist.js', array( 'jquery' ), '', true );
 	wp_enqueue_style( 'wpcanvas-admin', $theme_uri . '/library/css/admin-style.css' );
 }
 add_action( 'admin_enqueue_scripts', 'cnvs_admin_scripts_and_styles' );

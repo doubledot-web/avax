@@ -48,7 +48,7 @@ $third_section       = get_field( 'third_section_about' );
 				</section>
 
 				<section id="our-services" class="section section-text section-services uk-margin-xlarge-bottom">
-					<div class="uk-container uk-container-expand pr-remove-horizontal@l">
+					<div class="uk-container uk-container-xlarge pr-remove-horizontal@l">
 						<div class="uk-grid-large" uk-grid>
 							<div class="uk-width-1-2@m uk-margin-auto-top">
 								<div class="max-width-740 remove-margin-from-last-el uk-text-light">

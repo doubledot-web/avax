@@ -42,6 +42,17 @@
 	&:active {
 		border-color: $black;
 	}
+
+	&.btn-white {
+		color: $white;
+		border-color: $white;
+
+		&:hover,
+		&:active {
+			color: $black;
+			background: $white;
+		}
+	}
 }
 
 /**************
@@ -219,6 +230,134 @@
  **************/
 .home {
 	.section {
+		&-image-map {
+			.btn-white {
+				@media (max-width: $breakpoint-small-max) {
+					color: $black;
+					border-color: $black;
+
+					&:hover,
+					&:active {
+						color: $white;
+						background: $black;
+					}
+				}
+				@media (min-width: $breakpoint-medium) {
+					position: absolute;
+					left: 50%;
+					bottom: 35px;
+					transform: translateX(-50%);
+				}
+			}
+
+			.marker {
+				&-active {
+					.marker {
+						&-btn {
+							&::after {
+								display: block;
+							}
+						}
+
+						&-product {
+							@include autoAlpha(false, false);
+						}
+					}
+				}
+
+				&-btn {
+					position: relative;
+					width: 22px;
+					height: 22px;
+					border-radius: 50%;
+					border: 1px solid $white;
+					@media (min-width: $breakpoint-small) {
+						width: 36px;
+						height: 36px;
+					}
+
+					&::before,
+					&::after {
+						content: "";
+						position: absolute;
+						left: 50%;
+						background: $white;
+						transform: translate(-50%, -50%);
+						filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+					}
+
+					&::before {
+						top: 50%;
+						width: 8px;
+						height: 8px;
+						border-radius: inherit;
+						@media (min-width: $breakpoint-small) {
+							width: 12px;
+							height: 12px;
+						}
+					}
+
+					&::after {
+						display: none;
+						top: calc(50% + 10px);
+						width: 1px;
+						height: 20px;
+						@media (min-width: $breakpoint-small) {
+							top: calc(50% + 20px);
+							height: 29px;
+						}
+					}
+				}
+
+				&-product {
+					position: absolute;
+					top: 40px;
+					width: max-content;
+					padding: 5px;
+					line-height: 1.25;
+					z-index: 2;
+					transition: all 0.2s;
+					@include autoAlpha(true, true);
+					@media (max-width: $breakpoint-medium-max) {
+						font-size: 18px;
+						color: $white;
+						background: $black;
+					}
+					@media (max-width: $breakpoint-small-max) {
+						font-size: 14px;
+					}
+					@media (min-width: $breakpoint-small) {
+						top: 60px;
+						//text-wrap: nowrap;
+					}
+				}
+			}
+		}
+
+		&-two-columns-slider-image {
+			.slide {
+				&-left {
+					left: 15px;
+					@media (min-width: $breakpoint-small) {
+						left: 30px;
+					}
+					@media (min-width: $breakpoint-medium) {
+						left: 40px;
+					}
+				}
+
+				&-right {
+					right: 15px;
+					@media (min-width: $breakpoint-small) {
+						right: 30px;
+					}
+					@media (min-width: $breakpoint-medium) {
+						right: 40px;
+					}
+				}
+			}
+		}
+
 		&-brands {
 			img {
 				@media (max-width: $breakpoint-small-max) {
@@ -235,9 +374,6 @@
 			&-brands {
 				.brand {
 					padding: 10px;
-
-					img {
-					}
 				}
 
 				.uk-grid-medium > .uk-grid-margin {
@@ -305,11 +441,11 @@
 /**************
  *** OTHER ***
  **************/
- .post-cats-dropdown {
+.post-cats-dropdown {
 	.filter + .filter {
 		margin-top: 3px;
 	}
- }
+}
 
 .showroom-info {
 	a {
@@ -335,30 +471,6 @@
 
 	a:not(:last-child) {
 		margin-right: 4px;
-	}
-}
-
-.slider-arrows {
-	.slider {
-		&-prev {
-			@media (max-width: $breakpoint-small-max) {
-				right: calc(100% - 15px);
-			}
-			@media (max-width: $breakpoint-xsmall-max) {
-				left: 0;
-				right: auto;
-			}
-		}
-
-		&-next {
-			@media (max-width: $breakpoint-small-max) {
-				left: calc(100% - 15px);
-			}
-			@media (max-width: $breakpoint-xsmall-max) {
-				right: 0;
-				left: auto;
-			}
-		}
 	}
 }
 
@@ -420,7 +532,6 @@
 		}
 	}
 }
-
 
 /**************
  *** LINK TEXT SHADOW HOVER ***

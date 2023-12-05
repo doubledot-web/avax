@@ -2,6 +2,7 @@ jQuery(document).ready(function ($) {
 	const $window = $(window);
 	const $document = $(document);
 	const $body = $("body");
+	const $homePage = $("body.home");
 	const $siteHeader = $(".site-header");
 	const $accordionModalMenu = $(".modal-menu .accordion");
 	const $searchForm = $(".search-form");
@@ -13,6 +14,7 @@ jQuery(document).ready(function ($) {
 	toggleDesktopMenu();
 	toggleAccordionMobileMenu();
 	modalMenuActions();
+	toggleImageMapProducts();
 
 	function onScrollActions() {
 		const $homeSocials = $(".section-hero .socials");
@@ -140,6 +142,19 @@ jQuery(document).ready(function ($) {
 			$searchFormMobile.hide();
 			$accordionModalMenu.show();
 		});
+	}
+
+	function toggleImageMapProducts() {
+		if ($homePage.length) {
+			const markers = $(".marker");
+			const ACTIVE_CLASS = "marker-active";
+			$(".marker-btn").on("click", function () {
+				const $this = $(this);
+				const $parent = $this.parent();
+				markers.not($parent).removeClass(ACTIVE_CLASS);
+				$parent.toggleClass(ACTIVE_CLASS);
+			});
+		}
 	}
 });
 

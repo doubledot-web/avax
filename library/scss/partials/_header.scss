@@ -2,7 +2,7 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-		right: 0;
+	right: 0;
 	z-index: 111;
 	height: 80px;
 	transition: all 0.1s;
@@ -34,11 +34,6 @@
 		}
 	}
 
-	&.header-fixed {
-
-
-	}
-
 	&.header-sticky {
 		//position: sticky;
 		background: $white;
@@ -46,10 +41,10 @@
 		& ~ .site-main {
 			margin-top: 80px;
 			@media (min-width: $breakpoint-small) {
-			margin-top: 100px;
+				margin-top: 100px;
 			}
 			@media (min-width: $breakpoint-large) {
-			margin-top: 160px;
+				margin-top: 160px;
 			}
 		}
 	}

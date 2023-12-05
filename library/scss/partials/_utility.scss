@@ -84,7 +84,6 @@ iframe {
 	flex-grow: 1;
 }
 
-
 .no-text-shadow {
 	&,
 	&:hover {
@@ -102,5 +101,25 @@ iframe {
 	@media (min-width: $breakpoint-medium) {
 		padding-left: 40px;
 		padding-right: 40px;
+	}
+}
+
+.left-uikit-grid {
+	left: 15px;
+	@media (min-width: $breakpoint-small) {
+		left: 30px;
+	}
+	@media (min-width: $breakpoint-medium) {
+		left: 40px;
+	}
+}
+
+.right-uikit-grid {
+	right: 15px;
+	@media (min-width: $breakpoint-small) {
+		right: 30px;
+	}
+	@media (min-width: $breakpoint-medium) {
+		right: 40px;
 	}
 }
