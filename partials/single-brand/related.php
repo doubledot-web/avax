@@ -12,6 +12,7 @@ if ( empty( $prods ) ) :
 	);
 	$type  = 'product';
 endif;
+//pass set_product_slider_width($prods);
 ?>
 
 <section class="section section-related-products uk-margin-large-bottom">
@@ -21,17 +22,21 @@ endif;
 		</h2>
 
 		<div uk-slider>
-			<?php
-			woocommerce_product_loop_start();
-			foreach ( $prods as $prod ) :
-				$post_object = 'product' === $type ? get_post( $prod->get_id() ) : $prod;
-				setup_postdata( $GLOBALS['post'] = $post_object );
-				wc_get_template_part( 'content', 'product' );
-			endforeach;
-			woocommerce_product_loop_end();
-			wp_reset_postdata();
-			get_template_part( 'partials/slider-arrows' );
-			?>
+			<div class="uk-position-relative">
+				<div class="<?php echo esc_attr( set_product_slider_width( $prods ) ); ?> uk-margin-auto-left uk-margin-auto-right uk-slider-container">
+					<?php
+					woocommerce_product_loop_start();
+					foreach ( $prods as $prod ) :
+						$post_object = 'product' === $type ? get_post( $prod->get_id() ) : $prod;
+						setup_postdata( $GLOBALS['post'] = $post_object );
+						wc_get_template_part( 'content', 'product' );
+					endforeach;
+					woocommerce_product_loop_end();
+					wp_reset_postdata();
+					?>
+				</div>
+				<?php get_template_part( 'partials/slider-arrows-centered' ); ?>
+			</div>
 		</div>
 
 		<div class="uk-text-center uk-margin-large-top">
@@ -39,6 +44,5 @@ endif;
 				<?php esc_html_e( 'view all products', 'wpcanvas' ); ?>
 			</a>
 		</div>
-
 	</div>
 </section>

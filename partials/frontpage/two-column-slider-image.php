@@ -16,7 +16,7 @@ $fifth_section_slides = $fifth_section['slides'];
 			<div class="uk-width-1-2@m">
 				<div uk-slider>
 					<div class="uk-position-relative">
-						<div class="uk-width-4-5 uk-margin-auto-left uk-margin-auto-right uk-slider-container">
+						<div class="uk-width-5-6 uk-width-4-5@s uk-margin-auto-left uk-margin-auto-right uk-slider-container">
 							<ul class="uk-slider-items">
 								<?php
 								foreach ( $fifth_section_slides as $slide ) :

@@ -1,0 +1,104 @@
+/**************
+ *** FILTERS
+ **************/
+.breadcrumbs-sorting-wrapper {
+	.btn-toggle-filters {
+		svg {
+			transition: transform 0.2s;
+		}
+
+		&.active {
+			svg {
+				transform: rotate(180deg);
+			}
+		}
+	}
+}
+
+.filters-wrapper {
+	display: none;
+}
+
+/**************
+ *** ERRORS
+ **************/
+
+/**************
+ *** SWATCHES PLUGIN
+ **************/
+
+/*------------------------------------*\
+  AJAX SIDECART PLUGIN
+\*------------------------------------*/
+
+/**************
+ *** TEMPLATES
+ **************/
+
+/**************
+ *** OTHER
+ **************/
+.woocommerce-ordering {
+	.orderby {
+		border: none;
+		font-size: $global-font-size;
+	}
+}
+
+.onsale,
+.shop-online {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	font-size: 14px;
+	padding: 6px 16px;
+	border-radius: 20px;
+	z-index: 1;
+	text-align: center;
+	color: $white;
+	background: $black;
+}
+
+.onsale {
+	width: 65px;
+}
+
+/*------------------------------------*\
+    PAGINATION
+\*------------------------------------*/
+.woocommerce-pagination {
+	.page-numbers {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 20px;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.page-numbers:not(.prev):not(.next):not(.current):not(.dots) {
+		color: $black;
+	}
+
+	.current {
+		color: $gray;
+	}
+
+	.page-numbers:not(.prev):not(.next):not(.dots) {
+		transition: color 0.2s;
+
+		&:hover {
+			color: $global-link-hover-color;
+		}
+	}
+}
+
+/*------------------------------------*\
+    BREADCRUMBS
+\*------------------------------------*/
+.woocommerce-breadcrumb {
+	a + span {
+		font-weight: 500;
+	}
+}

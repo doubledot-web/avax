@@ -10,6 +10,8 @@ $theme-color: $white;
 $red: #d9534f;
 $green: #5cb85c;
 $blue: #428bca;
+$text-shadow-hover:  0 0 1px $black, 0 0 1px $black;
+$chevron-down: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMCIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iIzAwMCIgZD0iTTYuMTggOS41MzguNjguMzJoMS42NWw0LjI5IDcuMDRMMTAuOTMyLjMyaDEuNjA2TDYuOTk0IDkuNTM4SDYuMThaIi8+PC9zdmc+";
 
 /*** UIkit Overrides ***/
 $global-color: $black;

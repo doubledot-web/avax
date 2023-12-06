@@ -15,104 +15,106 @@ elseif ( is_category() ) :
 endif;
 ?>
 
-<main class="site-main">
-	<section class="section section-text uk-text-center uk-padding-large uk-padding-remove-horizontal">
-		<div class="uk-container uk-container-large">
-			<div class="remove-margin-from-last-el uk-text-center uk-text-light">
-				<?php echo wp_kses_post( $other['blog_text'] ); ?>
+<div id="primary" class="content-area">
+	<main id="site-main" class="site-main">
+		<section class="section section-text uk-text-center uk-padding-large uk-padding-remove-horizontal">
+			<div class="uk-container uk-container-large">
+				<div class="remove-margin-from-last-el uk-text-center uk-text-light">
+					<?php echo wp_kses_post( $other['blog_text'] ); ?>
+				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
-	<section class="section uk-margin-xlarge-bottom">
-		<div class="uk-container uk-container-large">
-			<div class="uk-inline">
-				<button class="btn-base uk-text-uppercase uk-text-light uk-flex uk-flex-middle uk-margin-medium-bottom" type="button">
-					<?php esc_html_e( 'Apply filters', 'wpcanvas' ); ?>
-					<svg width="13" height="10" class="uk-margin-left" aria-hidden="true">
-						<use xlink:href="#chevron-down-arrow"></use>
-					</svg>
-				</button>
-				<div class="post-cats-dropdown" uk-dropdown="mode: click; pos: bottom-right">
-					<?php $active_class = $show_all_posts ? ' text-gray' : ''; ?>
-					<div class="filter<?php echo esc_attr( $active_class ); ?>">
-						<a class="text-black<?php echo esc_attr( $active_class ); ?> uk-text-light uk-display-inline-block uk-text-uppercase" href="<?php echo esc_url( get_blog_page_url() ); ?>">
-							<?php esc_html_e( 'All Categories', 'wpcanvas' ); ?>
-						</a>
-					</div>
-					<?php
-					foreach ( $post_cats as $cat ) :
-						$cat_id       = $cat->term_id;
-						$cat_slug     = $cat->slug;
-						$cat_name     = $cat->name;
-						$cat_link     = get_category_link( $cat_id );
-						$active_class = $cat_link === $current_url ? ' text-gray' : '';
-						if ( 'Uncategorized' === $cat_name ) :
-							continue;
-						endif;
-						?>
-						<div class="filter">
-							<a class="text-black<?php echo esc_attr( $active_class ); ?> uk-text-light uk-display-inline-block uk-text-uppercase" href="<?php echo esc_url( $cat_link ); ?>">
-								<?php echo esc_html( $cat_name ); ?>
+		<section class="section uk-margin-xlarge-bottom">
+			<div class="uk-container uk-container-large">
+				<div class="uk-inline">
+					<button class="btn-base uk-text-uppercase uk-text-light uk-flex uk-flex-middle uk-margin-medium-bottom" type="button">
+						<?php esc_html_e( 'Apply filters', 'wpcanvas' ); ?>
+						<svg width="13" height="10" class="uk-margin-left" aria-hidden="true">
+							<use xlink:href="#chevron-down-arrow"></use>
+						</svg>
+					</button>
+					<div class="post-cats-dropdown" uk-dropdown="mode: click; pos: bottom-right">
+						<?php $active_class = $show_all_posts ? ' text-gray' : ''; ?>
+						<div class="filter<?php echo esc_attr( $active_class ); ?>">
+							<a class="text-black<?php echo esc_attr( $active_class ); ?> uk-text-light uk-display-inline-block uk-text-uppercase" href="<?php echo esc_url( get_blog_page_url() ); ?>">
+								<?php esc_html_e( 'All Categories', 'wpcanvas' ); ?>
 							</a>
 						</div>
-					<?php endforeach; ?>
-				</div>
-			</div>
-
-			<?php
-			if ( have_posts() ) :
-				?>
-				<div class="uk-grid-large" uk-grid>
-					<?php
-					while ( have_posts() ) :
-						the_post();
-						?>
-						<div class="uk-width-1-2@s">
-							<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-								<a class="text-shadow-hover" href="<?php the_permalink(); ?>">
-									<figure class="uk-margin-remove">
-										<?php
-										the_post_thumbnail(
-											'full',
-											array(
-												'loading' => 'lazy',
-												'class'   => 'object-fit-cover uk-width-1-1',
-											)
-										);
-										?>
-									</figure>
-									<div class="post-info uk-margin-top">
-										<time class="text-black no-text-shadow uk-display-inline-block uk-text-light uk-margin-small-bottom" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
-											<?php echo esc_html( get_the_date( 'd F Y' ) ); ?>
-										</time>
-										<h2 class="font-weight-100 uk-margin-remove">
-											<?php the_title(); ?>
-										</h2>
-									</div>
-								</a>
-							</article>
-						</div>
 						<?php
-					endwhile;
-					?>
+						foreach ( $post_cats as $cat ) :
+							$cat_id       = $cat->term_id;
+							$cat_slug     = $cat->slug;
+							$cat_name     = $cat->name;
+							$cat_link     = get_category_link( $cat_id );
+							$active_class = $cat_link === $current_url ? ' text-gray' : '';
+							if ( 'Uncategorized' === $cat_name ) :
+								continue;
+							endif;
+							?>
+							<div class="filter">
+								<a class="text-black<?php echo esc_attr( $active_class ); ?> uk-text-light uk-display-inline-block uk-text-uppercase" href="<?php echo esc_url( $cat_link ); ?>">
+									<?php echo esc_html( $cat_name ); ?>
+								</a>
+							</div>
+						<?php endforeach; ?>
+					</div>
 				</div>
-				<?php
-				get_template_part( 'partials/posts-pagination' );
-				?>
-				<?php
-			else :
-				?>
-				<p class="uk-text-light uk-margin-large-top">
-					<?php esc_html_e( 'Sorry, but no posts found!', 'wpcanvas' ); ?>
-				</p>
-				<?php
-			endif;
-			?>
 
-		</div>
-	</section>
-</main>
+				<?php
+				if ( have_posts() ) :
+					?>
+					<div class="uk-grid-large" uk-grid>
+						<?php
+						while ( have_posts() ) :
+							the_post();
+							?>
+							<div class="uk-width-1-2@s">
+								<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+									<a class="text-shadow-hover" href="<?php the_permalink(); ?>">
+										<figure class="uk-margin-remove">
+											<?php
+											the_post_thumbnail(
+												'full',
+												array(
+													'loading' => 'lazy',
+													'class'   => 'object-fit-cover uk-width-1-1',
+												)
+											);
+											?>
+										</figure>
+										<div class="post-info uk-margin-top">
+											<time class="text-black no-text-shadow uk-display-inline-block uk-text-light uk-margin-small-bottom" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
+												<?php echo esc_html( get_the_date( 'd F Y' ) ); ?>
+											</time>
+											<h2 class="font-weight-100 uk-margin-remove">
+												<?php the_title(); ?>
+											</h2>
+										</div>
+									</a>
+								</article>
+							</div>
+							<?php
+						endwhile;
+						?>
+					</div>
+					<?php
+					get_template_part( 'partials/posts-pagination' );
+					?>
+					<?php
+				else :
+					?>
+					<p class="uk-text-light uk-margin-large-top">
+						<?php esc_html_e( 'Sorry, but no posts found!', 'wpcanvas' ); ?>
+					</p>
+					<?php
+				endif;
+				?>
+
+			</div>
+		</section>
+	</main>
+</div>
 
 <?php
 get_footer();

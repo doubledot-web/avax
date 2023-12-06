@@ -7,7 +7,8 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: rgba(255, 255, 255, 0.85);
+	//background: rgba(255, 255, 255, 0.85);
+	background: $white;
 
 	.top-wrapper {
 		position: sticky;
@@ -15,6 +16,7 @@
 		//padding: 10px 0;
 		height: 80px;
 		z-index: 1;
+		background: $white;
 		@media (min-width: $breakpoint-small) {
 			height: 100px;
 		}
@@ -70,7 +72,7 @@
 
 			&.open {
 				> a {
-					text-shadow: 0 0 1px $black, 0 0 1px $black;
+					text-shadow: $text-shadow-hover;
 					border-bottom: 3px solid $black;
 				}
 			}

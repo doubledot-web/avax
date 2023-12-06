@@ -15,6 +15,7 @@ jQuery(document).ready(function ($) {
 	toggleAccordionMobileMenu();
 	modalMenuActions();
 	toggleImageMapProducts();
+	toggleWCFilters();
 
 	function onScrollActions() {
 		const $homeSocials = $(".section-hero .socials");
@@ -129,6 +130,8 @@ jQuery(document).ready(function ($) {
 			if ($siteHeader.hasClass(HEADER_CLASS)) {
 				initialHeaderWhite = true;
 				$siteHeader.removeClass(HEADER_CLASS);
+			} else {
+				initialHeaderWhite = false;
 			}
 		});
 
@@ -156,12 +159,31 @@ jQuery(document).ready(function ($) {
 			});
 		}
 	}
+
+	function toggleWCFilters() {
+		if ($(".archive").length) {
+			const $btnToggleFilters = $(".btn-toggle-filters");
+			const $filtersWrapper = $(".filters-wrapper");
+			$btnToggleFilters.on("click", function () {
+				$(this).toggleClass("active");
+				$filtersWrapper.slideToggle();
+			});
+		}
+	}
 });
 
 // onload
 jQuery(window).on("load", function ($) {
 	jQuery.ready.then(function ($) {
+		const $body = $("body");
+
+		hidePreloader($);
 		navigateToCertainPageSectionBasedOnHash($);
+
+		function hidePreloader($) {
+			$body.removeClass("uk-overflow-hidden");
+			$(".preloader").fadeOut(200);
+		}
 
 		function navigateToCertainPageSectionBasedOnHash($) {
 			if (location.hash) {

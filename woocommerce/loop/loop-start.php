@@ -20,4 +20,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<ul class="products posts-grid <?php echo is_product() || is_singular( 'project' ) || is_page_template( 'page-templates/brand.php' ) ? 'uk-slider-items' : ''; ?> columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>" uk-grid>
+<ul class="products posts-grid uk-grid-row-large <?php echo is_product() || is_singular( 'project' ) || is_page_template( 'page-templates/brand.php' ) ? 'uk-slider-items' : ''; ?> columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>" uk-grid>

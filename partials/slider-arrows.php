@@ -1,6 +1,6 @@
 <?php
 $label_prev = isset( $args['label_prev'] ) ? $args['label_prev'] : __( 'Previous Product', 'wpcanvas' );
-$label_next = isset( $args['label_next'] ) ? $args['label_next'] : __( 'Previous Product', 'wpcanvas' );
+$label_next = isset( $args['label_next'] ) ? $args['label_next'] : __( 'Next Product', 'wpcanvas' );
 ?>
 
 <div class="uk-flex uk-flex-between uk-margin-medium-top">

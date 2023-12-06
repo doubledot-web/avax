@@ -399,8 +399,8 @@ function cnvs_custom_oembed_function( $cache, $url, $attr, $post_id ) {
  */
 function filter_posts( $query ) {
 	if ( ! is_admin() && $query->is_main_query() ) :
-		if ( is_tax( 'project_type' ) ) :
-			$query->set( 'posts_per_page', 4 );
+		if ( is_tax( 'product_cat' ) ) :
+			//$query->set( 'posts_per_page', 3 );
 		endif;
 	endif;
 }

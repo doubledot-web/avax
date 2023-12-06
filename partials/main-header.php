@@ -4,10 +4,9 @@ if ( is_front_page() || is_singular( 'post' ) || ( is_tax( 'product_cat' ) && 0 
 else :
 	$header_position_class = 'header-sticky';
 endif;
-$queried_id           = is_archive() ? get_queried_object()->taxonomy . '_' . get_queried_object()->term_id : '';
+$queried_id           = is_shop() || ! is_archive() ? '' : get_queried_object()->taxonomy . '_' . get_queried_object()->term_id;
 $hero_fields          = get_field( 'hero_fields', $queried_id );
-$header_color_white   = $hero_fields['header_color_white'];
-$header_color_class   = isset( $header_color_white ) && ! empty( $header_color_white ) ? ' header-white' : '';
+$header_color_class   = ! empty( $hero_fields['header_color_white'] ) ? ' header-white' : '';
 $header_extra_classes = $header_position_class . $header_color_class;
 ?>
 

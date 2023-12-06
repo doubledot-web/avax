@@ -12,10 +12,12 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class( 'uk-overflow-hidden' ); ?>>
 	<?php
 	get_template_part( 'partials/svg-sprites' );
 	?>
+
+	<div class="preloader"></div>
 
 	<div id="container"> <?php // closes in footer.php ?>
 		<?php

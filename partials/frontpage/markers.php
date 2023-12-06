@@ -2,6 +2,8 @@
 $third_section_slides = get_field( 'third_section_home' );
 $img                  = $third_section_slides['image'];
 $markers              = $third_section_slides['markers'];
+$options_pages        = get_field( 'pages', 'option' );
+$projects_page        = $options_pages['projects'];
 ?>
 
 <section class="section section-image-map uk-position-relative uk-margin-large-bottom">
@@ -29,7 +31,7 @@ $markers              = $third_section_slides['markers'];
 						if ( $prod_lowest_price !== $prod_highest_price ) :
 							$prod_price = $prod_lowest_price . ' - ' . $prod_highest_price;
 						else :
-							$prod_price = $min_regular_price;
+							$prod_price = $prod_lowest_price;
 						endif;
 					endif;
 					$prod_price = $prod_price . '€';
@@ -47,7 +49,7 @@ $markers              = $third_section_slides['markers'];
 			</figcaption>
 		</figure>
 		<div class="uk-text-center uk-margin-top">
-			<a class="btn-white uk-button uk-button-default" href="">
+			<a class="btn-white uk-button uk-button-default" href="<?php echo esc_url( $projects_page ); ?>">
 				<?php esc_html_e( 'Discover', 'wpcanvas' ); ?>
 			</a>
 		</div>

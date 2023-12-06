@@ -17,15 +17,18 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$current_term        = get_queried_object();
-$current_term_parent = $current_term->parent;
-$outdoor_id          = 42;
-$sales_id            = 47;
+/*shop->is archive but without parent, term_id etc*/
+if ( is_product_category() ) :
+	$current_term        = get_queried_object();
+	$current_term_parent = $current_term->parent;
+	$outdoor_id          = 42;
+	$sales_id            = 47;
 
-/*Check if top level categories*/
-if ( 0 === $current_term_parent && get_queried_object_id() !== $outdoor_id && get_queried_object_id() !== $sales_id ) :
-	get_template_part( 'partials/archive-product', null, array( 'current_term' => $current_term ) );
-	return;
+	/*Check if top level categories*/
+	if ( 0 === $current_term_parent && get_queried_object_id() !== $outdoor_id && get_queried_object_id() !== $sales_id ) :
+		get_template_part( 'partials/archive-product', null, array( 'current_term' => $current_term ) );
+		return;
+	endif;
 endif;
 
 get_header( 'shop' );
@@ -38,24 +41,29 @@ get_header( 'shop' );
  * @hooked WC_Structured_Data::generate_website_data() - 30
  */
 do_action( 'woocommerce_before_main_content' );
-
 ?>
-<header class="woocommerce-products-header">
-	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
-	<?php endif; ?>
 
-	<?php
-	/**
-	 * Hook: woocommerce_archive_description.
-	 *
-	 * @hooked woocommerce_taxonomy_archive_description - 10
-	 * @hooked woocommerce_product_archive_description - 10
-	 */
-	do_action( 'woocommerce_archive_description' );
-	?>
-</header>
+<div class="breadcrumbs-sorting-wrapper uk-flex uk-flex-middle uk-flex-between uk-margin-large-top uk-margin-bottom">
+	<div>
+		<?php woocommerce_breadcrumb(); ?>
+		<div class="toggle-filters-wrapper uk-margin-top">
+			<button class="btn-base btn-toggle-filters uk-text-uppercase uk-text-light uk-flex uk-flex-middle" type="button">
+				<?php esc_html_e( 'Apply filters', 'wpcanvas' ); ?>
+				<svg width="13" height="10" class="uk-margin-left" aria-hidden="true">
+					<use xlink:href="#chevron-down-arrow"></use>
+				</svg>
+			</button>
+		</div>
+	</div>
+	<div>
+		<?php woocommerce_catalog_ordering(); ?>
+	</div>
+</div>
+<div class="filters-wrapper uk-padding-large uk-padding-remove-horizontal uk-padding-remove-top">FILTERS GO HERE</div>
+
+
 <?php
+
 if ( woocommerce_product_loop() ) {
 
 	/**
