@@ -255,4 +255,19 @@
 			//
 		}
 	}
+
+	.sup-count {
+		position: absolute;
+		top: -5px;
+		right: -5px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 18px;
+		height: 18px;
+		border-radius: 50%;
+		font-size: 13px;
+		color: $white;
+		background: $red;
+	}
 }

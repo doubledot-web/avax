@@ -33,10 +33,12 @@ if ( post_password_required() ) {
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 
+	<?php get_template_part( 'partials/single-product/breadcrumb' ); ?>
+
 	<section class="section section-product-info">
 		<div class="uk-container uk-container-xlarge uk-margin-large-top uk-margin-large-bottom">
-			<div uk-grid>
-				<div class="uk-width-1-2@m">
+			<div class="uk-grid-large" uk-grid>
+				<div class="product-gallery-col uk-width-1-2@m">
 					<?php
 					/**
 					 * Hook: woocommerce_before_single_product_summary.
@@ -48,7 +50,7 @@ if ( post_password_required() ) {
 					?>
 				</div>
 				<div class="uk-width-1-2@m">
-					<div class="summary entry-summary">
+					<div class="summary entry-summary max-width-620">
 						<?php
 						/**
 						 * Hook: woocommerce_single_product_summary.
@@ -63,6 +65,7 @@ if ( post_password_required() ) {
 						 * @hooked WC_Structured_Data::generate_product_data() - 60
 						 */
 						do_action( 'woocommerce_single_product_summary' );
+						get_template_part( 'partials/single-product/accordion' );
 						?>
 					</div>
 				</div>
@@ -71,23 +74,7 @@ if ( post_password_required() ) {
 
 	</section>
 
-	<?php
-	$full_width_img = get_field( 'fullwidth_image' );
-	if ( $full_width_img ) :
-		?>
-		<div class="uk-container uk-container-expand uk-padding-remove">
-			<figure class="uk-margin-remove">
-				<?php
-				echo wp_get_attachment_image(
-					$full_width_img,
-					'full',
-					false,
-					array( 'class' => 'uk-width-1-1' )
-				);
-				?>
-			</figure>
-		</div>
-	<?php endif; ?>
+	<?php get_template_part( 'partials/single-product/image' ); ?>
 
 	<?php
 	/**

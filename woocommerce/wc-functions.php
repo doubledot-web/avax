@@ -2,6 +2,11 @@
 // Declare WooCommerce Support
 function cnvs_woocommerce_support() {
 	add_theme_support( 'woocommerce' );
+	/*array(
+			'gallery_thumbnail_image_width' => 250,
+	);*/
+
+	add_theme_support( 'wc-product-gallery-slider' );
 }
 add_action( 'after_setup_theme', 'cnvs_woocommerce_support' );
 
@@ -22,6 +27,7 @@ function cnvs_remove_wc_stuff() {
 	remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
 	remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
 	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+	add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 20 );
 }
 add_action( 'init', 'cnvs_remove_wc_stuff' );
 
@@ -112,7 +118,7 @@ function woocommerce_template_loop_product_link_open() {
 
 	$link = apply_filters( 'woocommerce_loop_product_link', get_the_permalink(), $product );
 
-	echo '<a href="' . esc_url( $link ) . '" class="back-front-hover-effect woocommerce-LoopProduct-link woocommerce-loop-product__link uk-display-block">';
+	echo '<a href="' . esc_url( $link ) . '" class="back-front-hover-effect text-shadow-hover woocommerce-LoopProduct-link woocommerce-loop-product__link uk-display-block">';
 }
 
 // Add second image on product hover
@@ -213,3 +219,27 @@ function set_number_of_related_products_to_four( $args ) {
 	return $args;
 }
 add_filter( 'woocommerce_output_related_products_args', 'set_number_of_related_products_to_four' );
+
+// show on mobile only dots
+function customize_product_gallery_options( $options ) {
+	$options['controlNav'] = wp_is_mobile() == $options['controlNav'] ? true : 'thumbnails';
+
+	return $options;
+}
+add_filter( 'woocommerce_single_product_carousel_options', 'customize_product_gallery_options' );
+
+// Add extra margin
+function woocommerce_single_variation() {
+	echo '<div class="woocommerce-variation single_variation uk-margin-bottom"></div>';
+}
+
+// Change thumbnail image size width to show the full image
+function customize_gallery_thumbnail_size( $size ) {
+	/*check wc-product-functions.php*/
+	/*$gallery_thumbnail_size           = apply_filters( 'woocommerce_gallery_thumbnail_size', array( $gallery_thumbnail['width'], $gallery_thumbnail['height'] ) );
+	*/
+	/*return full image*/
+	return 'full';
+}
+add_filter( 'woocommerce_gallery_thumbnail_size', 'customize_gallery_thumbnail_size' );
+

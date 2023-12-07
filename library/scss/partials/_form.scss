@@ -12,7 +12,6 @@
 		&,
 		&:focus {
 			background-color: transparent;
-			border-color: $black;
 		}
 	}
 
@@ -23,13 +22,31 @@
 		height: auto;
 	}
 
+	&-input,
+	&-select:not([multiple]):not([size]) {
+		height: 44px;
+	}
+
+	&-input,
+	&-textarea,
+	&-select {
+		&:focus {
+			border-color: $black;
+		}
+	}
+
+	&-textarea,
+	&-select {
+		border: 3px solid $black;
+	}
+
 	&-textarea {
 		height: 295px;
-		border: 3px solid $black;
 	}
 
 	&-select:not([multiple]):not([size]) {
 		background-image: url($chevron-down);
+		background-position: center right 20px;
 	}
 }
 

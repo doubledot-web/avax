@@ -12,6 +12,7 @@ $green: #5cb85c;
 $blue: #428bca;
 $text-shadow-hover:  0 0 1px $black, 0 0 1px $black;
 $chevron-down: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMCIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iIzAwMCIgZD0iTTYuMTggOS41MzguNjguMzJoMS42NWw0LjI5IDcuMDRMMTAuOTMyLjMyaDEuNjA2TDYuOTk0IDkuNTM4SDYuMThaIi8+PC9zdmc+";
+$chevron-up: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMy4wLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAxMyAxMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTMgMTA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGQ9Ik03LDAuM2w1LjUsOS4yaC0xLjZsLTQuMy03bC00LjMsN0gwLjdsNS41LTkuMkg3eiIvPg0KPC9zdmc+DQo=";
 
 /*** UIkit Overrides ***/
 $global-color: $black;
@@ -38,6 +39,10 @@ $button-default-hover-background: $black;
 $button-default-hover-color: $white;
 $button-default-active-background: $black;
 $button-default-active-color: $white;
+
+$accordion-title-font-size: $global-font-size;
+$accordion-item-margin-top: 10px;
+$accordion-content-margin-top: 10px;
 
 //$navbar-color-mode: none !default;
 //$navbar-nav-gap: 0px !default;

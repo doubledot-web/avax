@@ -3,6 +3,7 @@ jQuery(document).ready(function ($) {
 	const $document = $(document);
 	const $body = $("body");
 	const $homePage = $("body.home");
+	const $productPage = $("body.single-product");
 	const $siteHeader = $(".site-header");
 	const $accordionModalMenu = $(".modal-menu .accordion");
 	const $searchForm = $(".search-form");
@@ -16,6 +17,9 @@ jQuery(document).ready(function ($) {
 	modalMenuActions();
 	toggleImageMapProducts();
 	toggleWCFilters();
+	addMinusPlusQuantityButtons();
+	updateWishListProductsOnAjax();
+	createCustomDotsOnProductGallery();
 
 	function onScrollActions() {
 		const $homeSocials = $(".section-hero .socials");
@@ -170,6 +174,136 @@ jQuery(document).ready(function ($) {
 			});
 		}
 	}
+
+	function addMinusPlusQuantityButtons() {
+		if ($productPage.length) {
+			$("form.cart").on(
+				"click",
+				"button.plus, button.minus",
+				function () {
+					// Get current quantity values
+					const qty = $(this).closest("form.cart").find(".qty");
+					const val = parseFloat(qty.val());
+					const max = parseFloat(qty.attr("max"));
+					const min = parseFloat(qty.attr("min"));
+					const step = parseFloat(qty.attr("step"));
+
+					// Change the value if plus or minus
+					if ($(this).is(".plus")) {
+						if (max && max <= val) {
+							qty.val(max);
+						} else {
+							qty.val(val + step);
+						}
+					} else {
+						if (min && min >= val) {
+							qty.val(min);
+						} else if (val > 1) {
+							qty.val(val - step);
+						}
+					}
+				}
+			);
+		}
+
+		/*if ($(".page-template-cart-page").length) {
+			$document.on("click", "button.plus, button.minus", function () {
+				const $WCCartFormUpdateCartBtn = $(
+					'.woocommerce-cart-form button[name="update_cart"]'
+				);
+				// Get current quantity values
+				const qty = $(this).closest(".product-quantity").find(".qty");
+				const val = parseFloat(qty.val());
+				const max = parseFloat(qty.attr("max"));
+				const min = parseFloat(qty.attr("min"));
+				const step = parseFloat(qty.attr("step"));
+
+				// Change the value if plus or minus
+				if ($(this).is(".plus")) {
+					if (max && max <= val) {
+						qty.val(max);
+					} else {
+						qty.val(val + step);
+					}
+				} else {
+					if (min && min >= val) {
+						qty.val(min);
+					} else if (val > 1) {
+						qty.val(val - step);
+					}
+				}
+
+				if ($WCCartFormUpdateCartBtn.prop("disabled")) {
+					$WCCartFormUpdateCartBtn.prop("disabled", false);
+				}
+			});
+		}*/
+	}
+
+	function updateWishListProductsOnAjax() {
+		$document.on(
+			"added_to_wishlist removed_from_wishlist adding_to_cart",
+			function () {
+				$.ajax({
+					type: "POST",
+					url: yith_wcwl_l10n.ajax_url,
+					data: {
+						action: "yith_wcwl_update_wishlist_count",
+					},
+					dataType: "json",
+					success: function (data) {
+						$(".total-wishlist-count").text(`${data.count}`);
+					},
+				});
+			}
+		);
+	}
+
+	function createCustomDotsOnProductGallery() {
+		if ($productPage.length) {
+			const ACTIVE_CLASS = "flex-active";
+
+			$document.on(
+				"click touchstart tap",
+				".custom-dots a",
+				function (e) {
+					e.preventDefault();
+					const $this = $(this);
+					const $parent = $this.parent();
+					$(".custom-dots li").removeClass(ACTIVE_CLASS);
+					$parent.addClass(ACTIVE_CLASS);
+					const index = $parent.index();
+					$(".flex-control-thumbs li")
+						.eq(index)
+						.find("img")
+						.trigger("click");
+				}
+			);
+
+			$document.on(
+				"click touchstart tap",
+				".flex-control-thumbs img",
+				function () {
+					const $this = $(this);
+					const $parent = $this.parent();
+					const index = $parent.index();
+					$(".custom-dots li").removeClass(ACTIVE_CLASS);
+					$(".custom-dots li").eq(index).addClass(ACTIVE_CLASS);
+				}
+			);
+
+			$document.on("click", ".flex-control-nav img", function () {
+				$("html,body").animate(
+					{
+						scrollTop: $(
+							".woocommerce-product-gallery__wrapper"
+						).offset().top,
+					},
+					500
+				);
+			});
+		}
+	}
 });
 
 // onload
@@ -179,6 +313,7 @@ jQuery(window).on("load", function ($) {
 
 		hidePreloader($);
 		navigateToCertainPageSectionBasedOnHash($);
+		manipulateCustomDotsOnProductGallery($);
 
 		function hidePreloader($) {
 			$body.removeClass("uk-overflow-hidden");
@@ -212,5 +347,25 @@ jQuery(window).on("load", function ($) {
 				});
 			}
 		}
+
+		function manipulateCustomDotsOnProductGallery($) {
+			if ($(".custom-dots").length) {
+				if (isTouchDevice() || $(".flex-control-paging").length) {
+					$(".custom-dots").remove();
+				}
+				if ($(".flex-control-thumbs li").length > 1) {
+					$(".flex-viewport").append($(".custom-dots"));
+				}
+			}
+		}
 	});
 });
+
+// Independent functions
+function isTouchDevice() {
+	return (
+		"ontouchstart" in window ||
+		navigator.maxTouchPoints > 0 ||
+		navigator.msMaxTouchPoints > 0
+	);
+}

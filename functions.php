@@ -446,3 +446,16 @@ function add_shortcode_instructions( $post ) {
 	endif;
 }
 add_action( 'edit_form_after_title', 'add_shortcode_instructions' );
+
+/**
+ * GET TOTAL NUMBER OF WISHLIST PRODUCTS
+ */
+function yith_wcwl_ajax_update_count() {
+	wp_send_json(
+		array(
+			'count' => yith_wcwl_count_products(),
+		)
+	);
+}
+add_action( 'wp_ajax_yith_wcwl_update_wishlist_count', 'yith_wcwl_ajax_update_count' );
+add_action( 'wp_ajax_nopriv_yith_wcwl_update_wishlist_count', 'yith_wcwl_ajax_update_count' );

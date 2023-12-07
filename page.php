@@ -1,39 +1,25 @@
-<?php get_header(); ?>
+<?php
+get_header();
+?>
 
-<div id="content" class="uk-container" uk-height-viewport="expand: true">
-	<div id="inner-content" uk-grid>
-
-		<main id="main" class="uk-width-2-3@m" itemprop="mainContentOfPage">
-
-			<?php
-			if ( have_posts() ) :
-				while ( have_posts() ) :
-					the_post();
-					?>
-
-					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-						<header class="article-header">
-							<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
-						</header>
-
-						<section class="article-body">
-							<?php the_content(); ?>
-							<?php // get_template_part( 'partials/content-blocks/init' ); // ACF Flexible Content block builder ?>
-							<?php // wp_link_pages(); ?>
-						</section>
-
-					</article>
-
-					<?php
-				endwhile;
-			endif;
-			?>
-		</main>
-
-		<?php get_template_part( 'asides/sidebar' ); ?>
-
-	</div>
+<div id="primary" class="content-area uk-padding-large uk-padding-remove-horizontal">
+	<main id="site-main" class="site-main">
+		<?php
+		if ( have_posts() ) :
+			while ( have_posts() ) :
+				the_post();
+				?>
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<div class="uk-container uk-container-xlarge">
+						<?php the_content(); ?>
+					</div>
+				</article>
+				<?php
+			endwhile;
+		endif;
+		?>
+	</main>
 </div>
 
-<?php get_footer(); ?>
+<?php
+get_footer();

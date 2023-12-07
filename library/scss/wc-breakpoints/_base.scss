@@ -24,8 +24,120 @@
  **************/
 
 /**************
+ *** PRODUCT SLIDER
+ **************/
+.woocommerce-product-gallery__image {
+	pointer-events: none;
+}
+
+.woocommerce-product-gallery {
+	position: relative;
+}
+
+.flex-control-nav {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+	margin: 0;
+
+	li {
+		width: calc(100% / 3);
+		cursor: pointer;
+
+		img {
+			width: 100%;
+			object-fit: cover;
+		}
+	}
+}
+
+.flex-control-paging,
+.custom-dots {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	gap: 10px;
+	position: absolute;
+	left: 50%;
+	bottom: 20px;
+	transform: translateX(-50%);
+	z-index: 1;
+
+	li {
+		a {
+			display: block;
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+			background: transparent;
+			border: 1px solid $black;
+			color: transparent;
+			overflow: hidden;
+			transition: 0.2s ease-in-out;
+		}
+	}
+}
+
+.flex-control-paging {
+	a {
+		&.flex-active {
+			background: $black;
+		}
+	}
+}
+
+.custom-dots {
+	li {
+		&.flex-active,
+		&:hover {
+			a {
+				background: $black;
+			}
+		}
+	}
+}
+
+/**************
  *** SWATCHES PLUGIN
  **************/
+.woo-variation-swatches {
+	.variable-items-wrapper {
+		gap: 8px;
+	}
+
+	.wvs-style-squared.variable-items-wrapper
+		.variable-item:not(.radio-variable-item) {
+		border-radius: 0;
+	}
+
+	&.wvs-show-label .variations td .woo-selected-variation-item-name,
+	&.wvs-show-label .variations th .woo-selected-variation-item-name {
+		font-weight: 400;
+	}
+
+	.variable-items-wrapper .variable-item:not(.radio-variable-item) {
+		padding: 0;
+		margin: 0;
+
+		&.selected,
+		&:hover {
+			box-shadow: 0 0 0 3px $black;
+		}
+
+		&.color-variable-item.selected:not(.no-stock),
+		&.image-variable-item.selected:not(.no-stock) {
+			.variable-item-contents:before {
+				display: none;
+			}
+		}
+
+		&.disabled .variable-item-contents:before {
+			display: none;
+		}
+	}
+}
 
 /*------------------------------------*\
   AJAX SIDECART PLUGIN
@@ -38,10 +150,58 @@
 /**************
  *** OTHER
  **************/
+.product-gallery-col {
+	max-width: 700px;
+}
+
+.entry-summary {
+	@media (min-width: $breakpoint-medium) {
+		padding-left: 70px;
+	}
+}
+
+.product_meta a {
+	color: $black;
+
+	&:hover {
+		color: $gray;
+	}
+}
+
+.variations .uk-select {
+	width: auto;
+	min-width: 240px;
+}
+
+.added_to_cart.wc-forward {
+	margin-left: 16px;
+}
+
+.quantity {
+	&-wrapper {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+	}
+
+	[type="number"] {
+		width: max-content;
+		width: 45px;
+		line-height: normal;
+		padding: 0;
+		border: none;
+		text-align: center;
+	}
+}
+
+.contact-wishlist-wrapper {
+	gap: 16px;
+}
+
 .woocommerce-ordering {
 	.orderby {
 		border: none;
-		font-size: $global-font-size;
+		font-size: $base-h5-font-size;
 	}
 }
 

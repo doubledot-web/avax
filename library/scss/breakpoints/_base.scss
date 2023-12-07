@@ -18,6 +18,27 @@
 /**************
  *** UIKIT OVERRIDES ***
  **************/
+ .uk-accordion {
+	&-title {
+		@media (max-width: $breakpoint-small-max) {
+			//font-size: 20px;
+		}
+
+		&::before {
+			background-size: 13px 10px;
+			background-repeat: no-repeat;
+			background-image: url($chevron-down);		}
+	}
+
+	.uk-open {
+		.uk-accordion-title {
+			&::before {
+				background-image: url($chevron-up);
+			}
+		}
+	}
+}
+
 .uk-dropbar-top {
 	box-shadow: none;
 }
@@ -41,9 +62,11 @@
 
 .uk-button-default {
 	font-size: 20px;
+	font-weight: 400;
 	line-height: 44px;
+	min-width: 165px;
 	height: 44px;
-	padding: 0 15px;
+	padding: 0 8px;
 	border: 3px solid $black;
 	text-transform: uppercase;
 
@@ -55,6 +78,17 @@
 	&.btn-white {
 		color: $white;
 		border-color: $white;
+
+		&:hover,
+		&:active {
+			color: $black;
+			background: $white;
+		}
+	}
+
+	&.btn-black {
+		color: $white;
+		background: $black;
 
 		&:hover,
 		&:active {
