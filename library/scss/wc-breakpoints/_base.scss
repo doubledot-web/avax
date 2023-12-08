@@ -1,4 +1,25 @@
 /**************
+ *** BACK FRONT IMAGE
+ **************/
+.back-front-hover-effect {
+	.image-wrapper {
+		position: relative;
+	}
+
+	.img-back {
+		display: none;
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			.img-back {
+				display: block;
+			}
+		}
+	}
+}
+
+/**************
  *** FILTERS
  **************/
 .breadcrumbs-sorting-wrapper {
@@ -22,6 +43,41 @@
 /**************
  *** ERRORS
  **************/
+.woocommerce {
+	&-error,
+	&-info,
+	&-message {
+		padding: 1em 2em 1em 3.5em;
+		margin: 0 0 2em;
+		position: relative;
+		background-color: $light-gray;
+		list-style: none outside;
+		border-top: 2px solid transparent;
+
+		&::before {
+			content: "";
+			display: inline-block;
+			position: absolute;
+			top: 1.3em;
+			left: 1.5em;
+			width: 16px;
+			height: 16px;
+			background-image: url(../imgs/info.svg);
+		}
+	}
+
+	&-info {
+		border-top-color: $wc-info;
+	}
+
+	&-message {
+		border-top-color: $wc-msg;
+	}
+
+	&-error {
+		border-top-color: $wc-error;
+	}
+}
 
 /**************
  *** PRODUCT SLIDER
@@ -100,6 +156,131 @@
 }
 
 /**************
+ *** YITH WISHLIST PLUGIN
+ **************/
+.wishlist_table.mobile li {
+	padding: 20px 0;
+	border-bottom: 3px solid $black;
+
+	&:first-child {
+		border-top: 3px solid $black;
+	}
+
+	.item-wrapper {
+		&,
+		.item-details {
+			width: 100%;
+		}
+
+		.item-details table.item-details-table td.label {
+			font-weight: 500;
+		}
+
+		.product-thumbnail {
+			a {
+				display: block;
+			}
+
+			max-width: 100%;
+			margin-right: 0;
+		}
+	}
+
+	.item-details table.item-details-table td.label,
+	.item-details table.item-details-table td,
+	table.additional-info td {
+		font-size: 100%;
+	}
+
+	table.additional-info td.label {
+		font-weight: 500;
+	}
+
+	table.item-details-table,
+	table.additional-info {
+		width: 100%;
+	}
+
+	.product-name {
+		text-align: center;
+	}
+
+	.product-remove {
+		a {
+			color: $black;
+		}
+	}
+
+	.additional-info-wrapper {
+		.product-add-to-cart {
+			margin-top: 20px;
+		}
+	}
+}
+
+table.wishlist_table {
+	font-size: 100%;
+	border-collapse: collapse;
+
+	thead {
+		th {
+			text-align: left;
+			border: none;
+			text-transform: uppercase;
+			font-weight: 400;
+			border-bottom: 3px solid $black;
+
+			&.product-thumbnail {
+				width: 80px;
+				@media (min-width: $breakpoint-medium) {
+					width: 200px;
+				}
+				@media (min-width: $breakpoint-large) {
+					width: 320px;
+				}
+			}
+		}
+	}
+
+	tbody {
+		td {
+			text-align: left;
+			border-bottom: 3px solid $black;
+
+			&.product-thumbnail {
+				a {
+					max-width: 100%;
+				}
+			}
+
+			&.product-remove {
+				padding: 16px 12px;
+			}
+
+			&.product-add-to-cart {
+				text-align: right;
+				padding-right: 0;
+
+				a {
+					margin: 0 0 0 auto !important;
+					@media (min-width: $breakpoint-medium) {
+						min-width: 205px;
+					}
+				}
+			}
+		}
+	}
+
+	a {
+		color: $black;
+	}
+}
+
+#yith-wcwl-popup-message {
+	font-weight: 500;
+}
+
+/**************
  *** SWATCHES PLUGIN
  **************/
 .woo-variation-swatches {
@@ -142,6 +323,143 @@
 /*------------------------------------*\
   AJAX SIDECART PLUGIN
 \*------------------------------------*/
+.xoo-wsc-container {
+	.xoo-wsc-header {
+		padding-top: 40px;
+
+		.xoo-wsch-top {
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.xoo-wsch-text {
+			font-size: $base-h3-font-size;
+		}
+
+		span.xoo-wsch-close {
+			position: static;
+
+			&::before {
+				content: "";
+				display: block;
+				width: 25px;
+				height: 25px;
+				background-image: url($close-icon);
+				background-size: 25px 25px;
+			}
+		}
+	}
+
+	.xoo-wsc-product {
+		border-radius: 0;
+		border: none;
+
+		.xoo-wsc-img-col {
+			img {
+				width: 120px;
+				height: 120px;
+			}
+		}
+
+		span.xoo-wsc-pname {
+			&,
+			a {
+				font-weight: 400;
+			}
+		}
+
+		.xoo-wsc-pprice {
+			font-weight: 300;
+		}
+
+		.xoo-wsc-icon-trash {
+			&::before {
+				content: "";
+				display: block;
+				width: 16px;
+				height: 16px;
+				background-image: url($close-icon);
+				background-size: 16px 16px;
+			}
+		}
+
+		dl.variation,
+		dl.variation p {
+			font-size: $global-font-size;
+		}
+
+		dl.variation,
+		dl.variation {
+			dd,
+			dt {
+				font-weight: 300;
+				font-style: normal;
+			}
+		}
+
+		.xoo-wsc-chng {
+			font-weight: 400;
+		}
+
+		input[type="number"].xoo-wsc-qty,
+		.xoo-wsc-qtb-square {
+			border: none;
+		}
+
+		input[type="number"].xoo-wsc-qty {
+			font-size: $global-font-size;
+		}
+	}
+
+	.xoo-wsc-footer {
+		.xoo-wsc-ft-totals {
+			padding: 25px 0;
+			border-top: 3px solid $black;
+		}
+
+		.xoo-wsc-ft-amt-total {
+			padding: 25px 5px;
+			border-top: 3px solid $black;
+			border-bottom: 3px solid $black;
+			margin-top: 25px;
+		}
+
+		.xoo-wsc-ft-amt-subtotal {
+			margin-bottom: 10px;
+		}
+
+		.xoo-wsc-ft-amt-label {
+			font-weight: normal;
+			text-transform: uppercase;
+		}
+
+		.xoo-wsc-ft-buttons-cont {
+			justify-content: flex-end;
+			text-transform: uppercase;
+			grid-row-gap: 15px;
+		}
+
+		.xoo-wsc-ft-btn-cart {
+			color: $black;
+			background: transparent;
+			border-color: $black;
+
+			&:hover {
+				color: $white;
+				background: $black;
+			}
+		}
+
+		.xoo-wsc-btn {
+			width: 175px;
+			white-space: nowrap;
+		}
+
+		.xoo-wsc-ft-amt.less {
+			//color: $black;
+		}
+	}
+}
 
 /**************
  *** TEMPLATES

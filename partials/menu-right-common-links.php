@@ -13,8 +13,11 @@
 		<use xlink:href="#account"></use>
 	</svg>
 </a>
-<a href="#" class="xoo-wsc-cart-trigger">
+<a class="xoo-wsc-cart-trigger uk-position-relative" href="#">
 	<svg width="33" height="28" aria-hidden="true">
 		<use xlink:href="#cart"></use>
 	</svg>
+	<span class="sup-count total-cart-count">
+		<?php echo esc_html( yith_wcwl_count_all_products() ); ?>
+	</span>
 </a>

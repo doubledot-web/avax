@@ -243,3 +243,17 @@ function customize_gallery_thumbnail_size( $size ) {
 }
 add_filter( 'woocommerce_gallery_thumbnail_size', 'customize_gallery_thumbnail_size' );
 
+// Refresh cart count on AJAX
+function wc_refresh_cart_count( $fragments ) {
+	ob_start();
+	?>
+	<span class="sup-count total-cart-count">
+		<?php echo esc_html( WC()->cart->get_cart_contents_count() ); ?>
+	</span>
+	<?php
+	$fragments['.total-cart-count'] = ob_get_clean();
+	return $fragments;
+}
+
+// https://stackoverflow.com/questions/51123903/ajaxify-header-cart-items-count-in-woocommerce
+add_filter( 'woocommerce_add_to_cart_fragments', 'wc_refresh_cart_count' );

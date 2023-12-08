@@ -1,20 +1,4 @@
-/**************
- *** BACK FRONT IMAGE
- **************/
-.back-front-hover-effect {
-	.image-wrapper {
-		position: relative;
-	}
-
-	.img-back {
-		display: none;
-	}
-
-	@media (hover: hover) {
-		&:hover {
-			.img-back {
-				display: block;
-			}
-		}
-	}
-}
+$wc-gray: #b9b9b9;
+$wc-error: #b81c23;
+$wc-msg: #8fae1b;
+$wc-info: #1e85be;

@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-<div id="primary" class="content-area uk-padding-large uk-padding-remove-horizontal">
+<div id="primary" class="content-area uk-padding-large uk-padding-remove-horizontal uk-padding-remove-bottom uk-margin-xlarge-bottom">
 	<main id="site-main" class="site-main">
 		<?php
 		if ( have_posts() ) :

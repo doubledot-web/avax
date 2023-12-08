@@ -1,6 +1,12 @@
 /**************
  *** FONTS RESPONSIVE ***
  **************/
+html,
+h5 {
+	@media (max-width: $breakpoint-small-max) {
+		font-size: $global-font-size-mob;
+	}
+}
 
 /*------------------------------------*\
   PRELOADER
@@ -18,7 +24,7 @@
 /**************
  *** UIKIT OVERRIDES ***
  **************/
- .uk-accordion {
+.uk-accordion {
 	&-title {
 		@media (max-width: $breakpoint-small-max) {
 			//font-size: 20px;
@@ -27,7 +33,8 @@
 		&::before {
 			background-size: 13px 10px;
 			background-repeat: no-repeat;
-			background-image: url($chevron-down);		}
+			background-image: url($chevron-down);
+		}
 	}
 
 	.uk-open {
@@ -63,7 +70,7 @@
 .uk-button-default {
 	font-size: 20px;
 	font-weight: 400;
-	line-height: 44px;
+	//line-height: 44px;
 	min-width: 165px;
 	height: 44px;
 	padding: 0 8px;
@@ -509,6 +516,21 @@
 	a:not(:last-child) {
 		margin-right: 4px;
 	}
+}
+
+.sup-count {
+	position: absolute;
+	top: -5px;
+	right: -5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	font-size: 13px;
+	color: $white;
+	background: $red;
 }
 
 /*------------------------------------*\
