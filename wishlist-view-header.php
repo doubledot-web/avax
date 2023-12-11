@@ -67,7 +67,7 @@ do_action( 'yith_wcwl_before_wishlist_form', $wishlist );
 				 *
 				 * @return string
 				 */
-				echo wp_kses_post( apply_filters( 'yith_wcwl_wishlist_title', '<h1 class="font-weight-100 uk-margin-remove">' . $page_title . '</h2>' ) );
+				//echo wp_kses_post( apply_filters( 'yith_wcwl_wishlist_title', '<h1 class="font-weight-100 uk-margin-remove">' . $page_title . '</h1>' ) );
 				?>
 				<?php if ( $can_user_edit_title ) : ?>
 					<a class="btn button show-title-form">

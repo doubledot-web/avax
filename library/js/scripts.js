@@ -4,6 +4,7 @@ jQuery(document).ready(function ($) {
 	const $body = $("body");
 	const $homePage = $("body.home");
 	const $productPage = $("body.single-product");
+	const $cartPage = $("body.woocommerce-cart");
 	const $siteHeader = $(".site-header");
 	const $accordionModalMenu = $(".modal-menu .accordion");
 	const $searchForm = $(".search-form");
@@ -206,7 +207,7 @@ jQuery(document).ready(function ($) {
 			);
 		}
 
-		/*if ($(".page-template-cart-page").length) {
+		if ($cartPage.length) {
 			$document.on("click", "button.plus, button.minus", function () {
 				const $WCCartFormUpdateCartBtn = $(
 					'.woocommerce-cart-form button[name="update_cart"]'
@@ -237,7 +238,7 @@ jQuery(document).ready(function ($) {
 					$WCCartFormUpdateCartBtn.prop("disabled", false);
 				}
 			});
-		}*/
+		}
 	}
 
 	function updateWishListProductsOnAjax() {

@@ -62,7 +62,11 @@
 			left: 1.5em;
 			width: 16px;
 			height: 16px;
-			background-image: url(../imgs/info.svg);
+			background-image: url(../img/info.svg);
+		}
+
+		strong {
+			font-weight: 500;
 		}
 	}
 
@@ -159,6 +163,7 @@
  *** YITH WISHLIST PLUGIN
  **************/
 .wishlist_table.mobile li {
+	position: relative;
 	padding: 20px 0;
 	border-bottom: 3px solid $black;
 
@@ -177,13 +182,14 @@
 		}
 
 		.product-thumbnail {
-			a {
-				display: block;
-			}
-
 			max-width: 100%;
 			margin-right: 0;
 		}
+	}
+
+	table.additional-info td,
+	.item-details table.item-details-table td {
+		padding: 0;
 	}
 
 	.item-details table.item-details-table td.label,
@@ -206,9 +212,9 @@
 	}
 
 	.product-remove {
-		a {
-			color: $black;
-		}
+		position: absolute;
+		left: 0;
+		top: 20px;
 	}
 
 	.additional-info-wrapper {
@@ -236,7 +242,7 @@ table.wishlist_table {
 					width: 200px;
 				}
 				@media (min-width: $breakpoint-large) {
-					width: 320px;
+					width: 300px;
 				}
 			}
 		}
@@ -407,6 +413,7 @@ table.wishlist_table {
 		}
 
 		input[type="number"].xoo-wsc-qty {
+			font-family: inherit;
 			font-size: $global-font-size;
 		}
 	}
@@ -460,10 +467,6 @@ table.wishlist_table {
 		}
 	}
 }
-
-/**************
- *** TEMPLATES
- **************/
 
 /**************
  *** OTHER
@@ -539,6 +542,227 @@ table.wishlist_table {
 
 .onsale {
 	width: 65px;
+}
+
+.uk-button-default:disabled,
+.uk-button.disabled,
+button.disabled,
+.loading {
+	pointer-events: none;
+}
+
+.loading {
+	position: relative;
+	padding-right: 35px;
+	//opacity: 0.3;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		right: 8px;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		box-sizing: border-box;
+		border: 4px solid $white;
+		border-top-color: $black;
+		animation: loading 2s linear infinite;
+	}
+
+	&::after {
+		display: none;
+	}
+}
+
+@keyframes loading {
+	0% {
+		transform: translateY(-50%) rotate(0deg);
+	}
+	100% {
+		transform: translateY(-50%) rotate(360deg);
+	}
+}
+
+.cart_totals {
+	table {
+		border-top: 3px solid $black;
+		border-bottom: 3px solid $black;
+	}
+
+	.order-total {
+		border-top: 3px solid $black;
+	}
+
+	th {
+		padding-left: 0;
+	}
+}
+
+span.select2-container--default {
+	.select2-selection--single {
+		border: none;
+		border-radius: 0;
+		height: 44px;
+
+		.select2-selection__arrow {
+			top: 50%;
+			transform: translateY(-50%);
+			width: 13px;
+			height: 10px;
+			background-image: url($chevron-down);
+			background-position: center;
+
+			b {
+				display: none;
+			}
+		}
+
+		.select2-selection__rendered {
+			padding: 0;
+			line-height: 44px;
+			color: $black;
+			border-bottom: 3px solid $black;
+		}
+	}
+}
+
+.woocommerce-cart-form {
+	table.cart {
+		text-align: center;
+
+		tr {
+			position: relative;
+
+			&:last-child {
+				td {
+					border-bottom: none;
+				}
+			}
+		}
+
+		/*th,
+		td {
+			border-bottom: 3px solid $black;
+		}*/
+
+		.product {
+			&-thumbnail {
+				width: 270px;
+			}
+
+			&-name {
+				@media (min-width: $breakpoint-medium) {
+					text-align: left;
+				}
+			}
+		}
+	}
+
+	.coupon-wrapper {
+		display: flex;
+		flex-direction: column;
+		@media (min-width: $breakpoint-medium) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		.coupon {
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+
+			@media (min-width: $breakpoint-small) {
+				flex-direction: row;
+			}
+		}
+
+		@include placeholder() {
+			color: $black;
+		}
+
+		.uk-input {
+			width: 100%;
+			flex-grow: 1;
+			min-width: 350px;
+		}
+
+		button {
+			@media (max-width: $breakpoint-xsmall-max) {
+				flex-shrink: 0;
+				width: 100%;
+			}
+		}
+	}
+}
+
+.shop_table {
+	th,
+	td {
+		border-bottom: 3px solid $black;
+	}
+}
+
+/**************
+ *** RESPONSIVE SHOP TABLE
+ **************/
+@media (max-width: $breakpoint-small-max) {
+	.woocommerce-cart-form table.cart {
+		tbody {
+			/*no coupon*/
+			tr:not(:last-child) {
+				display: block;
+				padding: 20px 0;
+
+				&:first-child {
+					border-top: 3px solid $black;
+				}
+
+				&:not(:last-child) {
+					border-bottom: 3px solid $black;
+				}
+
+				th,
+				td {
+					border-bottom: none;
+				}
+
+				td {
+					display: block;
+					padding: 6px 0;
+					text-align: right;
+
+					&::before {
+						content: attr(data-title) ": ";
+						font-weight: 500;
+						float: left;
+					}
+
+					&.product-thumbnail,
+					&.product-remove {
+						&::before {
+							display: none;
+						}
+					}
+
+					&.product-thumbnail {
+						text-align: center;
+						width: 100%;
+					}
+
+					&.product-remove {
+						position: absolute;
+						top: 20px;
+						left: 0;
+					}
+				}
+			}
+		}
+
+		.quantity-wrapper {
+			justify-content: flex-end;
+		}
+	}
 }
 
 /*------------------------------------*\

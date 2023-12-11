@@ -24,7 +24,7 @@ defined( 'ABSPATH' ) || exit;
 $label = ! empty( $args['product_name'] ) ? sprintf( esc_html__( '%s quantity', 'woocommerce' ), wp_strip_all_tags( $args['product_name'] ) ) : esc_html__( 'Quantity', 'woocommerce' );
 
 ?>
-<div class="quantity-wrapper uk-margin-bottom">
+<div class="quantity-wrapper uk-margin-bottom1">
 	<button type="button" class="minus btn-base uk-flex" aria-label="<?php esc_attr_e( 'Remove items', 'wpcanvas' ); ?>">
 		<svg width="9" height="3" aria-hidden="true">
 			<use xlink:href="#minus"></use>

@@ -243,6 +243,15 @@ function customize_gallery_thumbnail_size( $size ) {
 }
 add_filter( 'woocommerce_gallery_thumbnail_size', 'customize_gallery_thumbnail_size' );
 
+//Redirect shop page to a category page
+function redirect_shop_page() {
+	if ( is_shop() ) :
+		wp_redirect( home_url( '/product-category/living-room/' ) );
+		exit();
+	endif;
+}
+add_action( 'template_redirect', 'redirect_shop_page' );
+
 // Refresh cart count on AJAX
 function wc_refresh_cart_count( $fragments ) {
 	ob_start();

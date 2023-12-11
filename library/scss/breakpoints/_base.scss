@@ -24,6 +24,12 @@ h5 {
 /**************
  *** UIKIT OVERRIDES ***
  **************/
+.uk-table {
+	th {
+		font-size: $global-font-size;
+		color: $black;
+	}
+}
 .uk-accordion {
 	&-title {
 		@media (max-width: $breakpoint-small-max) {
@@ -77,6 +83,10 @@ h5 {
 	border: 3px solid $black;
 	text-transform: uppercase;
 
+	&:disabled {
+		border-color: $black;
+	}
+
 	&:hover,
 	&:active {
 		border-color: $black;
@@ -85,6 +95,10 @@ h5 {
 	&.btn-white {
 		color: $white;
 		border-color: $white;
+
+		&:disabled {
+			border-color: $white;
+		}
 
 		&:hover,
 		&:active {
@@ -525,8 +539,8 @@ h5 {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 18px;
-	height: 18px;
+	width: 20px;
+	height: 20px;
 	border-radius: 50%;
 	font-size: 13px;
 	color: $white;
