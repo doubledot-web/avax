@@ -21,11 +21,11 @@ defined( 'ABSPATH' ) || exit;
 <div class="woocommerce-billing-fields">
 	<?php if ( wc_ship_to_billing_address_only() && WC()->cart->needs_shipping() ) : ?>
 
-		<h3 class="font-weight-100"><?php esc_html_e( 'Billing &amp; Shipping', 'woocommerce' ); ?></h3>
+		<h3 class="uk-text-light"><?php esc_html_e( 'Billing &amp; Shipping', 'woocommerce' ); ?></h3>
 
 	<?php else : ?>
 
-		<h3 class="font-weight-100"><?php esc_html_e( 'Billing details', 'woocommerce' ); ?></h3>
+		<h3 class="uk-text-light"><?php esc_html_e( 'Billing details', 'woocommerce' ); ?></h3>
 
 	<?php endif; ?>
 
@@ -36,8 +36,12 @@ defined( 'ABSPATH' ) || exit;
 		$fields = $checkout->get_checkout_fields( 'billing' );
 
 		foreach ( $fields as $key => $field ) {
+			//ddump( $field );
 			$field['label_class'] = array( 'uk-form-label' );
 			$field['input_class'] = array( 'uk-input' );
+			//$control_required     = $field['required'] ? ' *' : '';
+			//$field['placeholder'] = $field['label'] . $control_required;
+			//$field['label']       = null;
 			woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
 		}
 		?>

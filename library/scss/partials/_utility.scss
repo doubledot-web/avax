@@ -73,6 +73,12 @@
 	}
 }
 
+.pr-remove-horizontal\@xl {
+	@media (min-width: $breakpoint-xlarge) {
+		padding-right: 0;
+	}
+}
+
 [src$=".jpg"][loading="lazy"],
 .bg-lazy,
 iframe {
@@ -95,6 +101,10 @@ iframe {
 
 .max-width-1600 {
 	max-width: 1600px;
+}
+
+.max-width-1025 {
+	max-width: 1025px;
 }
 
 .flex-grow-1 {

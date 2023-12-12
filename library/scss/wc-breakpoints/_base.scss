@@ -164,7 +164,7 @@
  **************/
 .wishlist_table.mobile li {
 	position: relative;
-	padding: 20px 0;
+	padding: 16px 0;
 	border-bottom: 3px solid $black;
 
 	&:first-child {
@@ -703,8 +703,121 @@ span.select2-container--default {
 	}
 }
 
+.wc-item-meta {
+	padding: 0;
+	list-style: none outside;
+
+	.wc-item-meta-label {
+		float: left;
+		clear: both;
+		margin-right: 0.25em;
+		display: inline-block;
+	}
+}
+
+.customer-login {
+	max-width: 1025px;
+
+	.account-subtitle {
+		padding-bottom: 5px;
+		border-bottom: 3px solid $black;
+	}
+
+	.col-2 {
+		@media (max-width: $breakpoint-xsmall-max) {
+			margin-top: 30px;
+		}
+		.account-subtitle {
+			@media (min-width: $breakpoint-small) {
+				padding-left: 60px;
+			}
+		}
+	}
+
+	.woocommerce-form {
+		padding-top: 20px;
+	}
+
+	.woocommerce-form-register {
+		.with-margin {
+			@media (min-width: $breakpoint-small) {
+				margin-right: 60px;
+			}
+		}
+	}
+
+	.woocommerce-form-login {
+		@media (min-width: $breakpoint-small) {
+			border-left: 3px solid;
+		}
+
+		.with-margin {
+			@media (min-width: $breakpoint-small) {
+				margin-left: 60px;
+			}
+		}
+	}
+}
+
+.navigation-list {
+	@media (min-width: $breakpoint-large) {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px 50px;
+		//justify-content: space-between;
+		padding-bottom: 5px;
+		border-bottom: 3px solid;
+	}
+
+	li {
+		@media (min-width: $breakpoint-large) {
+			display: inline-block;
+		}
+
+		& + li {
+			@media (max-width: $breakpoint-medium-max) {
+				margin-top: 10px;
+			}
+		}
+
+		&.is-active {
+			a {
+				color: $global-link-color;
+			}
+		}
+	}
+}
+
+.woocommerce-MyAccount-orders {
+	text-transform: uppercase;
+
+	td,
+	th {
+		text-align: center;
+	}
+
+	th,
+	td {
+		&:first-child {
+			padding-left: 0;
+			@media (min-width: $breakpoint-medium) {
+			text-align: left;
+			}
+		}
+
+		&:last-child {
+			padding-right: 0;
+			text-align: right;
+		}
+	}
+
+	th.woocommerce-orders-table__header-order-actions {
+		color: transparent;
+	}
+}
+
 /**************
- *** RESPONSIVE SHOP TABLE
+ *** RESPONSIVE SHOP TABLES
  **************/
 @media (max-width: $breakpoint-small-max) {
 	.woocommerce-cart-form table.cart {
@@ -712,7 +825,7 @@ span.select2-container--default {
 			/*no coupon*/
 			tr:not(:last-child) {
 				display: block;
-				padding: 20px 0;
+				padding: 16px 0;
 
 				&:first-child {
 					border-top: 3px solid $black;
@@ -763,6 +876,44 @@ span.select2-container--default {
 			justify-content: flex-end;
 		}
 	}
+
+	.woocommerce-MyAccount-orders {
+		thead {
+			display: none;
+		}
+
+		tbody {
+ 			tr {
+				display: block;
+
+
+
+				td {
+					display: block;
+					padding: 16px 0;
+					text-align: right;
+
+					&::before {
+						content: attr(data-title) ": ";
+						font-weight: 500;
+						float: left;
+					}
+
+				&.woocommerce-orders-table__cell-order-actions {
+					line-height: 44px;
+				}
+
+
+
+				}
+			}
+		}
+
+		.quantity-wrapper {
+			justify-content: flex-end;
+		}
+	}
+
 }
 
 /*------------------------------------*\

@@ -266,3 +266,22 @@ function wc_refresh_cart_count( $fragments ) {
 
 // https://stackoverflow.com/questions/51123903/ajaxify-header-cart-items-count-in-woocommerce
 add_filter( 'woocommerce_add_to_cart_fragments', 'wc_refresh_cart_count' );
+
+// Change column order in
+function customize_columns_order( $cols ) {
+	unset( $cols['order-number'] );
+	unset( $cols['order-date'] );
+	unset( $cols['order-status'] );
+	unset( $cols['order-total'] );
+	unset( $cols['order-actions'] );
+
+	$cols['order-date']    = __( 'Date', 'woocommerce' );
+	$cols['order-number']  = __( 'Order', 'woocommerce' );
+	$cols['order-total']   = __( 'Total', 'woocommerce' );
+	$cols['order-status']  = __( 'Status', 'woocommerce' );
+	$cols['order-actions'] = __( 'Actions', 'woocommerce' );
+
+	return $cols;
+
+}
+add_filter( 'woocommerce_account_orders_columns', 'customize_columns_order' );

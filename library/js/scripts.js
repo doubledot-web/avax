@@ -21,6 +21,7 @@ jQuery(document).ready(function ($) {
 	addMinusPlusQuantityButtons();
 	updateWishListProductsOnAjax();
 	createCustomDotsOnProductGallery();
+	//convertWCLabelsIntoPlaceholdersOnAddresses();
 
 	function onScrollActions() {
 		const $homeSocials = $(".section-hero .socials");
@@ -302,6 +303,25 @@ jQuery(document).ready(function ($) {
 					},
 					500
 				);
+			});
+		}
+	}
+	function convertWCLabelsIntoPlaceholdersOnAddresses() {
+		if (
+			$(".woocommerce-address-fields").length ||
+			$(".woocommerce-billing-fields").length
+		) {
+			$(".form-row").each(function () {
+				const $this = $(this);
+				const $label = $this.find("label");
+				const labelText = $label.text();
+				const $next = $this.find(".woocommerce-input-wrapper");
+				const $input = $next.find("input");
+				if (!$input.length) {
+					return true;
+				}
+				$input.attr("placeholder", labelText);
+				$label.remove();
 			});
 		}
 	}

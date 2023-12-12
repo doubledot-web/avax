@@ -24,6 +24,11 @@ h5 {
 /**************
  *** UIKIT OVERRIDES ***
  **************/
+.uk-form-label {
+	color: $black;
+	font-size: $global-font-size;
+}
+
 .uk-table {
 	th {
 		font-size: $global-font-size;
@@ -84,6 +89,7 @@ h5 {
 	text-transform: uppercase;
 
 	&:disabled {
+		color: $black;
 		border-color: $black;
 	}
 

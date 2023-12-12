@@ -5,8 +5,6 @@ For more info: http://codex.wordpress.org/Page_Templates
 */
 
 get_header();
-
-
 ?>
 
 <div id="primary" class="content-area">
