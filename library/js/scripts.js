@@ -11,6 +11,7 @@ jQuery(document).ready(function ($) {
 	const $searchFormMobile = $(".search-form-mobile");
 	let scrollBottom = false;
 
+	initActions();
 	onScrollActions();
 	toggleSearchForm();
 	toggleDesktopMenu();
@@ -22,6 +23,14 @@ jQuery(document).ready(function ($) {
 	updateWishListProductsOnAjax();
 	createCustomDotsOnProductGallery();
 	//convertWCLabelsIntoPlaceholdersOnAddresses();
+
+	function initActions() {
+		//force a small scroll
+		const scrollTop = $window.scrollTop();
+		if (scrollTop > 40) {
+			window.scrollTo(0, 100);
+		}
+	}
 
 	function onScrollActions() {
 		const $homeSocials = $(".section-hero .socials");
@@ -94,8 +103,10 @@ jQuery(document).ready(function ($) {
 			$siteHeader.addClass(HEADER_CLASS);
 		});
 
-		$("#desktop-navbar").on("hide", function () {
-			$siteHeader.removeClass(HEADER_CLASS);
+		$("#desktop-navbar").on("hide", function (e) {
+			if (!$('a[aria-expanded="true"]').length) {
+				//$siteHeader.removeClass(HEADER_CLASS);
+			}
 		});
 	}
 
@@ -314,14 +325,14 @@ jQuery(document).ready(function ($) {
 			$(".form-row").each(function () {
 				const $this = $(this);
 				const $label = $this.find("label");
-				const labelText = $label.text();
 				const $next = $this.find(".woocommerce-input-wrapper");
 				const $input = $next.find("input");
-				if (!$input.length) {
+				const labelText = $label.text();
+				/*if (!$input.length) {
 					return true;
-				}
+				}*/
 				$input.attr("placeholder", labelText);
-				$label.remove();
+				$label.hide();
 			});
 		}
 	}

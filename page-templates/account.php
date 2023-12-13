@@ -4,6 +4,7 @@ Template Name: Account Page
 For more info: http://codex.wordpress.org/Page_Templates
 */
 get_header();
+$img_id = 465;
 ?>
 
 <div id="primary" class="content-area uk-padding-large uk-padding-remove-horizontal uk-padding-remove-bottom uk-margin-xlarge-bottom">
@@ -24,7 +25,7 @@ get_header();
 							</div>
 							<div class="uk-width-auto@xl uk-flex-right@xl uk-visible@xl">
 								<figure class="uk-text-center uk-margin-remove">
-									<?php echo wp_get_attachment_image( 465, 'full' ); ?>
+									<?php echo wp_get_attachment_image( $img_id, 'full' ); ?>
 								</figure>
 							</div>
 						</div>

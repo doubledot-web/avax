@@ -35,7 +35,7 @@ do_action( 'woocommerce_before_edit_account_address_form' ); ?>
 			<div class="woocommerce-address-fields__field-wrapper uk-child-width-1-2@s" uk-grid>
 				<?php
 				foreach ( $address as $key => $field ) {
-					$field['label_class'] = array( 'uk-form-label' );
+					$field['label_class'] = array( 'uk-form-label', 'uk-hidden' );
 					$field['input_class'] = array( 'uk-input' );
 					woocommerce_form_field( $key, $field, wc_get_post_data_by_key( $key, $field['value'] ) );
 				}

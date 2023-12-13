@@ -59,7 +59,9 @@ do_action( 'woocommerce_before_main_content' );
 		<?php woocommerce_catalog_ordering(); ?>
 	</div>
 </div>
-<div class="filters-wrapper uk-padding-large uk-padding-remove-horizontal uk-padding-remove-top">FILTERS GO HERE</div>
+<div class="filters-wrapper uk-padding-large uk-padding-remove-horizontal uk-padding-remove-top">
+	<?php get_template_part( 'partials/archive-product/filters' ); ?>
+</div>
 
 
 <?php

@@ -462,6 +462,18 @@ h5 {
 			min-height: 350px;
 		}
 	}
+
+	&-downloads {
+		.section {
+			&-pds {
+				img {
+					@media (min-width: $breakpoint-medium) {
+						max-width: 80%;
+					}
+				}
+			}
+		}
+	}
 }
 
 /**************
@@ -615,10 +627,21 @@ h5 {
 /**************
  *** LINK TEXT SHADOW HOVER ***
  **************/
-.text-shadow-hover {
+ .text-shadow-hover,
+ .text-shadow-light-hover {
 	transition: text-shadow 0.1s;
+ }
+
+.text-shadow-hover {
 
 	&:hover {
 		text-shadow: $text-shadow-hover;
+	}
+}
+
+.text-shadow-light-hover {
+
+	&:hover {
+		text-shadow: $text-shadow-light-hover;
 	}
 }

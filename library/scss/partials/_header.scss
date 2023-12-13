@@ -87,6 +87,7 @@
 		/*COMMON*/
 		svg {
 			fill: $white;
+			//background: red;
 		}
 
 		/*MOBILE*/
@@ -189,6 +190,12 @@
 				}
 				@media (min-width: 1400px) and (max-width: $breakpoint-large-max) {
 					font-size: 19px;
+				}
+			}
+
+			.sub-menu a {
+				&:hover {
+					text-shadow: $text-shadow-light-hover;
 				}
 			}
 

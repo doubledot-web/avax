@@ -27,7 +27,7 @@ $header_extra_classes = $header_position_class . $header_color_class;
 				</button>
 			</div>
 
-			<div id="desktop-navbar" class="uk-flex uk-width-1-1 desktop-navbar navbar uk-visible@l" uk-navbar="dropbar: true; target: .main-menu; mode: click; dropbar-transparent-mode: behind">
+			<div id="desktop-navbar" class="uk-flex uk-width-1-1 desktop-navbar navbar uk-visible@l" uk-navbar="dropbar: true; mode: click; target: .main-menu; dropbar-transparent-mode: behind">
 				<a class="logo uk-flex uk-navbar-left" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'AVAX logo', 'wpcanvas' ); ?>">
 					<svg width="179" height="80" role="img">
 						<use xlink:href="#logo"></use>

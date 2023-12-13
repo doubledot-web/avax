@@ -36,12 +36,9 @@ defined( 'ABSPATH' ) || exit;
 		$fields = $checkout->get_checkout_fields( 'billing' );
 
 		foreach ( $fields as $key => $field ) {
-			//ddump( $field );
-			$field['label_class'] = array( 'uk-form-label' );
+			$field['label_class'] = array( 'uk-form-label', 'uk-hidden' );
 			$field['input_class'] = array( 'uk-input' );
 			//$control_required     = $field['required'] ? ' *' : '';
-			//$field['placeholder'] = $field['label'] . $control_required;
-			//$field['label']       = null;
 			woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
 		}
 		?>

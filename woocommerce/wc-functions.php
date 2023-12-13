@@ -285,3 +285,67 @@ function customize_columns_order( $cols ) {
 
 }
 add_filter( 'woocommerce_account_orders_columns', 'customize_columns_order' );
+
+
+// Add placeholders to the billing, shipping fields
+//https://stackoverflow.com/questions/46326620/custom-placeholder-for-all-woocommerce-checkout-fields
+function override_default_address_fields( $fields ) {
+	//ddump( $fields );
+	$key_fields = array( 'country', 'first_name', 'last_name', 'company', 'address_1', 'address_2', 'city', 'state', 'postcode' );
+
+	foreach ( $key_fields as $key_field ) :
+		if ( ! empty( $fields[ $key_field ]['placeholder'] ) ) :
+			if ( $fields[ $key_field ]['required'] ) :
+				$fields[ $key_field ]['placeholder'] = $fields[ $key_field ]['placeholder'] . ' *';
+			endif;
+		else :
+			if ( $fields[ $key_field ]['required'] ) :
+				$fields[ $key_field ]['placeholder'] = $fields[ $key_field ]['label'] . ' *';
+			else :
+				$fields[ $key_field ]['placeholder'] = $fields[ $key_field ]['label'];
+			endif;
+		endif;
+	endforeach;
+
+	//$fields['address_1']['placeholder'] = $fields['address_1']['placeholder'] . ' *';
+
+	return $fields;
+}
+add_filter( 'woocommerce_default_address_fields', 'override_default_address_fields' );
+
+
+// Add placeholders to the billing, shipping fields
+function override_billing_checkout_fields( $fields ) {
+	//ddump( $fields );
+	$fields['account']['account_username']['placeholder'] = $fields['account']['account_username']['label'] . ' *';
+	$fields['account']['account_password']['placeholder'] = $fields['account']['account_password']['label'] . ' *';
+	$fields['billing']['billing_phone']['placeholder']    = $fields['billing']['billing_phone']['label'] . ' *';
+	$fields['billing']['billing_email']['placeholder']    = $fields['billing']['billing_email']['label'] . ' *';
+	//unset( $fields['account']['account_username']['label'] );
+	//unset( $fields['account']['account_password']['label'] );
+	//unset( $fields['account']['billing_phone']['label'] );
+	//unset( $fields['account']['billing_email']['label'] );
+
+	//foreach ( $fields as $category => $value ) :
+	//	foreach ( $value as $field => $property ) :
+	//		// remove label property
+	//		unset( $fields[ $category ][ $field ]['label'] );
+	//	endforeach;
+	//endforeach;
+
+	return $fields;
+}
+add_filter( 'woocommerce_checkout_fields', 'override_billing_checkout_fields' );
+
+// Add placeholders to the billing fields on the account page
+function override_edit_address_phone_email_billing_fields( $fields ) {
+	if ( isset( $fields['billing_phone'] ) ) :
+		$fields['billing_phone']['placeholder'] = $fields['billing_phone']['label'] . ' *';
+	endif;
+	if ( isset( $fields['billing_email'] ) ) :
+		$fields['billing_email']['placeholder'] = $fields['billing_email']['label'] . ' *';
+	endif;
+	return $fields;
+}
+add_filter( 'woocommerce_address_to_edit', 'override_edit_address_phone_email_billing_fields' );
+
