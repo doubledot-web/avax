@@ -104,9 +104,9 @@ jQuery(document).ready(function ($) {
 		});
 
 		$("#desktop-navbar").on("hide", function (e) {
-			if (!$('a[aria-expanded="true"]').length) {
-				//$siteHeader.removeClass(HEADER_CLASS);
-			}
+			//if (!$('a[aria-expanded="true"]').length) {
+			$siteHeader.removeClass(HEADER_CLASS);
+			//}
 		});
 	}
 
