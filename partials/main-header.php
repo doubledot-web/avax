@@ -1,5 +1,6 @@
 <?php
-if ( is_front_page() || is_singular( 'post' ) || ( is_tax( 'product_cat' ) && 0 === get_queried_object()->parent ) || is_page_template( array( 'page-templates/brands.php', 'page-templates/contract-division.php', 'page-templates/about.php', 'page-templates/contact.php', 'page-templates/showroom.php', 'page-templates/downloads.php', 'page-templates/brand.php' ) ) ) :
+
+if ( is_front_page() || is_singular( 'post' ) || ( is_tax( 'product_cat' ) && 0 === get_queried_object()->parent && 42 !== get_queried_object_id() && 47 !== get_queried_object_id() ) || is_page_template( array( 'page-templates/brands.php', 'page-templates/contract-division.php', 'page-templates/about.php', 'page-templates/contact.php', 'page-templates/showroom.php', 'page-templates/downloads.php', 'page-templates/brand.php' ) ) ) :
 	$header_position_class = 'header-fixed';
 else :
 	$header_position_class = 'header-sticky';

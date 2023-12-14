@@ -1,4 +1,6 @@
 <?php
+//echo do_shortcode( "[woof  sid='generator_657b190c0651e' autohide='0' autosubmit='-1' is_ajax='0' ajax_redraw='0' start_filtering_btn='0' btn_position='b' dynamic_recount='1' hide_terms_count_txt='0' mobile_mode='0' tax_only='product_brand']" );
+
 $current_term        = get_queried_object();
 $current_term_id     = $current_term->term_id;
 $current_term_tax    = $current_term->taxonomy;

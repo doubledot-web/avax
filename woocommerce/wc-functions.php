@@ -250,7 +250,7 @@ function redirect_shop_page() {
 		exit();
 	endif;
 }
-add_action( 'template_redirect', 'redirect_shop_page' );
+//add_action( 'template_redirect', 'redirect_shop_page' );
 
 // Refresh cart count on AJAX
 function wc_refresh_cart_count( $fragments ) {
