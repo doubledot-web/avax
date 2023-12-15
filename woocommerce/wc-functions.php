@@ -22,7 +22,7 @@ function cnvs_remove_wc_stuff() {
 	//remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10, 0 );
 	//remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination', 10, 0 );
 	remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
-	remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+	//remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 	remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
 	remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
 	remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
@@ -242,6 +242,51 @@ function customize_gallery_thumbnail_size( $size ) {
 	return 'full';
 }
 add_filter( 'woocommerce_gallery_thumbnail_size', 'customize_gallery_thumbnail_size' );
+
+/**
+ * Pass extra parameters to wc_get_products
+ */
+function handle_custom_query_var( $query_args, $query_vars ) {
+	if ( ! empty( $query_vars['brand'] ) ) :
+		$query_args['tax_query'][] = array(
+			'taxonomy' => 'product_brand',
+			'field'    => 'slug',
+			'terms'    => $query_vars['brand'],
+		);
+	endif;
+	if ( ! empty( $query_vars['product_category'] ) ) :
+		$query_args['tax_query'][] = array(
+			'taxonomy' => 'product_cat',
+			'terms'    => $query_vars['product_category'],
+		);
+	endif;
+	if ( ! empty( $query_vars['extra'] ) ) :
+		$tax_name = null;
+		foreach ( $query_vars['extra'] as $query_var_key => $query_var_value ) :
+			switch ( $query_var_key ) :
+				//more values here
+				case 'brand':
+					$tax_name = 'product_brand';
+					break;
+				case 'collection':
+					$tax_name = 'product_collection';
+					break;
+				case 'material':
+					$tax_name = 'pa_material';
+					break;
+			endswitch;
+
+			$query_args['tax_query'][] = array(
+				'taxonomy' => $tax_name,
+				'field'    => 'slug',
+				'terms'    => $query_var_value,
+			);
+		endforeach;
+	endif;
+	return $query_args;
+}
+add_filter( 'woocommerce_product_data_store_cpt_get_products_query', 'handle_custom_query_var', 10, 2 );
+
 
 //Redirect shop page to a category page
 function redirect_shop_page() {

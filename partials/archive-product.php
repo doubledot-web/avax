@@ -58,7 +58,6 @@ $sub_cats          = get_terms(
 					<?php
 				endforeach;
 				?>
-
 			</div>
 		</section>
 	</main>

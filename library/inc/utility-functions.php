@@ -28,3 +28,21 @@ function content_block_text_image_image( $block, $id = false ) {
 	</section>
 	<?php
 }
+
+
+function print_radios( $terms, $tax, $query_arg ) {
+	foreach ( $terms as $term_name ) :
+		$term_obj  = get_term_by( 'name', $term_name, $tax );
+		$term_id   = $term_obj->term_id;
+		$term_slug = $term_obj->slug;
+		$checked   = isset( $_GET[ $query_arg ] ) && $term_slug === $_GET[ $query_arg ] ? 'checked' : '';
+		?>
+		<div class="item">
+			<input type="radio" name=<?php echo esc_attr( $query_arg ); ?> id="<?php echo esc_attr( $term_id ); ?>" value="<?php echo esc_attr( $term_slug ); ?>"<?php echo $checked; ?>>
+			<label class="filter text-black text-black-hover text-shadow-light-hover uk-text-light uk-text-uppercase" for="<?php echo esc_attr( $term_id ); ?>">
+			<?php echo esc_html( $term_name ); ?>
+			</label>
+		</div>
+		<?php
+	endforeach;
+}

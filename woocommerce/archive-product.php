@@ -18,8 +18,8 @@
 defined( 'ABSPATH' ) || exit;
 
 /*shop->is archive but without parent, term_id etc*/
+$current_term = get_queried_object();
 if ( is_product_category() ) :
-	$current_term        = get_queried_object();
 	$current_term_parent = $current_term->parent;
 	$outdoor_id          = 42;
 	$sales_id            = 47;
@@ -43,25 +43,32 @@ get_header( 'shop' );
 do_action( 'woocommerce_before_main_content' );
 ?>
 
-<div class="breadcrumbs-sorting-wrapper uk-flex uk-flex-middle uk-flex-between uk-margin-large-top uk-margin-bottom">
-	<div>
-		<?php woocommerce_breadcrumb(); ?>
-		<div class="toggle-filters-wrapper uk-margin-top">
-			<button class="btn-base btn-toggle-filters uk-text-uppercase uk-text-light uk-flex uk-flex-middle" type="button">
-				<?php esc_html_e( 'Apply filters', 'wpcanvas' ); ?>
-				<svg width="13" height="10" class="uk-margin-left" aria-hidden="true">
-					<use xlink:href="#chevron-down-arrow"></use>
-				</svg>
-			</button>
+<?php if ( is_product_category() ) : ?>
+	<div class="breadcrumbs-sorting-wrapper uk-flex uk-flex-middle uk-flex-between uk-margin-large-top uk-margin-bottom">
+		<div>
+			<?php woocommerce_breadcrumb(); ?>
+			<div class="toggle-filters-wrapper uk-margin-top">
+				<button class="btn-base btn-toggle-filters uk-text-uppercase uk-text-light uk-flex uk-flex-middle" type="button">
+					<?php esc_html_e( 'Apply filters', 'wpcanvas' ); ?>
+					<svg width="13" height="10" class="uk-margin-left" aria-hidden="true">
+						<use xlink:href="#chevron-down-arrow"></use>
+					</svg>
+				</button>
+			</div>
+		</div>
+		<div>
+			<?php woocommerce_catalog_ordering(); ?>
 		</div>
 	</div>
-	<div>
-		<?php woocommerce_catalog_ordering(); ?>
+
+	<div class="filters-wrapper uk-padding-large uk-padding-remove-horizontal uk-padding-remove-top">
+		<?php get_template_part( 'partials/archive-product/filters' ); ?>
 	</div>
-</div>
-<div class="filters-wrapper uk-padding-large uk-padding-remove-horizontal uk-padding-remove-top">
-	<?php get_template_part( 'partials/archive-product/filters' ); ?>
-</div>
+<?php else : ?>
+	<h1 class="font-weight-100 uk-margin-large-top uk-margin-bottom">
+		<?php echo esc_html( $current_term->name ); ?>
+	</h1>
+<?php endif; ?>
 
 
 <?php

@@ -22,7 +22,7 @@ jQuery(document).ready(function ($) {
 	addMinusPlusQuantityButtons();
 	updateWishListProductsOnAjax();
 	createCustomDotsOnProductGallery();
-	//convertWCLabelsIntoPlaceholdersOnAddresses();
+	formFiltersActions();
 
 	function initActions() {
 		//force a small scroll
@@ -317,24 +317,14 @@ jQuery(document).ready(function ($) {
 			});
 		}
 	}
-	function convertWCLabelsIntoPlaceholdersOnAddresses() {
-		if (
-			$(".woocommerce-address-fields").length ||
-			$(".woocommerce-billing-fields").length
-		) {
-			$(".form-row").each(function () {
-				const $this = $(this);
-				const $label = $this.find("label");
-				const $next = $this.find(".woocommerce-input-wrapper");
-				const $input = $next.find("input");
-				const labelText = $label.text();
-				/*if (!$input.length) {
-					return true;
-				}*/
-				$input.attr("placeholder", labelText);
-				$label.hide();
-			});
-		}
+	function formFiltersActions() {
+		const $filtersWrapper = $(".filters-wrapper");
+		const $form = $filtersWrapper.find("form")
+		const $inputs = $filtersWrapper.find("input");
+
+		$inputs.on("input", function () {
+			$form.submit();
+		});
 	}
 });
 

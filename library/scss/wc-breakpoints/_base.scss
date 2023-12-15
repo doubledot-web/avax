@@ -39,6 +39,13 @@
 .filters-wrapper {
 	//display: none;
 	max-width: 1000px;
+
+	.item.active > a,
+	.item.active label,
+	.item [type="radio"]:checked + label {
+		text-shadow: $text-shadow-light-hover;
+
+	}
 }
 
 /**************
