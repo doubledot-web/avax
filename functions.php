@@ -395,17 +395,6 @@ function cnvs_custom_oembed_function( $cache, $url, $attr, $post_id ) {
 }
 // add_filter( 'embed_oembed_html', 'cnvs_custom_oembed_function', 10, 4 );
 
-/**
- * MODIFY MAIN QUERY
- */
-function filter_posts( $query ) {
-	if ( ! is_admin() && $query->is_main_query() ) :
-		if ( is_tax( 'product_cat' ) ) :
-			//$query->set( 'posts_per_page', 3 );
-		endif;
-	endif;
-}
-//add_action( 'pre_get_posts', 'filter_posts' );
 
 /**
  * GET ALL POSTS

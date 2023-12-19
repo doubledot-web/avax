@@ -1,3 +1,9 @@
+<?php
+$options_pages       = get_field( 'pages', 'option' );
+$privacy_policy_page = $options_pages['privacy_policy'];
+$cookie_policy_page  = $options_pages['cookie_policy'];
+?>
+
 <footer class="site-footer text-white bg-darkgray uk-text-light">
 	<div class="uk-container uk-container-expand">
 		<div class="widget-wrapper uk-padding-large uk-padding-remove-horizontal">
@@ -42,13 +48,13 @@
 					<p class="copyright uk-margin-remove">&copy; Avax A.E. <?php echo date( 'Y' ); ?></p>
 					<span class="divider-circle uk-visible@m">•</span>
 					<p class="uk-margin-remove">
-						<a href="<?php echo esc_url( $privacy_policy ); ?>">
+						<a href="<?php echo esc_url( $privacy_policy_page ); ?>">
 							<?php esc_html_e( 'Privacy Policy', 'wpcanvas' ); ?>
 						</a>
 					</p>
 					<span class="divider-circle uk-visible@m">•</span>
 					<p class="uk-margin-remove">
-						<a href="<?php echo esc_url( $cookie_policy ); ?>">
+						<a href="<?php echo esc_url( $cookie_policy_page ); ?>">
 							<?php esc_html_e( 'Cookie Policy', 'wpcanvas' ); ?>
 						</a>
 					</p>

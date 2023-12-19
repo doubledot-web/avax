@@ -4,7 +4,7 @@
 	left: 0;
 	right: 0;
 	z-index: 111;
-	height: 80px;
+	height: 70px;
 	transition: all 0.1s;
 	@media (min-width: $breakpoint-small) {
 		height: 100px;
@@ -39,7 +39,7 @@
 		background: $white;
 
 		& ~ .content-area {
-			margin-top: 80px;
+			margin-top: 70px;
 			@media (min-width: $breakpoint-small) {
 				margin-top: 100px;
 			}
@@ -93,6 +93,16 @@
 		/*MOBILE*/
 		.open-mobile-menu svg {
 			stroke: $white;
+		}
+
+		.langs {
+			a {
+				color: $white;
+
+				&::before {
+					background: $white;
+				}
+			}
 		}
 	}
 
@@ -259,8 +269,13 @@
 	.mobile-navbar {
 		padding: 10px 0;
 
-		@media (max-width: $breakpoint-medium-max) {
-			//
+		.logo {
+			svg {
+				@media (max-width: $breakpoint-xsmall-max) {
+					width: 133px;
+					height: 60px;
+				}
+			}
 		}
 	}
 }

@@ -49,7 +49,7 @@ if ( $show_downloads ) {
 		<thead>
 			<tr>
 				<th class="woocommerce-table__product-name product-name uk-padding-remove-left"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
-				<th class="woocommerce-table__product-table product-total uk-padding-remove-right"><?php esc_html_e( 'Total', 'woocommerce' ); ?></th>
+				<th class="woocommerce-table__product-table product-total uk-padding-remove-right uk-text-right"><?php esc_html_e( 'Total', 'woocommerce' ); ?></th>
 			</tr>
 		</thead>
 
@@ -83,7 +83,7 @@ if ( $show_downloads ) {
 				?>
 					<tr>
 						<th scope="row" class="uk-padding-remove-left"><?php echo esc_html( $total['label'] ); ?></th>
-						<td class="uk-padding-remove-right"><?php echo wp_kses_post( $total['value'] ); ?></td>
+						<td class="uk-padding-remove-right uk-text-right"><?php echo wp_kses_post( $total['value'] ); ?></td>
 					</tr>
 					<?php
 			}
@@ -91,7 +91,7 @@ if ( $show_downloads ) {
 			<?php if ( $order->get_customer_note() ) : ?>
 				<tr>
 					<th class="uk-padding-remove-left"><?php esc_html_e( 'Note:', 'woocommerce' ); ?></th>
-					<td class="uk-padding-remove-right"><?php echo wp_kses_post( nl2br( wptexturize( $order->get_customer_note() ) ) ); ?></td>
+					<td class="uk-padding-remove-right uk-text-right"><?php echo wp_kses_post( nl2br( wptexturize( $order->get_customer_note() ) ) ); ?></td>
 				</tr>
 			<?php endif; ?>
 		</tfoot>

@@ -19,8 +19,13 @@ if ( ! empty( $gallery_images ) ) :
 					<?php if ( $image_url ) : ?>
 						<a href="<?php echo esc_url( $image_url ); ?>">
 					<?php endif; ?>
-					<figure class="uk-margin-remove">
+					<figure class="uk-margin-remove uk-transition-toggle uk-light uk-position-relative">
 						<?php echo wp_get_attachment_image( $image_block['image'], 'full', '', array( 'class' => 'object-fit-cover uk-width-1-1' ) ); ?>
+						<div class="uk-overlay-primary uk-position-cover">
+						<div class="uk-position-center">
+							<span class="uk-transition-fade" uk-icon="icon: plus; ratio: 2"></span>
+						</div>
+						</div>
 					</figure>
 					<?php if ( $image_url ) : ?>
 						</a>

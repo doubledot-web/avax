@@ -243,9 +243,7 @@ function customize_gallery_thumbnail_size( $size ) {
 }
 add_filter( 'woocommerce_gallery_thumbnail_size', 'customize_gallery_thumbnail_size' );
 
-/**
- * Pass extra parameters to wc_get_products
- */
+// Pass extra parameters to wc_get_products
 function handle_custom_query_var( $query_args, $query_vars ) {
 	if ( ! empty( $query_vars['brand'] ) ) :
 		$query_args['tax_query'][] = array(
@@ -274,13 +272,18 @@ function handle_custom_query_var( $query_args, $query_vars ) {
 				case 'material':
 					$tax_name = 'pa_material';
 					break;
+				default:
+					unset( $tax_name );
+					break;
 			endswitch;
 
-			$query_args['tax_query'][] = array(
-				'taxonomy' => $tax_name,
-				'field'    => 'slug',
-				'terms'    => $query_var_value,
-			);
+			if ( isset( $tax_name ) ) :
+				$query_args['tax_query'][] = array(
+					'taxonomy' => $tax_name,
+					'field'    => 'slug',
+					'terms'    => $query_var_value,
+				);
+			endif;
 		endforeach;
 	endif;
 	return $query_args;
@@ -382,6 +385,7 @@ function override_billing_checkout_fields( $fields ) {
 }
 add_filter( 'woocommerce_checkout_fields', 'override_billing_checkout_fields' );
 
+
 // Add placeholders to the billing fields on the account page
 function override_edit_address_phone_email_billing_fields( $fields ) {
 	if ( isset( $fields['billing_phone'] ) ) :
@@ -394,3 +398,16 @@ function override_edit_address_phone_email_billing_fields( $fields ) {
 }
 add_filter( 'woocommerce_address_to_edit', 'override_edit_address_phone_email_billing_fields' );
 
+
+// show product image on review order on checkout page
+function add_image_on_review_order_on_checkout_page( $product_name, $cart_item ) {
+	if ( ! is_checkout() ) :
+		return $product_name;
+	endif;
+
+	$product   = $cart_item['data'];
+	$thumbnail = $product->get_image( array( '75', '75' ) );
+
+	return $thumbnail . $product_name;
+}
+add_filter( 'woocommerce_cart_item_name', 'add_image_on_review_order_on_checkout_page', 10, 2 );

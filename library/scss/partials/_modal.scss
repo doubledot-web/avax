@@ -14,11 +14,20 @@
 		position: sticky;
 		top: 0;
 		//padding: 10px 0;
-		height: 80px;
+		height: 70px;
 		z-index: 1;
 		background: $white;
 		@media (min-width: $breakpoint-small) {
 			height: 100px;
+		}
+
+		.logo {
+			svg {
+				@media (max-width: $breakpoint-xsmall-max) {
+					width: 133px;
+					height: 60px;
+				}
+			}
 		}
 
 		.close-search-form {
@@ -38,14 +47,15 @@
 		.accordion {
 			display: flex;
 			flex-direction: column;
-			padding-bottom: 100px;
+			padding-bottom: 160px;
 			margin: 0;
 
 			> li {
 				> a {
-					font-size: 40px;
+					font-size: 25px;
+					//font-size: 40px;
 					@media (min-width: $breakpoint-small) {
-						font-size: 50px;
+						//	font-size: 50px;
 					}
 				}
 			}
@@ -61,7 +71,7 @@
 
 			&.sub-menu {
 				display: none;
-				margin-top: 20px;
+				margin: 20px 0;
 			}
 		}
 
@@ -80,10 +90,11 @@
 
 		a {
 			color: $black;
-			font-size: 30px;
+			font-size: 20px;
 			font-weight: 300;
+			text-transform: uppercase;
 			@media (min-width: $breakpoint-small) {
-				font-size: 40px;
+				//font-size: 25px;
 			}
 		}
 	}
@@ -103,6 +114,8 @@
 		left: 0;
 		width: 100%;
 		z-index: 1;
+		padding-top: 10px;
+		background: $white;
 
 		.socials,
 		[class*="uk-modal-close-"] {
@@ -111,6 +124,10 @@
 
 		[class*="uk-modal-close-"] {
 			padding: 0;
+		}
+
+		.langs {
+			margin-bottom: 40px;
 		}
 	}
 }

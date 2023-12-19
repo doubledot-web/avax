@@ -26,7 +26,7 @@ $calculator_text          = '';
 ?>
 <tr class="woocommerce-shipping-totals shipping">
 	<th class="uk-padding-remove-left"><?php echo wp_kses_post( $package_name ); ?></th>
-	<td data-title="<?php echo esc_attr( $package_name ); ?>" class="uk-padding-remove-right">
+	<td data-title="<?php echo esc_attr( $package_name ); ?>" class="uk-padding-remove-right uk-text-right">
 		<?php if ( $available_methods ) : ?>
 			<ul id="shipping_method" class="woocommerce-shipping-methods uk-list uk-margin-remove">
 				<?php foreach ( $available_methods as $method ) : ?>

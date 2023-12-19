@@ -53,7 +53,7 @@
             "name": "images",
             "aria-label": "",
             "type": "gallery",
-            "instructions": "First two Images:  Images should have the same dimensions (700px x xyz)\r\nThird Image: Image dimensions should be 1400px x xyz.",
+            "instructions": "The first two images should have the same dimensions (700px x xyz). <br>\r\nThe third image should be 1400px x xyz.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -120,5 +120,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701698142
+    "modified": 1702999017
 }

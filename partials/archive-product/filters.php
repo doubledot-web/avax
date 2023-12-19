@@ -1,6 +1,11 @@
 <?php
-$current_term    = get_queried_object();
+$current_term    = $args['current_term'];
 $current_term_id = $current_term->term_id;
+
+$tax_brand      = 'product_brand';
+$tax_collection = 'product_collection';
+$tax_material   = 'pa_material';
+
 //
 $terms_brands_array      = array();
 $terms_collections_array = array();
@@ -23,10 +28,12 @@ foreach ( $prods as $prod ) :
 	//ddump( $post_object );
 	setup_postdata( $GLOBALS['post'] =& $post_object );
 	//$post is the global object
+	$original_post = $GLOBALS['post'];
 
-	$terms_brands      = get_the_terms( $GLOBALS['post'], 'product_brand' );
-	$terms_collections = get_the_terms( $GLOBALS['post'], 'product_collection' );
-	$terms_materials   = get_the_terms( $GLOBALS['post'], 'pa_material' );
+	$terms_brands      = get_the_terms( $original_post, $tax_brand );
+	$terms_collections = get_the_terms( $original_post, $tax_collection );
+	$terms_materials   = get_the_terms( $original_post, $tax_material );
+
 	if ( ! empty( $terms_brands ) ) :
 		foreach ( $terms_brands as $brand ) :
 			array_push( $terms_brands_array, $brand->name );
@@ -47,8 +54,6 @@ foreach ( $prods as $prod ) :
 
 endforeach;
 wp_reset_postdata();
-
-
 
 //make values unique
 $terms_brands_array_unique = array_unique( $terms_brands_array );
@@ -82,20 +87,24 @@ sort( $terms_materials_array_unique, SORT_NATURAL | SORT_FLAG_CASE );
 	<ul class="uk-switcher uk-margin">
 		<li class="uk-column-1-4">
 			<?php
-			print_radios( $terms_brands_array_unique, 'product_brand', 'brand' );
+			print_radios( $terms_brands_array_unique, $tax_brand, 'brand' );
 			?>
 		</li>
 		<li>
 			<?php
-			print_radios( $terms_collections_array_unique, 'product_collection', 'collection' );
+			print_radios( $terms_collections_array_unique, $tax_collection, 'collection' );
 			?>
 		</li>
 
 		<li>
 			<?php
-			print_radios( $terms_materials_array_unique, 'pa_material', 'material' );
+			print_radios( $terms_materials_array_unique, $tax_material, 'material' );
 			?>
 		</li>
 	</ul>
+
+	<a class="btn-black uk-button uk-button-default" href="<?php echo esc_url( get_term_link( $current_term_id ) ); ?>">
+		<?php esc_html_e( 'Clear Filters', 'wpcanvas' ); ?>
+	</a>
 </form>
 

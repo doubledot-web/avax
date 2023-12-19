@@ -30,15 +30,20 @@
 				)
 			);
 			?>
-			<form role="search" method="get" class="search-form search-form-mobile" action="<?php echo esc_url( get_the_permalink( wc_get_page_id( 'shop' ) ) ); ?>">
-				<input type="search" class="search-field uk-input" placeholder="<?php esc_attr_e( 'Search', 'wpcanvas' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+			<form role="search" method="get" class="search-form search-form-mobile" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<input type="search" class="search-field uk-input" minlength="3" placeholder="<?php esc_attr_e( 'Search', 'wpcanvas' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
 			</form>
 
 		</div>
 	</div>
 
-	<div class="bottom-wrapper plr-uikit-grid uk-flex uk-flex-middle uk-flex-between">
-		<?php get_template_part( 'partials/socials' ); ?>
+	<div class="bottom-wrapper plr-uikit-grid uk-flex uk-flex-bottom uk-flex-between">
+		<div>
+			<?php
+			get_template_part( 'partials/menu-langs' );
+			get_template_part( 'partials/socials' );
+			?>
+		</div>
 
 		<button class="btn btn-base uk-modal-close-default" type="button" aria-label="<?php esc_attr_e( 'Close mobile menu', 'wpcanvas' ); ?>">
 			<svg width="24" height="24" aria-hidden="true">

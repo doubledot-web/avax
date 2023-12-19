@@ -96,6 +96,52 @@
                     "allow_archives": 0,
                     "multiple": 0,
                     "allow_null": 0
+                },
+                {
+                    "key": "field_658165e8ab1a3",
+                    "label": "Privacy Policy",
+                    "name": "privacy_policy",
+                    "aria-label": "",
+                    "type": "page_link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "page"
+                    ],
+                    "post_status": "",
+                    "taxonomy": "",
+                    "allow_archives": 0,
+                    "multiple": 0,
+                    "allow_null": 0
+                },
+                {
+                    "key": "field_65816608ab1a4",
+                    "label": "Cookie Policy",
+                    "name": "cookie_policy",
+                    "aria-label": "",
+                    "type": "page_link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "page"
+                    ],
+                    "post_status": "",
+                    "taxonomy": "",
+                    "allow_archives": 0,
+                    "multiple": 0,
+                    "allow_null": 0
                 }
             ]
         },
@@ -234,7 +280,7 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
+            "layout": "row",
             "sub_fields": [
                 {
                     "key": "field_6569e13ce998b",
@@ -253,6 +299,26 @@
                     "default_value": "",
                     "tabs": "all",
                     "toolbar": "full",
+                    "media_upload": 0,
+                    "delay": 0
+                },
+                {
+                    "key": "field_658176636d189",
+                    "label": "Shipping",
+                    "name": "shipping",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "basic",
                     "media_upload": 0,
                     "delay": 0
                 }
@@ -277,5 +343,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701942099
+    "modified": 1702983418
 }

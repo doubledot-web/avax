@@ -2,7 +2,10 @@
  *** FONTS RESPONSIVE ***
  **************/
 html,
-h5 {
+h5,
+.uk-form-label,
+.uk-table th,
+.uk-subnav-pill > * > :first-child {
 	@media (max-width: $breakpoint-small-max) {
 		font-size: $global-font-size-mob;
 	}
@@ -35,6 +38,7 @@ h5 {
 		color: $black;
 	}
 }
+
 .uk-accordion {
 	&-title {
 		@media (max-width: $breakpoint-small-max) {
@@ -46,6 +50,10 @@ h5 {
 			background-repeat: no-repeat;
 			background-image: url($chevron-down);
 		}
+	}
+
+	&-content {
+		padding: 10px 0 20px 0;
 	}
 
 	.uk-open {
@@ -63,7 +71,7 @@ h5 {
 
 .uk-navbar-nav {
 	@media (min-width: $breakpoint-medium) {
-		gap: 5px;
+		gap: 15px;
 	}
 	@media (min-width: $breakpoint-xlarge) {
 		gap: 25px;
@@ -123,6 +131,14 @@ h5 {
 			background: $white;
 		}
 	}
+}
+
+.uk-subnav-pill > * > :first-child {
+	font-size: $global-font-size;
+}
+
+.uk-overlay-primary {
+	background: rgba(0, 0, 0, 0.3);
 }
 
 /**************
@@ -253,7 +269,7 @@ h5 {
 		padding: 25px 0;
 
 		.types {
-			gap: 20px;
+			gap: 10px 20px;
 			@media (min-width: $breakpoint-small) {
 				gap: 40px;
 			}
@@ -476,6 +492,22 @@ h5 {
 	}
 }
 
+.search-results {
+	.search-term {
+		padding: 2px;
+	}
+
+	.section-results {
+		article {
+			border-bottom: 1px solid $gray;
+
+			&:first-child {
+				border-top: 1px solid $gray;
+			}
+		}
+	}
+}
+
 /**************
  *** RESPONSIVE IFRAMES ***
  **************/
@@ -627,21 +659,44 @@ h5 {
 /**************
  *** LINK TEXT SHADOW HOVER ***
  **************/
- .text-shadow-hover,
- .text-shadow-light-hover {
+.text-shadow-hover,
+.text-shadow-light-hover {
 	transition: text-shadow 0.1s;
- }
+}
 
 .text-shadow-hover {
-
 	&:hover {
 		text-shadow: $text-shadow-hover;
 	}
 }
 
 .text-shadow-light-hover {
-
 	&:hover {
 		text-shadow: $text-shadow-light-hover;
+	}
+}
+
+/*------------------------------------*\
+    LANGS
+\*------------------------------------*/
+.langs {
+	a {
+		@include line-animation();
+
+		&::before {
+			left: 0;
+			width: 100%;
+		}
+
+		&:hover {
+			text-shadow: none;
+		}
+	}
+
+	.active {
+		&::before {
+			transform-origin: 0% 50%;
+			transform: scale3d(1, 1, 1);
+		}
 	}
 }

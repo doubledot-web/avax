@@ -21,7 +21,7 @@ defined( 'ABSPATH' ) || exit;
 	<thead>
 		<tr>
 			<th class="product-name uk-padding-remove-left"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
-			<th class="product-total uk-padding-remove-right"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th>
+			<th class="product-total uk-padding-remove-right uk-text-right"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -39,7 +39,7 @@ defined( 'ABSPATH' ) || exit;
 						<?php echo apply_filters( 'woocommerce_checkout_cart_item_quantity', ' <strong class="product-quantity">' . sprintf( '&times;&nbsp;%s', $cart_item['quantity'] ) . '</strong>', $cart_item, $cart_item_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 						<?php echo wc_get_formatted_cart_item_data( $cart_item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					</td>
-					<td class="product-total uk-padding-remove-right">
+					<td class="product-total uk-padding-remove-right uk-text-right">
 						<?php echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					</td>
 				</tr>
@@ -54,13 +54,13 @@ defined( 'ABSPATH' ) || exit;
 
 		<tr class="cart-subtotal">
 			<th class="uk-padding-remove-left"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th>
-			<td class="uk-padding-remove-right"><?php wc_cart_totals_subtotal_html(); ?></td>
+			<td class="uk-padding-remove-right uk-text-right"><?php wc_cart_totals_subtotal_html(); ?></td>
 		</tr>
 
 		<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
 			<tr class="cart-discount coupon-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
 				<th class="uk-padding-remove-left"><?php wc_cart_totals_coupon_label( $coupon ); ?></th>
-				<td class="uk-padding-remove-right"><?php wc_cart_totals_coupon_html( $coupon ); ?></td>
+				<td class="uk-padding-remove-right uk-text-right"><?php wc_cart_totals_coupon_html( $coupon ); ?></td>
 			</tr>
 		<?php endforeach; ?>
 
@@ -77,7 +77,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php foreach ( WC()->cart->get_fees() as $fee ) : ?>
 			<tr class="fee">
 				<th class="uk-padding-remove-left"><?php echo esc_html( $fee->name ); ?></th>
-				<td class="uk-padding-remove-right"><?php wc_cart_totals_fee_html( $fee ); ?></td>
+				<td class="uk-padding-remove-right uk-text-right"><?php wc_cart_totals_fee_html( $fee ); ?></td>
 			</tr>
 		<?php endforeach; ?>
 
@@ -86,13 +86,13 @@ defined( 'ABSPATH' ) || exit;
 				<?php foreach ( WC()->cart->get_tax_totals() as $code => $tax ) : // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited ?>
 					<tr class="tax-rate tax-rate-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
 						<th class="uk-padding-remove-left"><?php echo esc_html( $tax->label ); ?></th>
-						<td class="uk-padding-remove-right"><?php echo wp_kses_post( $tax->formatted_amount ); ?></td>
+						<td class="uk-padding-remove-right uk-text-right"><?php echo wp_kses_post( $tax->formatted_amount ); ?></td>
 					</tr>
 				<?php endforeach; ?>
 			<?php else : ?>
 				<tr class="tax-total">
 					<th class="uk-padding-remove-left"><?php echo esc_html( WC()->countries->tax_or_vat() ); ?></th>
-					<td class="uk-padding-remove-right"><?php wc_cart_totals_taxes_total_html(); ?></td>
+					<td class="uk-padding-remove-right uk-text-right"><?php wc_cart_totals_taxes_total_html(); ?></td>
 				</tr>
 			<?php endif; ?>
 		<?php endif; ?>
@@ -101,7 +101,7 @@ defined( 'ABSPATH' ) || exit;
 
 		<tr class="order-total">
 			<th class="uk-padding-remove-left"><?php esc_html_e( 'Total', 'woocommerce' ); ?></th>
-			<td class="uk-padding-remove-right"><?php wc_cart_totals_order_total_html(); ?></td>
+			<td class="uk-padding-remove-right uk-text-right"><?php wc_cart_totals_order_total_html(); ?></td>
 		</tr>
 
 		<?php do_action( 'woocommerce_review_order_after_order_total' ); ?>

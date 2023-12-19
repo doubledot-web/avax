@@ -1,4 +1,9 @@
 <?php
+/*
+Template Name: Eshop Page
+For more info: http://codex.wordpress.org/Page_Templates
+*/
+
 get_header();
 ?>
 
@@ -10,15 +15,11 @@ get_header();
 				the_post();
 				?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<div class="uk-container uk-margin-remove-left uk-margin-remove-right">
-						<section class="section-text">
-							<h1 class="uk-margin-medium-bottom">
-								<?php the_title(); ?>
-							</h1>
-							<div class="remove-margin-from-last-el uk-text-light">
-								<?php the_content(); ?>
-							</div>
-						</section>
+					<div class="uk-container uk-container-xlarge">
+						<h1 class="font-weight-100 uk-margin-medium-bottom">
+							<?php the_title(); ?>
+						</h1>
+						<?php the_content(); ?>
 					</div>
 				</article>
 				<?php

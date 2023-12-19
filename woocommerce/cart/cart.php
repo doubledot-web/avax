@@ -28,12 +28,12 @@ do_action( 'woocommerce_before_cart' ); ?>
 				<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents uk-width-1-1 uk-table uk-table-middle" cellspacing="0">
 					<thead>
 						<tr>
-							<th class="product-thumbnail uk-visible@m"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
-							<th class="product-name uk-visible@m"><?php esc_html_e( 'Description', 'woocommerce' ); ?></th>
-							<th class="product-price uk-visible@m"><?php esc_html_e( 'Price', 'woocommerce' ); ?></th>
-							<th class="product-quantity uk-visible@m"><?php esc_html_e( 'Quantity', 'woocommerce' ); ?></th>
-							<th class="product-subtotal uk-visible@m"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th>
-							<th class="product-remove uk-visible@m"><?php esc_html_e( 'Remove', 'woocommerce' ); ?></th>
+							<th class="product-thumbnail uk-padding-remove-left uk-visible@m"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
+							<th class="product-name uk-text-center uk-visible@m"><?php esc_html_e( 'Description', 'woocommerce' ); ?></th>
+							<th class="product-price uk-text-center uk-visible@m"><?php esc_html_e( 'Price', 'woocommerce' ); ?></th>
+							<th class="product-quantity uk-text-center uk-visible@m"><?php esc_html_e( 'Quantity', 'woocommerce' ); ?></th>
+							<th class="product-subtotal uk-text-center uk-visible@m"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th>
+							<th class="product-remove uk-padding-remove-right uk-text-right uk-visible@m"><?php esc_html_e( 'Remove', 'woocommerce' ); ?></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -58,9 +58,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 								?>
 								<tr class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 
-									<td class="product-thumbnail">
+									<td class="product-thumbnail uk-padding-remove-left">
 									<?php
-									$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(array( '270', '270' )), $cart_item, $cart_item_key );
+									$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image( array( '270', '270' ) ), $cart_item, $cart_item_key );
 
 									if ( ! $product_permalink ) {
 										echo $thumbnail; // PHPCS: XSS ok.
@@ -133,7 +133,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 										?>
 									</td>
 
-									<td class="product-remove">
+									<td class="product-remove uk-padding-remove-right">
 										<?php
 											echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 												'woocommerce_cart_item_remove_link',

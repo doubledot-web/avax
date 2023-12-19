@@ -23,6 +23,27 @@
  *** FILTERS
  **************/
 .breadcrumbs-sorting-wrapper {
+	display: flex;
+	flex-direction: column;
+	@media (min-width: $breakpoint-medium) {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.woocommerce-ordering {
+		.orderby {
+			border: none;
+			font-size: $base-h5-font-size;
+			width: 230px;
+			padding: 0;
+			margin-top: 10px;
+
+			@media (min-width: $breakpoint-medium) {
+				margin-top: 0;
+			}
+		}
+	}
+
 	.btn-toggle-filters {
 		svg {
 			transition: transform 0.2s;
@@ -37,14 +58,18 @@
 }
 
 .filters-wrapper {
-	//display: none;
+	display: none;
 	max-width: 1000px;
 
 	.item.active > a,
 	.item.active label,
 	.item [type="radio"]:checked + label {
 		text-shadow: $text-shadow-light-hover;
+	}
 
+	[type="radio"] {
+		position: absolute;
+		left: -9999px;
 	}
 }
 
@@ -153,9 +178,13 @@
 }
 
 .flex-control-paging {
-	a {
-		&.flex-active {
-			background: $black;
+	li {
+		width: auto;
+
+		a {
+			&.flex-active {
+				background: $black;
+			}
 		}
 	}
 }
@@ -242,7 +271,7 @@ table.wishlist_table {
 
 	thead {
 		th {
-			text-align: left;
+			//text-align: left;
 			border: none;
 			text-transform: uppercase;
 			font-weight: 400;
@@ -262,7 +291,7 @@ table.wishlist_table {
 
 	tbody {
 		td {
-			text-align: left;
+			//text-align: left;
 			border-bottom: 3px solid $black;
 
 			&.product-thumbnail {
@@ -507,7 +536,9 @@ table.wishlist_table {
 }
 
 .added_to_cart.wc-forward {
+	display: inline-block;
 	margin-left: 16px;
+	line-height: 44px;
 }
 
 .quantity {
@@ -529,13 +560,6 @@ table.wishlist_table {
 
 .contact-wishlist-wrapper {
 	gap: 16px;
-}
-
-.woocommerce-ordering {
-	.orderby {
-		border: none;
-		font-size: $base-h5-font-size;
-	}
 }
 
 .onsale,
@@ -651,12 +675,13 @@ span.select2-container--default {
 					border-bottom: none;
 				}
 			}
-		}
 
-		/*th,
-		td {
-			border-bottom: 3px solid $black;
-		}*/
+			td {
+				@media (min-width: $breakpoint-medium) {
+					text-align: center;
+				}
+			}
+		}
 
 		.product {
 			&-thumbnail {
@@ -665,7 +690,15 @@ span.select2-container--default {
 
 			&-name {
 				@media (min-width: $breakpoint-medium) {
-					text-align: left;
+					//text-align: left;
+				}
+			}
+
+			&-quantity {
+				.quantity-wrapper {
+					@media (min-width: $breakpoint-medium) {
+						justify-content: center;
+					}
 				}
 			}
 		}
@@ -694,8 +727,6 @@ span.select2-container--default {
 		}
 
 		.uk-input {
-			width: 100%;
-			flex-grow: 1;
 			min-width: 350px;
 		}
 
@@ -957,6 +988,8 @@ span.select2-container--default {
     BREADCRUMBS
 \*------------------------------------*/
 .woocommerce-breadcrumb {
+	text-transform: uppercase;
+
 	a + span {
 		font-weight: 500;
 	}

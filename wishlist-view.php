@@ -63,7 +63,7 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 			</th>
 		<?php endif; ?>
 
-		<th class="product-thumbnail">
+		<th class="product-thumbnail uk-padding-remove-left uk-text-left">
 			<?php esc_html_e( 'Product', 'wpcanvas' ); ?>
 		</th>
 
@@ -214,7 +214,7 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 						</td>
 					<?php endif ?>
 
-					<td class="product-thumbnail">
+					<td class="product-thumbnail uk-padding-remove-left">
 						<?php
 						/**
 						 * DO_ACTION: yith_wcwl_table_before_product_thumbnail
@@ -244,7 +244,7 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 						?>
 					</td>
 
-					<td class="product-name">
+					<td class="product-name uk-text-center">
 						<?php
 						/**
 						 * DO_ACTION: yith_wcwl_table_before_product_name
@@ -286,7 +286,7 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 					</td>
 
 					<?php if ( $show_price || $show_price_variations ) : ?>
-						<td class="product-price">
+						<td class="product- uk-text-center">
 							<?php
 							/**
 							 * DO_ACTION: yith_wcwl_table_before_product_price
@@ -358,7 +358,7 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 					<?php endif; ?>
 
 					<?php if ( $show_remove_product ) : ?>
-						<td class="product-remove">
+						<td class="product-remove uk-text-center">
 							<div>
 								<?php
 								/**

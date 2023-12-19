@@ -23,7 +23,7 @@ do_action( 'woocommerce_before_shipping_calculator' ); ?>
 
 	<?php printf( '<a href="#" class="shipping-calculator-button text-black text-underline text-underline-hover">%s</a>', esc_html( ! empty( $button_text ) ? $button_text : __( 'Calculate shipping', 'woocommerce' ) ) ); ?>
 
-	<section class="shipping-calculator-form uk-margin-small-top" style="display:none;">
+	<section class="shipping-calculator-form uk-text-left uk-margin-small-top" style="display:none;">
 
 		<?php if ( apply_filters( 'woocommerce_shipping_calculator_enable_country', true ) ) : ?>
 			<p class="form-row form-row-wide" id="calc_shipping_country_field">
@@ -88,7 +88,7 @@ do_action( 'woocommerce_before_shipping_calculator' ); ?>
 			</p>
 		<?php endif; ?>
 
-		<p><button type="submit" name="calc_shipping" value="1" class="button uk-button uk-button-default<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>"><?php esc_html_e( 'Update', 'woocommerce' ); ?></button></p>
+		<p class="uk-text-right"><button type="submit" name="calc_shipping" value="1" class="button uk-button uk-button-default<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>"><?php esc_html_e( 'Update', 'woocommerce' ); ?></button></p>
 		<?php wp_nonce_field( 'woocommerce-shipping-calculator', 'woocommerce-shipping-calculator-nonce' ); ?>
 	</section>
 </form>

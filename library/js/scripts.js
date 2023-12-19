@@ -319,7 +319,7 @@ jQuery(document).ready(function ($) {
 	}
 	function formFiltersActions() {
 		const $filtersWrapper = $(".filters-wrapper");
-		const $form = $filtersWrapper.find("form")
+		const $form = $filtersWrapper.find("form");
 		const $inputs = $filtersWrapper.find("input");
 
 		$inputs.on("input", function () {
@@ -350,7 +350,7 @@ jQuery(window).on("load", function ($) {
 							$(":target").offset().top -
 							$(".site-header").height(),
 					},
-					{ duration: 400 }
+					{ duration: 300 }
 				);
 
 				$(".contains-hash-link a").on("click", function (e) {

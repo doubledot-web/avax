@@ -19,6 +19,7 @@ defined( 'ABSPATH' ) || exit;
 
 /*shop->is archive but without parent, term_id etc*/
 $current_term = get_queried_object();
+
 if ( is_product_category() ) :
 	$current_term_parent = $current_term->parent;
 	$outdoor_id          = 42;
@@ -26,7 +27,7 @@ if ( is_product_category() ) :
 
 	/*Check if top level categories*/
 	if ( 0 === $current_term_parent && get_queried_object_id() !== $outdoor_id && get_queried_object_id() !== $sales_id ) :
-		get_template_part( 'partials/archive-product', null, array( 'current_term' => $current_term ) );
+		get_template_part( 'partials/archive-product/top-cat', null, array( 'current_term' => $current_term ) );
 		return;
 	endif;
 endif;
@@ -44,7 +45,7 @@ do_action( 'woocommerce_before_main_content' );
 ?>
 
 <?php if ( is_product_category() ) : ?>
-	<div class="breadcrumbs-sorting-wrapper uk-flex uk-flex-middle uk-flex-between uk-margin-large-top uk-margin-bottom">
+	<div class="breadcrumbs-sorting-wrapper uk-margin-large-top uk-margin-bottom">
 		<div>
 			<?php woocommerce_breadcrumb(); ?>
 			<div class="toggle-filters-wrapper uk-margin-top">
@@ -62,10 +63,11 @@ do_action( 'woocommerce_before_main_content' );
 	</div>
 
 	<div class="filters-wrapper uk-padding-large uk-padding-remove-horizontal uk-padding-remove-top">
-		<?php get_template_part( 'partials/archive-product/filters' ); ?>
+		<?php get_template_part( 'partials/archive-product/filters', null, array( 'current_term' => $current_term ) ); ?>
 	</div>
 <?php else : ?>
 	<h1 class="font-weight-100 uk-margin-large-top uk-margin-bottom">
+		<?php esc_html_e( 'Tag', 'wpcanvas' ); ?> :
 		<?php echo esc_html( $current_term->name ); ?>
 	</h1>
 <?php endif; ?>

@@ -360,7 +360,7 @@
                     "name": "image",
                     "aria-label": "",
                     "type": "image",
-                    "instructions": "",
+                    "instructions": "Image dimensions should be around 1000px x 1000px.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -400,5 +400,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701778920
+    "modified": 1702998870
 }
