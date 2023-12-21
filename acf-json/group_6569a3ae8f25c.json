@@ -16,6 +16,7 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 3,
             "default_value": "",
             "maxlength": "",
             "rows": "",
@@ -41,5 +42,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701422045
+    "acfml_field_group_mode": "advanced",
+    "modified": 1703084399
 }

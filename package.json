@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/doubledot-web/wpcanvas#readme",
   "dependencies": {
+    "@studio-freight/lenis": "^1.0.29",
     "uikit": "^3.17.11"
   }
 }

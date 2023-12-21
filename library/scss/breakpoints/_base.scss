@@ -1,4 +1,11 @@
 /**************
+ *** GENERIC ***
+ **************/
+html {
+	@include c-scrollbar-vertical($dark-gray, $white);
+}
+
+/**************
  *** FONTS RESPONSIVE ***
  **************/
 html,

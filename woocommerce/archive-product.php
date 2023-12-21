@@ -22,11 +22,9 @@ $current_term = get_queried_object();
 
 if ( is_product_category() ) :
 	$current_term_parent = $current_term->parent;
-	$outdoor_id          = 42;
-	$sales_id            = 47;
 
 	/*Check if top level categories*/
-	if ( 0 === $current_term_parent && get_queried_object_id() !== $outdoor_id && get_queried_object_id() !== $sales_id ) :
+	if ( 0 === $current_term_parent && get_queried_object_id() !== get_product_cat_wpml_id( 42 ) && get_queried_object_id() !== get_product_cat_wpml_id( 47 ) ) :
 		get_template_part( 'partials/archive-product/top-cat', null, array( 'current_term' => $current_term ) );
 		return;
 	endif;

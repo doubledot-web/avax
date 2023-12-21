@@ -1,12 +1,15 @@
 <?php
-
-if ( is_front_page() || is_singular( 'post' ) || ( is_product_category() && 0 === get_queried_object()->parent && 42 !== get_queried_object_id() && 47 !== get_queried_object_id() ) || is_page_template( array( 'page-templates/brands.php', 'page-templates/contract-division.php', 'page-templates/about.php', 'page-templates/contact.php', 'page-templates/showroom.php', 'page-templates/downloads.php', 'page-templates/brand.php' ) ) ) :
+if ( is_front_page() || is_singular( 'post' ) || ( is_product_category() && 0 === get_queried_object()->parent && get_product_cat_wpml_id( 42 ) !== get_queried_object_id() && get_product_cat_wpml_id( 47 ) !== get_queried_object_id() ) || is_page_template( array( 'page-templates/brands.php', 'page-templates/contract-division.php', 'page-templates/about.php', 'page-templates/contact.php', 'page-templates/showroom.php', 'page-templates/downloads.php', 'page-templates/brand.php' ) ) ) :
 	$header_position_class = 'header-fixed';
 else :
 	$header_position_class = 'header-sticky';
 endif;
-$queried_id           = is_shop() || ! is_archive() ? '' : get_queried_object()->taxonomy . '_' . get_queried_object()->term_id;
-$hero_fields          = get_field( 'hero_fields', $queried_id );
+$queried_id = ! is_archive() ? '' : get_queried_object()->taxonomy . '_' . get_queried_object()->term_id;
+
+if ( ! is_home() ) :
+	$hero_fields = get_field( 'hero_fields', $queried_id );
+endif;
+
 $header_color_class   = ! empty( $hero_fields['header_color_white'] ) ? ' header-white' : '';
 $header_extra_classes = $header_position_class . $header_color_class;
 ?>

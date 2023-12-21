@@ -5,6 +5,8 @@ For more info: http://codex.wordpress.org/Page_Templates
 */
 
 get_header();
+$contact      = get_field( 'contact', 'option' );
+$cf_shortcode = $contact['contact_form_shortcode'];
 ?>
 
 <div id="primary" class="content-area">
@@ -32,7 +34,7 @@ get_header();
 										<h2 class="font-weight-100 uk-h1">
 											<?php esc_html_e( 'Send Us A Message', 'wpcanvas' ); ?>
 										</h2>
-										<?php echo do_shortcode( '[contact-form-7 id="aeb2f6d" title="Contact form"]' ); ?>
+										<?php echo do_shortcode( $cf_shortcode ); ?>
 									</div>
 								</div>
 							</div>

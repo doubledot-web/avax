@@ -16,6 +16,7 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 3,
             "placement": "top",
             "endpoint": 0
         },
@@ -33,6 +34,7 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 3,
             "layout": "block",
             "sub_fields": [
                 {
@@ -49,6 +51,7 @@
                         "class": "",
                         "id": ""
                     },
+                    "wpml_cf_preferences": 3,
                     "post_type": [
                         "page"
                     ],
@@ -63,7 +66,7 @@
                     "label": "Projects",
                     "name": "projects",
                     "aria-label": "",
-                    "type": "link",
+                    "type": "page_link",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -72,7 +75,15 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "url"
+                    "wpml_cf_preferences": 3,
+                    "post_type": [
+                        "page"
+                    ],
+                    "post_status": "",
+                    "taxonomy": "",
+                    "allow_archives": 0,
+                    "multiple": 0,
+                    "allow_null": 0
                 },
                 {
                     "key": "field_6571933f9412e",
@@ -88,6 +99,7 @@
                         "class": "",
                         "id": ""
                     },
+                    "wpml_cf_preferences": 3,
                     "post_type": [
                         "page"
                     ],
@@ -111,6 +123,7 @@
                         "class": "",
                         "id": ""
                     },
+                    "wpml_cf_preferences": 3,
                     "post_type": [
                         "page"
                     ],
@@ -134,6 +147,7 @@
                         "class": "",
                         "id": ""
                     },
+                    "wpml_cf_preferences": 3,
                     "post_type": [
                         "page"
                     ],
@@ -159,6 +173,7 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 3,
             "placement": "top",
             "endpoint": 0
         },
@@ -176,6 +191,7 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 3,
             "layout": "block",
             "sub_fields": [
                 {
@@ -192,6 +208,7 @@
                         "class": "",
                         "id": ""
                     },
+                    "wpml_cf_preferences": 3,
                     "layout": "table",
                     "sub_fields": [
                         {
@@ -208,6 +225,7 @@
                                 "class": "",
                                 "id": ""
                             },
+                            "wpml_cf_preferences": 3,
                             "default_value": "",
                             "placeholder": ""
                         },
@@ -225,6 +243,7 @@
                                 "class": "",
                                 "id": ""
                             },
+                            "wpml_cf_preferences": 3,
                             "default_value": "",
                             "placeholder": ""
                         },
@@ -242,10 +261,53 @@
                                 "class": "",
                                 "id": ""
                             },
+                            "wpml_cf_preferences": 3,
                             "default_value": "",
                             "placeholder": ""
                         }
                     ]
+                },
+                {
+                    "key": "field_65842cd79ef6f",
+                    "label": "Contact Form Shortcode",
+                    "name": "contact_form_shortcode",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 3,
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_65842d089ef70",
+                    "label": "Newsletter Shortcode",
+                    "name": "newsletter_shortcode",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 3,
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
                 }
             ]
         },
@@ -263,6 +325,7 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 3,
             "placement": "top",
             "endpoint": 0
         },
@@ -280,6 +343,7 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 3,
             "layout": "row",
             "sub_fields": [
                 {
@@ -296,6 +360,7 @@
                         "class": "",
                         "id": ""
                     },
+                    "wpml_cf_preferences": 3,
                     "default_value": "",
                     "tabs": "all",
                     "toolbar": "full",
@@ -316,6 +381,7 @@
                         "class": "",
                         "id": ""
                     },
+                    "wpml_cf_preferences": 3,
                     "default_value": "",
                     "tabs": "all",
                     "toolbar": "basic",
@@ -343,5 +409,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1702983418
+    "acfml_field_group_mode": "advanced",
+    "modified": 1703161131
 }

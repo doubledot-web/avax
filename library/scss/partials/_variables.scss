@@ -19,6 +19,8 @@ $minus-icon: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOSIgaGVpZ2h0PSIzIiB2aWV3
 $plus-icon: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTEiIGhlaWdodD0iMTEiIHZpZXdCb3g9IjAgMCAxMSAxMSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuNTg4IDEwLjY2OFYwLjE5Nkg2LjM5MlYxMC42NjhINC41ODhaTTAuNDUyIDYuMjY4VjQuNTk2SDEwLjUyOFY2LjI2OEgwLjQ1MloiIGZpbGw9ImJsYWNrIi8+Cjwvc3ZnPgo=";
 
 /*** UIkit Overrides ***/
+$base-selection-background: $black;
+$base-selection-color: $white;
 $global-color: $black;
 $global-font-family: $sans-serif;
 $base-em-color: $global-color;

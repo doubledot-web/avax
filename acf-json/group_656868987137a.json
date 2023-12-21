@@ -16,6 +16,7 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 3,
             "layout": "table",
             "sub_fields": [
                 {
@@ -32,6 +33,7 @@
                         "class": "",
                         "id": ""
                     },
+                    "wpml_cf_preferences": 3,
                     "default_value": "",
                     "tabs": "all",
                     "toolbar": "full",
@@ -52,6 +54,7 @@
                         "class": "",
                         "id": ""
                     },
+                    "wpml_cf_preferences": 3,
                     "return_format": "id",
                     "library": "all",
                     "min_width": "",
@@ -77,6 +80,7 @@
                         "class": "",
                         "id": ""
                     },
+                    "wpml_cf_preferences": 3,
                     "return_format": "id",
                     "library": "all",
                     "min_width": "",
@@ -104,6 +108,7 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 3,
             "layout": "row",
             "sub_fields": [
                 {
@@ -120,6 +125,7 @@
                         "class": "",
                         "id": ""
                     },
+                    "wpml_cf_preferences": 3,
                     "default_value": "",
                     "maxlength": "",
                     "placeholder": "",
@@ -140,6 +146,7 @@
                         "class": "",
                         "id": ""
                     },
+                    "wpml_cf_preferences": 3,
                     "layouts": {
                         "layout_65688ab2eb971": {
                             "key": "layout_65688ab2eb971",
@@ -161,6 +168,7 @@
                                         "class": "",
                                         "id": ""
                                     },
+                                    "wpml_cf_preferences": 3,
                                     "default_value": "",
                                     "tabs": "all",
                                     "toolbar": "full",
@@ -181,6 +189,7 @@
                                         "class": "",
                                         "id": ""
                                     },
+                                    "wpml_cf_preferences": 3,
                                     "default_value": "",
                                     "tabs": "all",
                                     "toolbar": "full",
@@ -212,6 +221,7 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 3,
             "layout": "table",
             "sub_fields": [
                 {
@@ -228,6 +238,7 @@
                         "class": "",
                         "id": ""
                     },
+                    "wpml_cf_preferences": 3,
                     "default_value": "",
                     "tabs": "all",
                     "toolbar": "full",
@@ -248,6 +259,7 @@
                         "class": "",
                         "id": ""
                     },
+                    "wpml_cf_preferences": 3,
                     "return_format": "id",
                     "library": "all",
                     "min_width": "",
@@ -280,5 +292,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701352199
+    "acfml_field_group_mode": "advanced",
+    "modified": 1703084481
 }

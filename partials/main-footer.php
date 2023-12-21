@@ -1,7 +1,9 @@
 <?php
-$options_pages       = get_field( 'pages', 'option' );
-$privacy_policy_page = $options_pages['privacy_policy'];
-$cookie_policy_page  = $options_pages['cookie_policy'];
+$options_pages        = get_field( 'pages', 'option' );
+$privacy_policy_page  = $options_pages['privacy_policy'];
+$cookie_policy_page   = $options_pages['cookie_policy'];
+$contact              = get_field( 'contact', 'option' );
+$newsletter_shortcode = $contact['newsletter_shortcode'];
 ?>
 
 <footer class="site-footer text-white bg-darkgray uk-text-light">
@@ -31,7 +33,7 @@ $cookie_policy_page  = $options_pages['cookie_policy'];
 				<div class="uk-width-1-1 uk-width-2-5@m uk-width-auto@xl">
 					<div class="newsletter-wrapper">
 						<h5 class="text-white uk-text-uppercase"><?php esc_html_e( 'Stay in touch', 'wpcanvas' ); ?></h5>
-						<?php echo do_shortcode( '[yikes-mailchimp form="1"]' ); ?>
+						<?php echo do_shortcode( $newsletter_shortcode ); ?>
 						<div class="uk-margin-large-top">
 							<img width="600" height="76" class="" data-src="<?php echo esc_url( get_template_directory_uri() ) . '/library/img/espa-banner.png'; ?>" alt="<?php esc_attr_e( 'espa banner', 'wpcanvas' ); ?>" uk-img>
 						</div>

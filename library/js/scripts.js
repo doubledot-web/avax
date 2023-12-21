@@ -23,6 +23,7 @@ jQuery(document).ready(function ($) {
 	updateWishListProductsOnAjax();
 	createCustomDotsOnProductGallery();
 	formFiltersActions();
+	initLenis();
 
 	function initActions() {
 		//force a small scroll
@@ -325,6 +326,17 @@ jQuery(document).ready(function ($) {
 		$inputs.on("input", function () {
 			$form.submit();
 		});
+	}
+
+	function initLenis() {
+		const lenis = new Lenis();
+
+		function raf(time) {
+			lenis.raf(time);
+			requestAnimationFrame(raf);
+		}
+
+		requestAnimationFrame(raf);
 	}
 });
 

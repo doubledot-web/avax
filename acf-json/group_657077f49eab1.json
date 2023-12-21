@@ -16,6 +16,7 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 3,
             "return_format": "id",
             "library": "all",
             "min_width": "",
@@ -41,6 +42,7 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 3,
             "post_type": [
                 "product"
             ],
@@ -72,5 +74,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701876015
+    "acfml_field_group_mode": "advanced",
+    "modified": 1703084034
 }

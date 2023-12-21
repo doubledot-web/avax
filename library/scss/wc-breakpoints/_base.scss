@@ -34,7 +34,7 @@
 		.orderby {
 			border: none;
 			font-size: $base-h5-font-size;
-			width: 230px;
+			width: 300px;
 			padding: 0;
 			margin-top: 10px;
 
@@ -499,7 +499,8 @@ table.wishlist_table {
 		}
 
 		.xoo-wsc-btn {
-			width: 175px;
+			min-width: 275px;
+			width:max-content;
 			white-space: nowrap;
 		}
 
@@ -541,6 +542,11 @@ table.wishlist_table {
 	line-height: 44px;
 }
 
+.single_add_to_cart_button,
+.contact-wishlist-wrapper .uk-button {
+	min-width: 260px;
+}
+
 .quantity {
 	&-wrapper {
 		display: flex;
@@ -577,7 +583,7 @@ table.wishlist_table {
 }
 
 .onsale {
-	width: 65px;
+	width: max-content;
 }
 
 .uk-button-default:disabled,

@@ -16,6 +16,7 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 3,
             "layout": "block",
             "sub_fields": [
                 {
@@ -32,6 +33,7 @@
                         "class": "",
                         "id": ""
                     },
+                    "wpml_cf_preferences": 3,
                     "message": "",
                     "default_value": 0,
                     "ui_on_text": "",
@@ -52,6 +54,7 @@
                         "class": "",
                         "id": ""
                     },
+                    "wpml_cf_preferences": 3,
                     "layouts": {
                         "layout_6555ef84e40ab": {
                             "key": "layout_6555ef84e40ab",
@@ -73,6 +76,7 @@
                                         "class": "",
                                         "id": ""
                                     },
+                                    "wpml_cf_preferences": 3,
                                     "choices": {
                                         "image": "Image",
                                         "video": "Video"
@@ -107,6 +111,7 @@
                                         "class": "",
                                         "id": ""
                                     },
+                                    "wpml_cf_preferences": 3,
                                     "layout": "table",
                                     "sub_fields": [
                                         {
@@ -123,6 +128,7 @@
                                                 "class": "",
                                                 "id": ""
                                             },
+                                            "wpml_cf_preferences": 3,
                                             "return_format": "url",
                                             "library": "all",
                                             "min_width": "",
@@ -148,6 +154,7 @@
                                                 "class": "",
                                                 "id": ""
                                             },
+                                            "wpml_cf_preferences": 3,
                                             "choices": {
                                                 "top left": "top left",
                                                 "top center": "top center",
@@ -181,6 +188,7 @@
                                                 "class": "",
                                                 "id": ""
                                             },
+                                            "wpml_cf_preferences": 3,
                                             "return_format": "url",
                                             "library": "all",
                                             "min_width": "",
@@ -206,6 +214,7 @@
                                                 "class": "",
                                                 "id": ""
                                             },
+                                            "wpml_cf_preferences": 3,
                                             "choices": {
                                                 "top left": "top left",
                                                 "top center": "top center",
@@ -249,6 +258,7 @@
                                         "class": "",
                                         "id": ""
                                     },
+                                    "wpml_cf_preferences": 3,
                                     "layout": "table",
                                     "sub_fields": [
                                         {
@@ -265,6 +275,7 @@
                                                 "class": "",
                                                 "id": ""
                                             },
+                                            "wpml_cf_preferences": 3,
                                             "return_format": "url",
                                             "library": "all",
                                             "min_width": "",
@@ -290,6 +301,7 @@
                                                 "class": "",
                                                 "id": ""
                                             },
+                                            "wpml_cf_preferences": 3,
                                             "default_value": "",
                                             "placeholder": ""
                                         }
@@ -395,5 +407,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1702999509
+    "acfml_field_group_mode": "advanced",
+    "modified": 1703084976
 }
