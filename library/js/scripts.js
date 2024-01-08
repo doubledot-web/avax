@@ -23,7 +23,7 @@ jQuery(document).ready(function ($) {
 	updateWishListProductsOnAjax();
 	createCustomDotsOnProductGallery();
 	formFiltersActions();
-	initLenis();
+	//initLenis();
 
 	function initActions() {
 		//force a small scroll

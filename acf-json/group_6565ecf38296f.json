@@ -68,7 +68,7 @@
                                     "name": "image",
                                     "aria-label": "",
                                     "type": "image",
-                                    "instructions": "Put six images here. <br>\r\nImage 1 should be around 1000px x 550px. <br>\r\nImages 2,3,5,6 should be around 500px x 550px. <br>\r\nImage 3 should be around 500px x 1100px.",
+                                    "instructions": "Put six images here. <br>\r\nImage 1 should be around 1000px x 550px. <br>\r\nImages 2,3,5,6 should be around 500px x 550px. <br>\r\nImage 4 should be around 500px x 1100px.",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -76,6 +76,7 @@
                                         "class": "",
                                         "id": ""
                                     },
+                                    "wpml_cf_preferences": 0,
                                     "return_format": "id",
                                     "library": "all",
                                     "min_width": "",
@@ -148,5 +149,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "advanced",
-    "modified": 1703084760
+    "modified": 1704708152
 }
