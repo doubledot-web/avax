@@ -21,14 +21,14 @@ $slides             = $hero_fields['slides'];
 						$mob_img     = $image_info['mobile_image'];
 						$mob_img_pos = str_replace( ' ', '-', $image_info['mobile_image_position'] );
 						?>
-						<div class="uk-position-relative" uk-height-viewport>
+						<!--<div class="uk-position-relative uk-height-1-1">-->
 							<?php if ( $mob_img ) : ?>
 								<div class="bg-lazy uk-position-cover uk-background-cover uk-background-norepeat uk-background-<?php echo esc_attr( $mob_img_pos ); ?> uk-hidden@s" data-src="<?php echo esc_url( $mob_img ); ?>" uk-img></div>
 								<div class="bg-lazy uk-position-cover uk-background-cover uk-background-norepeat uk-background-<?php echo esc_attr( $img_pos ); ?> uk-visible@s" data-src="<?php echo esc_url( $img ); ?>" uk-img></div>
 							<?php else : ?>
 								<div class="bg-lazy uk-position-cover uk-background-cover uk-background-norepeat uk-background-<?php echo esc_attr( $img_pos ); ?>" data-src="<?php echo esc_url( $img ); ?>" uk-img></div>
 							<?php endif; ?>
-						</div>
+						<!--</div>-->
 						<?php
 					elseif ( 'video' === $type ) :
 						$video_info = $slide['video_info'];
