@@ -29,6 +29,79 @@
             "preview_size": "medium"
         },
         {
+            "key": "field_65b0ec9624512",
+            "label": "Downloads",
+            "name": "downloads",
+            "aria-label": "",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 3,
+            "layouts": {
+                "layout_65b0ecac1b0b1": {
+                    "key": "layout_65b0ecac1b0b1",
+                    "name": "download",
+                    "label": "Download",
+                    "display": "table",
+                    "sub_fields": [
+                        {
+                            "key": "field_65b0ef02e5c9e",
+                            "label": "File Name",
+                            "name": "file_name",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 3,
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_65b0ecba24513",
+                            "label": "File",
+                            "name": "file",
+                            "aria-label": "",
+                            "type": "file",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 3,
+                            "return_format": "url",
+                            "library": "all",
+                            "min_size": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "min": "",
+            "max": "",
+            "button_label": "Add Row"
+        },
+        {
             "key": "field_657077f4ee11e",
             "label": "Related Products",
             "name": "related_products",
@@ -75,5 +148,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "advanced",
-    "modified": 1703084034
+    "modified": 1706094778
 }

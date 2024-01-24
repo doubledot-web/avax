@@ -21,6 +21,7 @@ get_header();
 					get_template_part( 'partials/single-brand/text' );
 					get_template_part( 'partials/single-brand/gallery' );
 					get_template_part( 'partials/single-brand/related' );
+					get_template_part( 'partials/single-brand/clickable-image-text' );
 					?>
 				</article>
 

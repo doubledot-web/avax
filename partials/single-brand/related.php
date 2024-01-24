@@ -15,7 +15,7 @@ endif;
 //pass set_product_slider_width($prods);
 ?>
 
-<section class="section section-related-products uk-margin-large-bottom">
+<section class="section section-related-products uk-margin-large-top">
 	<div class="uk-container uk-container-xlarge">
 		<h2 class="font-weight-100 uk-h1 uk-text-center">
 			<?php esc_html_e( 'Featured Products', 'wpcanvas' ); ?>

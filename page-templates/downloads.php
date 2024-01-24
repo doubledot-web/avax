@@ -35,7 +35,7 @@ $items = get_field( 'items' );
 							foreach ( $items as $item ) :
 								?>
 								<div class="uk-width-1-2@s">
-									<a class="text-black" href="<?php echo esc_url( $item['file'] ); ?>" target="_blank" download>
+									<a class="text-black" href="<?php echo esc_url( $item['file'] ); ?>" target="_blank">
 										<figure class="uk-margin-remove">
 											<?php echo wp_get_attachment_image( $item['image'], 'full' ); ?>
 											<figcaption class="uk-text-light uk-text-uppercase uk-margin-medium-top">

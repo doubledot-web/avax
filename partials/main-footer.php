@@ -34,9 +34,6 @@ $newsletter_shortcode = $contact['newsletter_shortcode'];
 					<div class="newsletter-wrapper">
 						<h5 class="text-white uk-text-uppercase"><?php esc_html_e( 'Stay in touch', 'wpcanvas' ); ?></h5>
 						<?php echo do_shortcode( $newsletter_shortcode ); ?>
-						<div class="uk-margin-large-top">
-							<img width="600" height="76" class="" data-src="<?php echo esc_url( get_template_directory_uri() ) . '/library/img/espa-banner.png'; ?>" alt="<?php esc_attr_e( 'espa banner', 'wpcanvas' ); ?>" uk-img>
-						</div>
 					</div>
 				</div>
 			</div>

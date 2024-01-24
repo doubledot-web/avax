@@ -144,6 +144,11 @@ if ( class_exists( 'WooCommerce' ) ) {
 }
 
 
+/**
+ * REMOVE INLINE WIDTH STYLE ON WP IMAGES
+ */
+add_filter( 'img_caption_shortcode_width', '__return_zero' );
+
 
 /**
  * THUMBNAIL SIZES
@@ -181,6 +186,8 @@ function add_featured_image_instruction( $content ) {
 		return $content .= '<p>Image dimensions should be 1200px x 595px.</p>';
 	elseif ( 'post' === $post_type ) :
 		return $content .= '<p>Image dimensions should be 660px x 856px.</p>';
+	elseif ( 'member' === $post_type ) :
+		return $content .= '<p>Image dimensions should be 700px x xyz.</p>';
 	else :
 		return $content;
 	endif;

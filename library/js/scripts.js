@@ -23,6 +23,7 @@ jQuery(document).ready(function ($) {
 	updateWishListProductsOnAjax();
 	createCustomDotsOnProductGallery();
 	formFiltersActions();
+	disableFirstOptionOnCF7();
 	//initLenis();
 
 	function initActions() {
@@ -326,6 +327,10 @@ jQuery(document).ready(function ($) {
 		$inputs.on("input", function () {
 			$form.submit();
 		});
+	}
+
+	function disableFirstOptionOnCF7() {
+		$(".wpcf7 .uk-select option:first-child").prop("disabled", true);
 	}
 
 	function initLenis() {
