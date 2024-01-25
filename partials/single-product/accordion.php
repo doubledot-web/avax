@@ -24,7 +24,7 @@ $downloads = get_field( 'downloads' );
 		</li>
 		<?php
 	endif;
-	if ( is_user_logged_in() && ! empty( $downloads ) ) :
+	if ( ! empty( $downloads ) ) :
 		?>
 		<li>
 			<a class="uk-accordion-title uk-text-uppercase uk-display-inline-block" href>
@@ -32,15 +32,38 @@ $downloads = get_field( 'downloads' );
 			</a>
 			<div class="uk-accordion-content">
 				<div class="uk-margin-small-bottom">
-					<?php esc_html_e( 'Product fact sheet', 'wpcanvas' ); ?>
+					<?php
+					esc_html_e( 'Product fact sheet', 'wpcanvas' );
+					if ( ! is_user_logged_in() ) :
+						?>
+						<div class="font-weight-500 uk-text-small">
+							<?php esc_html_e( '*Please create an account to view the files!', 'wpcanvas' ); ?>
+						</div>
+						<?php
+					endif;
+					?>
 				</div>
 				<?php foreach ( $downloads as $download ) : ?>
 					<div class="uk-margin-small-bottom">
-						<a class="text-black text-black-hover" href="<?php echo esc_url( $download['file'] ); ?>" target="_blank">
-							<?php echo esc_html( $download['file_name'] ); ?>
-						</a>
+						<?php
+						if ( is_user_logged_in() ) :
+							?>
+							<a class="text-black text-black-hover" href="<?php echo esc_url( $download['file'] ); ?>" target="_blank">
+								<?php echo esc_html( $download['file_name'] ); ?>
+							</a>
+							<?php
+						else :
+							?>
+							<span class="text-black text-black-hover">
+								<?php echo esc_html( $download['file_name'] ); ?>
+							</span>
+							<?php
+						endif;
+						?>
 					</div>
-				<?php endforeach; ?>
+					<?php
+				endforeach;
+				?>
 			</div>
 		</li>
 	<?php endif; ?>
