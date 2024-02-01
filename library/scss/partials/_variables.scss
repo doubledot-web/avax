@@ -28,15 +28,15 @@ $global-link-color: $gray;
 $global-link-hover-color: darken($global-link-color, 10%);
 $base-heading-color: $black;
 
-$global-font-size: 20px;
+$global-font-size: 18px; //20px
 $global-line-height: 1.5;
-$global-small-font-size: 18px;
-$base-h1-font-size: 32px;
+$global-small-font-size: 16px; //18px
+$base-h1-font-size: 26px; //32px
 $base-h2-font-size: 22px;
+$base-h1-font-size-m: 32px; //42px
+$base-h2-font-size-m: 26px; //32px
+$base-h3-font-size: 22px; //25px
 
-$base-h1-font-size-m: 42px;
-$base-h2-font-size-m: 32px;
-$base-h3-font-size: 25px;
 $container-small-max-width: 840px;
 $container-xlarge-max-width: 1920px;
 
@@ -71,4 +71,4 @@ $subnav-pill-item-hover-color: $black;
 $subnav-pill-item-active-background: transparent;
 $subnav-pill-item-active-color: $black;
 
-$global-font-size-mob: 18px;
+$global-font-size-mob: 16px; //18px
