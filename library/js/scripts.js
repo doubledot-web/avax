@@ -307,7 +307,7 @@ jQuery(document).ready(function ($) {
 				}
 			);
 
-			$document.on("click", ".flex-control-nav img", function () {
+			/*$document.on("click", ".flex-control-nav img", function () {
 				$("html,body").animate(
 					{
 						scrollTop: $(
@@ -316,7 +316,7 @@ jQuery(document).ready(function ($) {
 					},
 					500
 				);
-			});
+			});*/
 		}
 	}
 	function formFiltersActions() {
