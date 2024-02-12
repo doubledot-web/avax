@@ -42,7 +42,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	do_action( 'woocommerce_before_shop_loop_item_title' );
 	?>
 
-	<div class="uk-text-center">
+	<div class="uk-text-center uk-margin-small-top">
 		<?php
 		/**
 		 * Hook: woocommerce_shop_loop_item_title.
