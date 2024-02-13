@@ -63,7 +63,6 @@ do_action( 'woocommerce_before_main_content' );
 	<div class="filters-wrapper uk-padding-large uk-padding-remove-horizontal uk-padding-remove-top">
 		<?php get_template_part( 'partials/archive-product/filters', null, array( 'current_term' => $current_term ) ); ?>
 	</div>
-	<!--<div class="uk-text-light uk-margin-small-bottom">FILTERS HERE</div>!-->
 <?php else : ?>
 	<h1 class="font-weight-100 uk-margin-large-top uk-margin-bottom">
 		<?php esc_html_e( 'Tag', 'wpcanvas' ); ?> :

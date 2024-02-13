@@ -145,40 +145,40 @@ function cnvs_close_wrapper_div_print_second_product_img() {
 add_action( 'woocommerce_before_shop_loop_item_title', 'cnvs_start_wrapper_div_print_second_product_img', 9 );
 add_action( 'woocommerce_before_shop_loop_item_title', 'cnvs_close_wrapper_div_print_second_product_img', 11 );
 
-// Add product collection under title on single product
-function add_product_collection_on_single_page() {
+// Add product brand under title on single product
+function add_product_brand_on_single_page() {
 	global $product;
-	$collections = get_the_terms( $product->get_id(), 'product_collection' );
-	if ( ! empty( $collections ) ) :
-		$collection_markup = '';
-		$last_el           = end( $collections );
-		foreach ( $collections as $collection ) :
-			$collection_title   = esc_html( $collection->name );
-			$collection_link    = esc_url( get_term_link( $collection->term_id ) );
-			$collection_markup .= '<a class="text-black" href="' . $collection_link . '">' . $collection_title . '</a>';
-			$collection_markup .= $last_el !== $collection ? ', ' : '';
+	$brands = get_the_terms( $product->get_id(), 'product_brand' );
+	if ( ! empty( $brands ) ) :
+		$brand_markup = '';
+		$last_el      = end( $brands );
+		foreach ( $brands as $brand ) :
+			$brand_title   = esc_html( $brand->name );
+			$brand_link    = esc_url( get_term_link( $brand->term_id ) );
+			$brand_markup .= '<a class="text-black" href="' . $brand_link . '">' . $brand_title . '</a>';
+			$brand_markup .= $last_el !== $brand ? ', ' : '';
 		endforeach;
-		echo '<div class="uk-text-uppercase uk-margin-small-bottom">' . $collection_markup . '</div>';
+		echo '<div class="uk-text-uppercase uk-margin-small-bottom">' . $brand_markup . '</div>';
 	endif;
 }
-add_action( 'woocommerce_single_product_summary', 'add_product_collection_on_single_page', 8 );
+add_action( 'woocommerce_single_product_summary', 'add_product_brand_on_single_page', 8 );
 
-// Add product collection under title on archive pages
-function add_product_collection_on_archive_pages() {
+// Add product brand under title on archive pages
+function add_product_brand_on_archive_pages() {
 	global $product;
-	$collections = get_the_terms( $product->get_id(), 'product_collection' );
-	if ( ! empty( $collections ) ) :
-		$collection_markup = '';
-		$last_el           = end( $collections );
-		foreach ( $collections as $collection ) :
-			$collection_title   = esc_html( $collection->name );
-			$collection_markup .= '<span class="text-black text-black-hover">' . $collection_title . '</span>';
-			$collection_markup .= $last_el !== $collection ? ', ' : '';
+	$brands = get_the_terms( $product->get_id(), 'product_brand' );
+	if ( ! empty( $brands ) ) :
+		$brand_markup = '';
+		$last_el      = end( $brands );
+		foreach ( $brands as $brand ) :
+			$brand_title   = esc_html( $brand->name );
+			$brand_markup .= '<span class="text-black text-black-hover">' . $brand_title . '</span>';
+			$brand_markup .= $last_el !== $brand ? ', ' : '';
 		endforeach;
-		echo '<div class="uk-text-uppercase uk-margin-small-bottom">' . $collection_markup . '</div>';
+		echo '<div class="uk-text-uppercase uk-margin-small-bottom">' . $brand_markup . '</div>';
 	endif;
 }
-add_action( 'woocommerce_after_shop_loop_item_title', 'add_product_collection_on_archive_pages', 8 );
+add_action( 'woocommerce_after_shop_loop_item_title', 'add_product_brand_on_archive_pages', 8 );
 
 // Override default breadcrumbs
 function woocommerce_breadcrumb( $args = array() ) {
