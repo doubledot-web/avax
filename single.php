@@ -34,7 +34,7 @@ get_header();
 						</div>
 						<div class="uk-container uk-container-xlarge uk-flex uk-flex-right uk-margin-large-top">
 							<a class="text-black text-black-hover text-shadow-hover uk-text-light uk-text-uppercase uk-flex uk-flex-middle" href="<?php echo esc_url( get_blog_page_url() ); ?>">
-								<svg width="14" height="24" class="uk-margin-right" aria-hidden="true">
+								<svg width="13" height="22" class="uk-margin-right" aria-hidden="true">
 									<use xlink:href="#chevron-prev-arrow"></use>
 								</svg>
 								<?php esc_html_e( 'Back to blog', 'wpcanvas' ); ?>

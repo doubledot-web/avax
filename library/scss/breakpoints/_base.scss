@@ -85,6 +85,10 @@ h5,
 	}
 }
 
+.uk-navbar-right {
+	gap: 0;
+}
+
 .uk-navbar-dropdown {
 	box-shadow: none;
 }
@@ -647,8 +651,8 @@ h5,
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 20px;
-	height: 20px;
+	width: 18px;
+	height: 18px;
 	border-radius: 50%;
 	font-size: 13px;
 	color: $white;
