@@ -6,7 +6,7 @@ function filter_products( $query ) {
 	if ( ! is_admin() && $query->is_main_query() ) :
 		if ( is_search() ) :
 			$query->set( 'posts_per_page', 10 );
-		elseif ( is_product_category() && ( 0 !== get_queried_object()->parent || get_product_cat_wpml_id( 42 ) === get_queried_object_id() || get_product_cat_wpml_id( 47 ) === get_queried_object_id() ) && ! empty( $_GET ) ) :
+		elseif ( is_product_category() && ( 0 !== get_queried_object()->parent || get_product_cat_wpml_id( 47 ) === get_queried_object_id() ) && ! empty( $_GET ) ) :
 			$tax_query = array();
 			foreach ( $_GET as $key => $value ) :
 				switch ( $key ) :
