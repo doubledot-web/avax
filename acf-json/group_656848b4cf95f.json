@@ -46,7 +46,7 @@
                     "name": "image1",
                     "aria-label": "",
                     "type": "image",
-                    "instructions": "Image dimensions should be around 650px x 500px.",
+                    "instructions": "Image dimensions should be around 575px x 575px.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -72,7 +72,7 @@
                     "name": "image2",
                     "aria-label": "",
                     "type": "image",
-                    "instructions": "Image dimensions should be around 1000px x 1000px.",
+                    "instructions": "Image dimensions should be around 800px x 1000px.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -147,7 +147,7 @@
                         "id": ""
                     },
                     "wpml_cf_preferences": 3,
-                    "return_format": "array",
+                    "return_format": "id",
                     "library": "all",
                     "min_width": "",
                     "min_height": "",
@@ -213,7 +213,7 @@
                         "id": ""
                     },
                     "wpml_cf_preferences": 3,
-                    "return_format": "array",
+                    "return_format": "id",
                     "library": "all",
                     "min_width": "",
                     "min_height": "",
@@ -246,5 +246,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "advanced",
-    "modified": 1703084547
+    "modified": 1710337228
 }

@@ -5,7 +5,7 @@ For more info: http://codex.wordpress.org/Page_Templates
 */
 
 get_header();
-$args                  = array(
+$args = array(
 	'hide_empty' => false,
 	//default orderby name in ASC
 );
@@ -50,9 +50,11 @@ $third_section_img_id  = $third_section['image'];
 							<div class="max-width-740 remove-margin-from-last-el uk-text-light uk-margin-medium-bottom">
 								<?php echo wp_kses_post( $second_section_text ); ?>
 							</div>
-							<figure class="uk-margin-remove">
-								<?php echo wp_get_attachment_image( $second_section_img_id, 'full' ); ?>
-							</figure>
+							<div class="max-width-1150">
+								<figure class="uk-margin-remove">
+									<?php echo wp_get_attachment_image( $second_section_img_id, 'full' ); ?>
+								</figure>
+							</div>
 						</div>
 					</section>
 

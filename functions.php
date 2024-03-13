@@ -442,7 +442,7 @@ function add_shortcode_instructions( $post ) {
 		';
 	endif;
 }
-add_action( 'edit_form_after_title', 'add_shortcode_instructions' );
+//add_action( 'edit_form_after_title', 'add_shortcode_instructions' );
 
 /**
  * GET TOTAL NUMBER OF WISHLIST PRODUCTS
