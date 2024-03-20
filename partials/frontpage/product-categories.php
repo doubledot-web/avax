@@ -25,7 +25,7 @@ $product_cats = get_terms( 'product_cat', $args );
 						<a href="<?php echo esc_url( get_term_link( $cat_id ) ); ?>">
 							<figure class="uk-margin-remove">
 								<?php
-								echo wp_get_attachment_image( $cat_img_id, 'full' );
+								echo wp_get_attachment_image( $cat_img_id, 'full', false, array( 'class' => 'object-fit-cover' ) );
 								?>
 							</figure>
 							<h3 class="uk-h5 uk-text-light uk-text-uppercase uk-margin-small-top uk-margin-remove-bottom">

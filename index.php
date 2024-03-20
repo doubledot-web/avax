@@ -25,7 +25,7 @@ endif;
 			</div>
 		</section>
 
-		<section class="section uk-margin-xlarge-bottom">
+		<section class="section section-posts uk-margin-xlarge-bottom">
 			<div class="uk-container uk-container-large">
 				<div class="uk-inline">
 					<button class="btn-base uk-text-uppercase uk-text-light uk-flex uk-flex-middle uk-margin-medium-bottom" type="button">
