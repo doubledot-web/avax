@@ -10,7 +10,7 @@
 					<div class="uk-width-1-2@s">
 						<a class="text-black text-black-hover" href="<?php echo esc_url( $col['page_link'] ); ?>">
 							<figure class="uk-margin-remove">
-								<?php echo wp_get_attachment_image( $col['image'], 'full', false, array( 'class' => 'uk-width-1-1' ) ); ?>
+								<?php echo wp_get_attachment_image( $col['image'], 'full', false, array( 'class' => 'object-fit-cover uk-width-1-1' ) ); ?>
 							</figure>
 							<div class="uk-text-light uk-margin-small-top">
 								<?php echo wp_kses_post( $col['text'] ); ?>

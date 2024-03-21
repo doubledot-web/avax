@@ -478,19 +478,14 @@ h5,
 	}
 }
 
-.blog {
-	.section-posts {
-		.post {
-			img {
-				height: 400px;
-				@media (min-width: $breakpoint-medium) {
-					height: 700px;
-				}
-				@media (min-width: $breakpoint-large) {
-					height: 850px;
-				}
-			}
-		}
+.blog .section-posts .post img,
+.section-dynamic-grid img {
+	height: 400px;
+	@media (min-width: $breakpoint-medium) {
+		height: 700px;
+	}
+	@media (min-width: $breakpoint-large) {
+		height: 850px;
 	}
 }
 
