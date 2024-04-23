@@ -7,6 +7,7 @@
 				</svg>
 			</a>
 
+			<?php /*TEMP*/ ?>
 			<div class="menu-right uk-navbar-right">
 				<button class="open-mobile-search-form btn-base uk-margin-small-right" aria-label="<?php esc_attr_e( 'Open search form', 'wpcanvas' ); ?>" type="button">
 					<svg width="21" height="22" aria-hidden="true">
@@ -15,6 +16,7 @@
 				</button>
 				<?php get_template_part( 'partials/menu-right-common-links' ); ?>
 			</div>
+			<?php /*TEMP*/ ?>
 		</div>
 	</div>
 

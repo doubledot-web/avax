@@ -55,6 +55,7 @@ $header_extra_classes = $header_position_class . $header_color_class;
 				</div>
 
 				<?php /*MENU RIGHT*/ ?>
+				<?php /*TEMP*/ ?>
 				<div class="menu-right uk-navbar-right">
 					<?php get_template_part( 'partials/menu-langs' ); ?>
 					<button class="open-search-form btn-base uk-margin-small-right" aria-label="<?php esc_attr_e( 'Open search form', 'wpcanvas' ); ?>" type="button">
@@ -69,6 +70,7 @@ $header_extra_classes = $header_position_class . $header_color_class;
 					</button>
 					<?php get_template_part( 'partials/menu-right-common-links' ); ?>
 				</div>
+				<?php /*TEMP*/ ?>
 			</div>
 		</div>
 	</nav>

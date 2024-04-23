@@ -10,9 +10,9 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see https://docs.woocommerce.com/document/template-structure/
+ * @see https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 7.0.1
+ * @version 8.7.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -42,6 +42,15 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
 		</p>
 	</div>
 
+	<?php
+		/**
+		 * Hook where additional fields should be rendered.
+		 *
+		 * @since 8.7.0
+		 */
+		do_action( 'woocommerce_edit_account_form_fields' );
+	?>
+
 	<fieldset class="uk-margin-medium-top">
 		<legend class="uk-padding-small"><?php esc_html_e( 'Password change', 'woocommerce' ); ?></legend>
 
@@ -60,7 +69,14 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
 	</fieldset>
 	<div class="clear"></div>
 
-	<?php do_action( 'woocommerce_edit_account_form' ); ?>
+	<?php
+		/**
+		 * My Account edit account form.
+		 *
+		 * @since 2.6.0
+		 */
+		do_action( 'woocommerce_edit_account_form' );
+	?>
 
 	<p class="uk-margin-medium-top">
 		<?php wp_nonce_field( 'save_account_details', 'save-account-details-nonce' ); ?>

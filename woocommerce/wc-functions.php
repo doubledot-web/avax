@@ -27,6 +27,19 @@ function cnvs_remove_wc_stuff() {
 	remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
 	remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
 	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+	/*TEMP*/
+	//remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+	//add_action( 'woocommerce_single_product_summary', 'add_contact', 30 );
+	/*function add_contact() {
+		$options_pages = get_field( 'pages', 'option' );
+		$contact_page  = $options_pages['contact'];
+		?>
+		<a class="uk-button uk-button-default" href="<?php echo esc_url( $contact_page ); ?>">
+			<?php esc_html_e( 'Contact', 'wpcanvas' ); ?>
+		</a>
+		<?php
+	}*/
+	/*TEMP*/
 	add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 20 );
 }
 add_action( 'init', 'cnvs_remove_wc_stuff' );
