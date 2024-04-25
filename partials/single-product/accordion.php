@@ -5,15 +5,19 @@ $downloads = get_field( 'downloads' );
 ?>
 
 <ul class="uk-text-light uk-margin-large-top" uk-accordion>
-	<li>
-		<a class="uk-accordion-title uk-text-uppercase uk-display-inline-block" href>
-			<?php esc_html_e( 'More Information', 'wpcanvas' ); ?>
-		</a>
-		<div class="uk-accordion-content">
-			<?php the_content(); ?>
-		</div>
-	</li>
-	<?php if ( $shipping ) : ?>
+	<?php if ( '' !== get_post()->post_content ) : ?>
+		<li>
+			<a class="uk-accordion-title uk-text-uppercase uk-display-inline-block" href>
+				<?php esc_html_e( 'More Information', 'wpcanvas' ); ?>
+			</a>
+			<div class="uk-accordion-content">
+				<?php the_content(); ?>
+			</div>
+		</li>
+		<?php
+	endif;
+	if ( $shipping ) :
+		?>
 		<li>
 			<a class="uk-accordion-title uk-text-uppercase uk-display-inline-block" href>
 				<?php esc_html_e( 'Shipping & Returns', 'wpcanvas' ); ?>

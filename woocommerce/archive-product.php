@@ -63,6 +63,66 @@ do_action( 'woocommerce_before_main_content' );
 	<div class="filters-wrapper uk-padding-large uk-padding-remove-horizontal uk-padding-remove-top">
 		<?php get_template_part( 'partials/archive-product/filters', null, array( 'current_term' => $current_term ) ); ?>
 	</div>
+
+	<?php if ( ! empty( $_GET ) && ( array_key_exists( 'brand', $_GET ) || array_key_exists( 'collection', $_GET ) || array_key_exists( 'material', $_GET ) ) ) : ?>
+		<div class="uk-flex uk-flex-column uk-text-uppercase uk-margin-small-bottom">
+			<div  class="font-weight-500">
+				<?php esc_html_e( 'Selected Filters', 'wpcanvas' ); ?>:
+			</div>
+			<div class="uk-text-light uk-flex uk-flex-column">
+				<?php
+				foreach ( $_GET as $key => $value ) :
+					if ( 'brand' === $key ) :
+						?>
+						<div class="gap-10 uk-flex uk-flex-middle">
+							<div>
+								<?php esc_html_e( 'Brand', 'wpcanvas' ); ?>:
+								<?php echo esc_html( get_term_by( 'slug', $value, 'product_brand' )->name ); ?>
+							</div>
+							<a href="<?php echo esc_url( remove_query_arg( 'brand' ) ); ?>" aria-label="<?php esc_attr_e( 'Remove this brand', 'wpcanvas' ); ?>">
+								<svg width="14" height="14" aria-hidden="true">
+									<use xlink:href="#close"></use>
+								</svg>
+							</a>
+						</div>
+						<?php
+					endif;
+					if ( 'collection' === $key ) :
+						?>
+						<div class="gap-10 uk-flex uk-flex-middle">
+							<div>
+								<?php esc_html_e( 'Collection', 'wpcanvas' ); ?>:
+								<?php echo esc_html( get_term_by( 'slug', $value, 'product_collection' )->name ); ?>
+							</div>
+							<a href="<?php echo esc_url( remove_query_arg( 'collection' ) ); ?>" aria-label="<?php esc_attr_e( 'Remove this collection', 'wpcanvas' ); ?>">
+								<svg width="14" height="14" aria-hidden="true">
+									<use xlink:href="#close"></use>
+								</svg>
+							</a>
+						</div>
+						<?php
+					endif;
+					if ( 'material' === $key ) :
+						?>
+						<div class="gap-10 uk-flex uk-flex-middle">
+							<div>
+								<?php esc_html_e( 'Material', 'wpcanvas' ); ?>:
+								<?php echo esc_html( get_term_by( 'slug', $value, 'pa_material' )->name ); ?>
+							</div>
+							<a href="<?php echo esc_url( remove_query_arg( 'material' ) ); ?>" aria-label="<?php esc_attr_e( 'Remove this material', 'wpcanvas' ); ?>">
+								<svg width="14" height="14" aria-hidden="true">
+									<use xlink:href="#close"></use>
+								</svg>
+							</a>
+						</div>
+						<?php
+					endif;
+				endforeach;
+				?>
+			</div>
+		</div>
+	<?php endif; ?>
+
 <?php else : ?>
 	<h1 class="font-weight-100 uk-margin-large-top uk-margin-bottom">
 		<?php esc_html_e( 'Tag', 'wpcanvas' ); ?> :
