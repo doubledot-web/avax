@@ -1,9 +1,4 @@
 <?php
-/*
-Template Name: Showroom Page
-For more info: http://codex.wordpress.org/Page_Templates
-*/
-
 get_header();
 ?>
 

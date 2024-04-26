@@ -7,6 +7,7 @@ For more info: http://codex.wordpress.org/Page_Templates
 get_header();
 $contact      = get_field( 'contact', 'option' );
 $cf_shortcode = $contact['contact_form_shortcode'];
+echo 'aaaaaaaaa';
 ?>
 
 <div id="primary" class="content-area">
