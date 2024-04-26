@@ -466,3 +466,23 @@ function get_product_cat_wpml_id( $id ) {
 	//$sales_id= 47;
 	return apply_filters( 'wpml_object_id', $id, 'product_cat', true );
 }
+
+/**
+ * ALLOW IFRAME IN WP_KSES_POST
+ */
+function custom_wpkses_post_tags( $tags, $context ) {
+	if ( 'post' === $context ) :
+		$tags['iframe'] = array(
+			'src'             => true,
+			'height'          => true,
+			'width'           => true,
+			'frameborder'     => true,
+			'allowfullscreen' => true,
+			'style'           => true,
+			'loading'         => true,
+			'referrerpolicy'  => true,
+		);
+	endif;
+	return $tags;
+}
+add_filter( 'wp_kses_allowed_html', 'custom_wpkses_post_tags', 10, 2 );

@@ -34,7 +34,7 @@ $cf_shortcode = $contact['contact_form_shortcode'];
 										</div>
 									</div>
 									<div class="flex-grow-1 uk-margin-medium-top">
-										<?php the_field( 'map' ); ?>
+										<?php echo wp_kses_post( get_field( 'map' ) ); ?>
 									</div>
 								</div>
 								<div class="uk-width-1-2@l uk-flex uk-flex-right@l">

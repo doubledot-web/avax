@@ -34,15 +34,19 @@ $projects_page        = $options_pages['projects'];
 							$prod_price = $prod_lowest_price;
 						endif;
 					endif;
-					$prod_price = $prod_price . '€';
+					$final_prod_price = $prod_price . '€';
 					?>
 					<div class="marker text-white uk-flex uk-flex-column uk-flex-middle uk-position-absolute" style="top: <?php echo esc_attr( $marker['top'] ); ?>%; left: <?php echo esc_attr( $marker['left'] ); ?>%">
 						<button class="marker-btn btn-base uk-position-relative"></button>
 						<a class="marker-product text-white text-white-hover uk-text-center uk-position-absolute" href="<?php echo esc_url( get_permalink( $prod_id ) ); ?>">
-							<?php echo esc_html( get_the_title( $prod_id ) ); ?>
-							<div class="product-price">
-								<?php echo esc_html( $prod_price ); ?>
-							</div>
+							<?php
+							echo esc_html( get_the_title( $prod_id ) );
+							if ( 0 != $prod_price ) :
+								?>
+								<div class="product-price">
+									<?php echo esc_html( $final_prod_price ); ?>
+								</div>
+							<?php endif; ?>
 						</a>
 					</div>
 				<?php endforeach; ?>
