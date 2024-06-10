@@ -13,7 +13,7 @@ get_header();
 					<?php
 					get_template_part( 'partials/content-blocks/hero-slider' );
 					?>
-					<section class="section section-text section-post-content uk-text-center uk-margin-large-top uk-margin-large-bottom">
+					<section id="info" class="section section-text section-post-content uk-text-center uk-margin-large-top uk-margin-large-bottom">
 						<div class="uk-container uk-container-large">
 							<div class="uk-margin-medium-bottom">
 								<h1 class="uk-margin-small-bottom">
