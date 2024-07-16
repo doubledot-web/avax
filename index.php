@@ -70,29 +70,15 @@ endif;
 							the_post();
 							?>
 							<div class="uk-width-1-2@s">
-								<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-									<a class="text-shadow-hover" href="<?php the_permalink(); ?>">
-										<figure class="uk-margin-remove">
-											<?php
-											the_post_thumbnail(
-												'full',
-												array(
-													'loading' => 'lazy',
-													'class'   => 'object-fit-cover uk-width-1-1',
-												)
-											);
-											?>
-										</figure>
-										<div class="post-info uk-margin-top">
-											<time class="text-black no-text-shadow uk-display-inline-block uk-text-light uk-margin-small-bottom" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
-												<?php echo esc_html( get_the_date( 'd F Y' ) ); ?>
-											</time>
-											<h2 class="font-weight-100 uk-margin-remove">
-												<?php the_title(); ?>
-											</h2>
-										</div>
-									</a>
-								</article>
+								<?php
+								get_template_part(
+									'partials/post',
+									null,
+									array(
+										'post_id' => get_the_ID(),
+									)
+								);
+								?>
 							</div>
 							<?php
 						endwhile;

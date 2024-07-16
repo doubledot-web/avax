@@ -20,6 +20,7 @@ $slides             = $hero_fields['slides'];
 						$img_pos     = str_replace( ' ', '-', $image_info['image_position'] );
 						$mob_img     = $image_info['mobile_image'];
 						$mob_img_pos = str_replace( ' ', '-', $image_info['mobile_image_position'] );
+						$link        = $image_info['link'];
 						?>
 						<!--<div class="uk-position-relative uk-height-1-1">-->
 							<?php if ( $mob_img ) : ?>
@@ -29,6 +30,11 @@ $slides             = $hero_fields['slides'];
 								<div class="bg-lazy uk-position-cover uk-background-cover uk-background-norepeat uk-background-<?php echo esc_attr( $img_pos ); ?>" data-src="<?php echo esc_url( $img ); ?>" uk-img></div>
 							<?php endif; ?>
 						<!--</div>-->
+						<?php if ( $link['url'] && $link['title'] ) : ?>
+							<a class="btn-white uk-button uk-button-default uk-position-bottom-center" href="<?php echo esc_url( $link['url'] ); ?>">
+								<?php echo esc_html( $link['title'] ); ?>
+							</a>
+						<?php endif; ?>
 						<?php
 					elseif ( 'video' === $type ) :
 						$video_info = $slide['video_info'];

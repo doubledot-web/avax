@@ -27,18 +27,19 @@ get_header();
 								<?php the_content(); ?>
 							</div>
 						</div>
-						<div class="uk-container uk-container-xlarge uk-flex uk-flex-right uk-margin-large-top">
-							<a class="text-black text-black-hover text-shadow-hover uk-text-light uk-text-uppercase uk-flex uk-flex-middle" href="<?php echo esc_url( get_blog_page_url() ); ?>">
-								<svg width="13" height="22" class="uk-margin-right" aria-hidden="true">
-									<use xlink:href="#chevron-prev-arrow"></use>
-								</svg>
-								<?php esc_html_e( 'Back to blog', 'wpcanvas' ); ?>
-							</a>
-						</div>
 					</section>
 
-				</article>
+					<?php get_template_part( 'partials/single-post/related' ); ?>
 
+					<div class="uk-container uk-container-xlarge uk-flex uk-flex-right uk-margin-large-bottom">
+						<a class="text-black text-black-hover text-shadow-hover uk-text-light uk-text-uppercase uk-flex uk-flex-middle" href="<?php echo esc_url( get_blog_page_url() ); ?>">
+							<svg width="13" height="22" class="uk-margin-right" aria-hidden="true">
+								<use xlink:href="#chevron-prev-arrow"></use>
+							</svg>
+							<?php esc_html_e( 'Back to blog', 'wpcanvas' ); ?>
+						</a>
+					</div>
+				</article>
 				<?php
 			endwhile;
 		endif;

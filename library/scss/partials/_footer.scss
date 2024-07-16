@@ -56,8 +56,17 @@
 		}
 	}
 
+	.footer-logos {
+		gap: 5px;
+
+		img {
+			max-width: 100px;
+		}
+	}
+
 	.footer-bottom {
-		padding: 1rem 0;
+		padding: 5px 0;
+		@include simple-typ(12px, 1.2);
 
 		.policy-credits {
 			text-align: center;
@@ -82,7 +91,7 @@
 		}
 
 		.recaptcha {
-			margin-top: 5px;
+			margin-top: 2px;
 			@media (max-width: $breakpoint-medium-max) {
 				text-align: center;
 			}

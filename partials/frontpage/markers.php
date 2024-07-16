@@ -4,13 +4,16 @@ $img                  = $third_section_slides['image'];
 $markers              = $third_section_slides['markers'];
 $options_pages        = get_field( 'pages', 'option' );
 $projects_page        = $options_pages['projects'];
+$label                = get_field( 'labels' )['third_section_label'];
 ?>
 
 <section class="section section-image-map uk-position-relative uk-margin-large-bottom">
 	<div class="uk-container uk-container-xlarge">
-		<h2 class="font-weight-100 uk-h1 uk-margin-remove-top uk-margin-medium-bottom">
-			<?php esc_html_e( 'Contract Division', 'wpcanvas' ); ?>
-		</h2>
+		<?php if ( $label ) : ?>
+			<h2 class="font-weight-100 uk-h1 uk-margin-remove-top uk-margin-medium-bottom">
+				<?php echo esc_html( $label ); ?>
+			</h2>
+		<?php endif; ?>
 	</div>
 
 	<figure class="map uk-position-relative uk-margin-remove">

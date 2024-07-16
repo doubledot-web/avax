@@ -76,7 +76,7 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "wpml_cf_preferences": 0,
+                                    "wpml_cf_preferences": 3,
                                     "return_format": "id",
                                     "library": "all",
                                     "min_width": "",
@@ -102,8 +102,10 @@
                                         "class": "",
                                         "id": ""
                                     },
+                                    "wpml_cf_preferences": 3,
                                     "post_type": [
-                                        "project"
+                                        "project",
+                                        "post"
                                     ],
                                     "post_status": "",
                                     "taxonomy": "",
@@ -149,5 +151,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "advanced",
-    "modified": 1704708152
+    "modified": 1721112081
 }

@@ -4,11 +4,13 @@ $privacy_policy_page  = $options_pages['privacy_policy'];
 $cookie_policy_page   = $options_pages['cookie_policy'];
 $contact              = get_field( 'contact', 'option' );
 $newsletter_shortcode = $contact['newsletter_shortcode'];
+$footer_logos         = get_field( 'other', 'option' )['footer_logos'];
+$pb_class             = ! empty( $footer_logos ) ? ' uk-padding-remove-bottom' : '';
 ?>
 
 <footer class="site-footer text-white bg-darkgray uk-text-light">
 	<div class="uk-container uk-container-expand">
-		<div class="widget-wrapper uk-padding-large uk-padding-remove-horizontal">
+		<div class="widget-wrapper uk-padding-large uk-padding-remove-horizontal<?php echo $pb_class; ?>">
 			<a class="logo uk-display-inline-block" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'AVAX logo', 'wpcanvas' ); ?>">
 				<svg class="fill-white" width="179" height="80" role="img">
 					<use xlink:href="#logo"></use>
@@ -40,6 +42,26 @@ $newsletter_shortcode = $contact['newsletter_shortcode'];
 				</div>
 			</div>
 		</div>
+
+		<?php if ( ! empty( $footer_logos ) ) : ?>
+			<ul class="footer-logos list-base uk-flex uk-flex-wrap uk-flex-middle uk-margin-medium-top uk-margin-large-bottom">
+				<?php
+				foreach ( $footer_logos as $logo ) :
+					$logo_img = $logo['image'];
+					$logo_url = $logo['url'];
+					?>
+					<li class="uk-margin-remove">
+						<figure class="uk-margin-remove">
+							<a class="uk-display-block" href="<?php echo esc_url( $logo_url ); ?>">
+								<?php
+								echo wp_get_attachment_image( $logo_img, 'full' );
+								?>
+							</a>
+						</figure>
+					</li>
+				<?php endforeach; ?>
+			</ul>
+		<?php endif; ?>
 	</div>
 
 	<div class="footer-bottom text-white bg-black uk-text-small">

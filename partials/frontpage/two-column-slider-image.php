@@ -2,13 +2,16 @@
 $fifth_section        = get_field( 'fifth_section_home' );
 $fifth_section_img    = $fifth_section['image'];
 $fifth_section_slides = $fifth_section['slides'];
+$label                = get_field( 'labels' )['fifth_section_label'];
 ?>
 
 <section class="section section-two-columns-slider-image uk-margin-large-bottom">
 	<div class="uk-container uk-container-xlarge">
-		<h2 class="font-weight-100 uk-h1 uk-margin-remove-top uk-margin-medium-bottom">
-			<?php esc_html_e( 'Shop Our Favorites', 'wpcanvas' ); ?>
-		</h2>
+		<?php if ( $label ) : ?>
+			<h2 class="font-weight-100 uk-h1 uk-margin-remove-top uk-margin-medium-bottom">
+				<?php echo esc_html( $label ); ?>
+			</h2>
+		<?php endif; ?>
 	</div>
 
 	<div class="uk-container uk-container-xlarge uk-padding-remove">

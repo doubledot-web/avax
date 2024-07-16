@@ -387,6 +387,87 @@
                     "toolbar": "basic",
                     "media_upload": 0,
                     "delay": 0
+                },
+                {
+                    "key": "field_669639b6f1b84",
+                    "label": "Footer Logos",
+                    "name": "footer_logos",
+                    "aria-label": "",
+                    "type": "flexible_content",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 3,
+                    "layouts": {
+                        "layout_66963a8e0d46f": {
+                            "key": "layout_66963a8e0d46f",
+                            "name": "block",
+                            "label": "Block",
+                            "display": "table",
+                            "sub_fields": [
+                                {
+                                    "key": "field_66963a95cbcfb",
+                                    "label": "Image",
+                                    "name": "image",
+                                    "aria-label": "",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "wpml_cf_preferences": 3,
+                                    "return_format": "id",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "",
+                                    "preview_size": "medium"
+                                },
+                                {
+                                    "key": "field_66963aa2cbcfc",
+                                    "label": "URL",
+                                    "name": "url",
+                                    "aria-label": "",
+                                    "type": "page_link",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "wpml_cf_preferences": 3,
+                                    "post_type": [
+                                        "page"
+                                    ],
+                                    "post_status": "",
+                                    "taxonomy": "",
+                                    "allow_archives": 0,
+                                    "multiple": 0,
+                                    "allow_null": 0
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        }
+                    },
+                    "min": "",
+                    "max": "",
+                    "button_label": "Add Row"
                 }
             ]
         }
@@ -410,5 +491,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "advanced",
-    "modified": 1703161131
+    "modified": 1721121467
 }

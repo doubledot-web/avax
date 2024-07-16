@@ -1,12 +1,15 @@
 <?php
 $fourth_section_slides = get_field( 'fourth_section_home' );
+$label                 = get_field( 'labels' )['fourth_section_label'];
 ?>
 
 <section class="section section-trending uk-margin-large-bottom">
 	<div class="uk-container uk-container-xlarge">
-		<h2 class="font-weight-100 uk-h1 uk-margin-remove-top uk-margin-medium-bottom">
-			<?php esc_html_e( 'What\'s Trending', 'wpcanvas' ); ?>
-		</h2>
+		<?php if ( $label ) : ?>
+			<h2 class="font-weight-100 uk-h1 uk-margin-remove-top uk-margin-medium-bottom">
+				<?php echo esc_html( $label ); ?>
+			</h2>
+		<?php endif; ?>
 
 		<div class="uk-container uk-container-xlarge uk-padding-remove">
 			<div uk-slider>

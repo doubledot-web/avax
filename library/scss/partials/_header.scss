@@ -193,6 +193,7 @@
 
 		.main-menu {
 			a {
+				display: inline-flex;
 				font-weight: 300;
 				color: $black;
 				@media (min-width: $breakpoint-large) and (max-width: 1399px) {
@@ -241,6 +242,10 @@
 					grid-template-columns: repeat(5, 1fr);
 					justify-content: space-between;
 					gap: 25px 40px;
+
+					li:first-child {
+						grid-column: 1/-1;
+					}
 				}
 			}
 

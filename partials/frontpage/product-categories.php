@@ -5,13 +5,16 @@ $args         = array(
 	'exclude'    => 15, //uncategorized
 );
 $product_cats = get_terms( 'product_cat', $args );
+$label        = get_field( 'labels' )['second_section_label'];
 ?>
 
 <section class="section section-product-categories uk-margin-large-top uk-margin-large-bottom">
 	<div class="uk-container uk-container-xlarge">
-		<h2 class="font-weight-100 uk-h1 uk-margin-remove-top uk-margin-medium-bottom">
-			<?php esc_html_e( 'Explore Our Collection', 'wpcanvas' ); ?>
-		</h2>
+		<?php if ( $label ) : ?>
+			<h2 class="font-weight-100 uk-h1 uk-margin-remove-top uk-margin-medium-bottom">
+				<?php echo esc_html( $label ); ?>
+			</h2>
+		<?php endif; ?>
 		<div uk-slider>
 			<ul class="uk-slider-items uk-grid-medium uk-grid">
 				<?php
