@@ -560,6 +560,16 @@ h5,
 			}
 		}
 	}
+
+	&-post {
+		.section {
+			&-related {
+				img {
+					height: 400px;
+				}
+			}
+		}
+	}
 }
 
 .search-results {
