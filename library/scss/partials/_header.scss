@@ -232,6 +232,16 @@
 						}
 					}
 				}
+
+				&:nth-child(4) {
+					.uk-navbar-dropdown {
+						> .sub-menu {
+							li:first-child {
+								grid-column: 1/-1;
+							}
+						}
+					}
+				}
 			}
 		}
 
@@ -242,10 +252,6 @@
 					grid-template-columns: repeat(5, 1fr);
 					justify-content: space-between;
 					gap: 25px 40px;
-
-					li:first-child {
-						grid-column: 1/-1;
-					}
 				}
 			}
 
