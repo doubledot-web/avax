@@ -53,20 +53,14 @@
 		/*DESKTOP ONLY*/
 		.main-menu {
 			> li {
-				&:not(.contract-division) {
+				& {
 					> a {
 						color: $white;
 					}
 				}
-
-				&.contract-division {
-					> a {
-						color: $black;
-					}
-				}
 			}
 
-			li:not(.contract-division) {
+			li {
 				a:not([aria-expanded="true"]) {
 					&::before {
 						background: $white;
@@ -76,11 +70,13 @@
 						text-shadow: 0 0 1px $white, 0 0 1px $white;
 					}
 				}
-			}
 
-			.contract-division {
-				color: $black;
-				background: $white;
+				&.current-menu-ancestor,
+				&.current-menu-item {
+					a {
+						text-shadow: 0 0 1px $white, 0 0 1px $white;
+					}
+				}
 			}
 		}
 
@@ -109,16 +105,6 @@
 	&.header-open {
 		/*DESKTOP ONLY*/
 		.main-menu {
-			.contract-division {
-				> a {
-					color: $white;
-					background: $black;
-
-					&:before {
-						display: none;
-					}
-				}
-			}
 		}
 	}
 
@@ -152,13 +138,6 @@
 			//padding: 10px 0;
 
 			.main-menu {
-				.contract-division {
-					background: $black;
-
-					> a {
-						color: $white;
-					}
-				}
 			}
 		}
 	}
@@ -204,21 +183,24 @@
 				}
 			}
 
-			.sub-menu a {
-				&:hover {
-					text-shadow: $text-shadow-light-hover;
+			.sub-menu {
+				a {
+					&:hover {
+						text-shadow: $text-shadow-hover;
+					}
+				}
+
+				.current-menu-item a {
+					//text-shadow: $text-shadow-light-hover;
+				}
+
+				li.current-menu-item > a {
+					text-shadow: $text-shadow-hover;
 				}
 			}
 
 			> li {
-				&.contract-division {
-					> a {
-						padding: 0 12.5px;
-						color: $white;
-					}
-				}
-
-				&:not(.contract-division) {
+				& {
 					> a {
 						@include line-animation();
 
@@ -239,6 +221,18 @@
 							li:first-child {
 								grid-column: 1/-1;
 							}
+						}
+					}
+				}
+
+				&.current-menu-ancestor,
+				&.current-menu-item {
+					> a {
+						text-shadow: $text-shadow-hover;
+
+						&::before {
+							transform-origin: 0% 50%;
+							transform: scale3d(1, 1, 1);
 						}
 					}
 				}

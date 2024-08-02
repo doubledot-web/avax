@@ -182,8 +182,13 @@ h5,
 			bottom: 40px;
 		}
 	}
+
 	&-bg-gray {
 		background: $bg-gray;
+	}
+
+	&-text-intro {
+		padding: 20px 0;
 	}
 
 	&-text {
@@ -198,6 +203,14 @@ h5,
 			font-size: $base-h1-font-size;
 			@media (min-width: $breakpoint-medium) {
 				font-size: $base-h1-font-size-m;
+			}
+		}
+
+		a {
+			transition: text-shadow 0.1s;
+
+			&:hover {
+				text-shadow: $text-shadow-hover;
 			}
 		}
 	}
@@ -301,11 +314,18 @@ h5,
 
 	&-project-types {
 		padding: 25px 0;
+		z-index: 10;
 
 		.types {
 			gap: 10px 20px;
 			@media (min-width: $breakpoint-small) {
 				gap: 40px;
+			}
+		}
+
+		a {
+			&:hover {
+				color: $gray;
 			}
 		}
 	}
@@ -516,7 +536,7 @@ h5,
 		.section {
 			&-brands {
 				.brand {
-					padding: 10px;
+					//padding: 10px;
 				}
 
 				.uk-grid-medium > .uk-grid-margin {
@@ -532,6 +552,7 @@ h5,
 		iframe {
 			width: 100%;
 			height: 100%;
+			filter: grayscale(1);
 			min-height: 350px;
 		}
 	}
@@ -570,6 +591,22 @@ h5,
 			}
 		}
 	}
+
+	&-product {
+		.woocommerce-breadcrumb-wrapper {
+			transition: all 0.1s;
+			z-index: 10;
+			padding: 20px 0 10px;
+		}
+
+		.header-on-scroll ~ .content-area {
+			.woocommerce-breadcrumb-wrapper {
+				@media (min-width: $breakpoint-large) {
+					top: 100px !important;
+				}
+			}
+		}
+	}
 }
 
 .search-results {
@@ -583,6 +620,36 @@ h5,
 
 			&:first-child {
 				border-top: 1px solid $gray;
+			}
+		}
+	}
+}
+
+.tax-project_type {
+	.section-project-types {
+		transition: all 0.1s;
+	}
+
+	.header-on-scroll ~ .content-area {
+		.section-project-types {
+			@media (min-width: $breakpoint-large) {
+				top: 100px !important;
+			}
+		}
+	}
+}
+
+//product categories, tags
+.archive.woocommerce {
+	.breadcrumbs-sorting-wrapper {
+		padding-top: 20px;
+		transition: all 0.1s;
+	}
+
+	.header-on-scroll ~ .content-area {
+		.breadcrumbs-sorting-wrapper {
+			@media (min-width: $breakpoint-large) {
+				top: 100px !important;
 			}
 		}
 	}
@@ -685,15 +752,15 @@ h5,
 }
 
 .socials {
-	position: fixed;
-	left: 15px;
-	bottom: 40px;
-	z-index: 2;
+	//position: fixed;
+	//left: 15px;
+	//bottom: 40px;
+	//z-index: 2;
 	@media (min-width: $breakpoint-small) {
-		left: 30px;
+		//	left: 30px;
 	}
 	@media (min-width: $breakpoint-medium) {
-		left: 40px;
+		//	left: 40px;
 	}
 
 	a:not(:last-child) {
@@ -732,14 +799,14 @@ h5,
 	}
 
 	.current {
-		color: $gray;
+		text-shadow: $text-shadow-hover;
 	}
 
 	.page-numbers:not(.prev):not(.next):not(.dots) {
-		transition: color 0.2s;
+		transition: text-shadow 0.1s;
 
 		&:hover {
-			color: $global-link-hover-color;
+			text-shadow: $text-shadow-hover;
 		}
 	}
 }
@@ -778,6 +845,10 @@ h5,
 /**************
  *** LINK TEXT SHADOW HOVER ***
  **************/
+.text-shadow {
+	text-shadow: $text-shadow-hover;
+}
+
 .text-shadow-hover,
 .text-shadow-light-hover {
 	transition: text-shadow 0.1s;

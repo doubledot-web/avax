@@ -47,7 +47,7 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 								<?php do_action( 'woocommerce_my_account_my_orders_column_' . $column_id, $order ); ?>
 
 							<?php elseif ( 'order-number' === $column_id ) : ?>
-								<a class="text-black" href="<?php echo esc_url( $order->get_view_order_url() ); ?>">
+								<a class="text-black text-shadow-hover" href="<?php echo esc_url( $order->get_view_order_url() ); ?>">
 									<?php echo esc_html( _x( '#', 'hash before order number', 'woocommerce' ) . $order->get_order_number() ); ?>
 								</a>
 

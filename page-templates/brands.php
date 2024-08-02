@@ -20,10 +20,10 @@ $query = get_terms( 'product_brand', $args );
 				?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<?php
-					get_template_part( 'partials/content-blocks/hero-slider' );
+					//get_template_part( 'partials/content-blocks/hero-slider' );
 					?>
 
-					<section class="section section-text uk-margin-large-top uk-margin-large-bottom">
+					<section class="section section-text section-text-intro">
 						<div class="uk-container uk-container-large">
 							<div class="remove-margin-from-last-el uk-text-center uk-text-light">
 								<?php the_content(); ?>
@@ -34,7 +34,7 @@ $query = get_terms( 'product_brand', $args );
 					<?php if ( ! empty( $query ) ) : ?>
 						<section class="section section-brands uk-margin-large-bottom">
 							<div class="uk-container uk-container-large">
-								<div class="uk-grid-medium" uk-grid>
+								<div class="uk-grid-small" uk-grid>
 									<?php
 									foreach ( $query as $brand ) :
 										$brand_id         = $brand->term_id;

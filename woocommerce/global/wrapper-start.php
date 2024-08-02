@@ -45,7 +45,7 @@ switch ( $template ) {
 		break;
 	case 'avax':
 		if ( is_archive() ) :
-			echo '<div id="primary" class="content-area uk-container uk-container-xlarge uk-margin-large-bottom"><main id="main" class="site-main">';
+			echo '<div id="primary" class="content-area uk-margin-large-bottom"><main id="main" class="site-main">';
 		else :
 			echo '<div id="primary" class="content-area uk-margin-large-bottom"><main id="main" class="site-main">';
 		endif;

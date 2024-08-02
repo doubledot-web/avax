@@ -2,7 +2,7 @@
 $languages = icl_get_languages( 'skip_missing=0&orderby=code' );
 if ( ! empty( $languages ) ) :
 	?>
-	<div class="langs uk-text-uppercase uk-flex uk-margin-right">
+	<div class="langs uk-text-uppercase uk-flex uk-margin-right uk-hidden">
 		<?php
 		foreach ( $languages as $language ) :
 			$lang_active = $language['active'] ? 'active ' : '';

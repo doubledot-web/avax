@@ -180,7 +180,7 @@
                                             "name": "mobile_image",
                                             "aria-label": "",
                                             "type": "image",
-                                            "instructions": "Image dimensions should be 768px x 1024px. <br>\r\nIf empty, the desktop image will be used.",
+                                            "instructions": "Image dimensions should be 640px x 1137px. <br>\r\nIf empty, the desktop image will be used.",
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
@@ -425,5 +425,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "advanced",
-    "modified": 1721113776
+    "modified": 1722502408
 }

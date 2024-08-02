@@ -85,7 +85,7 @@ sort( $terms_materials_array_unique, SORT_NATURAL | SORT_FLAG_CASE );
 		</li>
 	</ul>
 	<ul class="uk-switcher uk-margin">
-		<li class="uk-column-1-4">
+		<li class="uk-column-1-3 uk-columns-1-4@s">
 			<?php
 			print_radios( $terms_brands_array_unique, $tax_brand, 'brand' );
 			?>

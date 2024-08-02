@@ -1,5 +1,5 @@
 <?php
-if ( is_front_page() || is_singular( 'post' ) || ( is_product_category() && 0 === get_queried_object()->parent && get_product_cat_wpml_id( 47 ) !== get_queried_object_id() ) || is_page_template( array( 'page-templates/brands.php', 'page-templates/contract-division.php', 'page-templates/about.php', 'page-templates/contact.php', 'page-templates/showroom.php', 'page-templates/downloads.php', 'page-templates/brand.php' ) ) ) :
+if ( is_front_page() || is_singular( 'post' ) || ( is_product_category() && 0 === get_queried_object()->parent && get_product_cat_wpml_id( 47 ) !== get_queried_object_id() ) || is_page_template( array( 'page-templates/contract-division.php', 'page-templates/about.php', 'page-templates/showroom.php', 'page-templates/downloads.php', 'page-templates/brand.php' ) ) ) :
 	$header_position_class = 'header-fixed';
 else :
 	$header_position_class = 'header-sticky';
@@ -57,7 +57,8 @@ $header_extra_classes = $header_position_class . $header_color_class;
 				<?php /*MENU RIGHT*/ ?>
 				<?php /*TEMP*/ ?>
 				<div class="menu-right uk-navbar-right">
-					<?php get_template_part( 'partials/menu-langs' ); ?>
+					<?php
+					/*<?php get_template_part( 'partials/menu-langs' ); ?>
 					<button class="open-search-form btn-base uk-margin-small-right" aria-label="<?php esc_attr_e( 'Open search form', 'wpcanvas' ); ?>" type="button">
 						<svg width="21" height="22" aria-hidden="true">
 							<use xlink:href="#search"></use>
@@ -69,7 +70,17 @@ $header_extra_classes = $header_position_class . $header_color_class;
 						</svg>
 					</button>
 					<?php get_template_part( 'partials/menu-right-common-links' ); ?>
-				</div>
+					</div>*/
+					?>
+					<?php
+					get_template_part(
+						'partials/socials',
+						null,
+						array(
+							'header_color_white' => $header_color_class,
+						)
+					);
+					?>
 				<?php /*TEMP*/ ?>
 			</div>
 		</div>

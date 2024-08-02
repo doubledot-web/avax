@@ -17,7 +17,7 @@ endif;
 
 <div id="primary" class="content-area">
 	<main id="site-main" class="site-main">
-		<section class="section section-text uk-text-center uk-padding-large uk-padding-remove-horizontal">
+		<section class="section section-text section-text-intro uk-text-center">
 			<div class="uk-container uk-container-large">
 				<div class="remove-margin-from-last-el uk-text-center uk-text-light">
 					<?php echo wp_kses_post( $other['blog_text'] ); ?>
@@ -35,9 +35,9 @@ endif;
 						</svg>
 					</button>
 					<div class="post-cats-dropdown" uk-dropdown="mode: click; pos: bottom-right">
-						<?php $active_class = $show_all_posts ? ' text-gray' : ''; ?>
-						<div class="filter<?php echo esc_attr( $active_class ); ?>">
-							<a class="text-black<?php echo esc_attr( $active_class ); ?> uk-text-light uk-display-inline-block uk-text-uppercase" href="<?php echo esc_url( get_blog_page_url() ); ?>">
+						<?php $active_class = $show_all_posts ? ' text-shadow' : ''; ?>
+						<div class="filter">
+							<a class="text-black text-shadow-hover<?php echo esc_attr( $active_class ); ?> uk-text-light uk-display-inline-block uk-text-uppercase" href="<?php echo esc_url( get_blog_page_url() ); ?>">
 								<?php esc_html_e( 'All Categories', 'wpcanvas' ); ?>
 							</a>
 						</div>
@@ -47,13 +47,13 @@ endif;
 							$cat_slug     = $cat->slug;
 							$cat_name     = $cat->name;
 							$cat_link     = get_category_link( $cat_id );
-							$active_class = $cat_link === $current_url ? ' text-gray' : '';
+							$active_class = $cat_link === $current_url ? ' text-shadow' : '';
 							if ( 'Uncategorized' === $cat_name ) :
 								continue;
 							endif;
 							?>
 							<div class="filter">
-								<a class="text-black<?php echo esc_attr( $active_class ); ?> uk-text-light uk-display-inline-block uk-text-uppercase" href="<?php echo esc_url( $cat_link ); ?>">
+								<a class="text-black text-shadow-hover<?php echo esc_attr( $active_class ); ?> uk-text-light uk-display-inline-block uk-text-uppercase" href="<?php echo esc_url( $cat_link ); ?>">
 									<?php echo esc_html( $cat_name ); ?>
 								</a>
 							</div>

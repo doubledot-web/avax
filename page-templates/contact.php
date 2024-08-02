@@ -18,10 +18,10 @@ $cf_shortcode = $contact['contact_form_shortcode'];
 				?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<?php
-					get_template_part( 'partials/content-blocks/hero-slider' );
+					//get_template_part( 'partials/content-blocks/hero-slider' );
 					?>
 
-					<section class="section section-text section-text-form section-form uk-margin-large-top uk-margin-xlarge-bottom">
+					<section class="section section-text section-text-intro section-text-form section-form">
 						<div class="uk-container uk-container-xlarge">
 							<div class="uk-grid-large" uk-grid>
 								<div class="uk-width-1-2@m">

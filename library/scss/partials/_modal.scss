@@ -76,10 +76,8 @@
 		}
 
 		li {
-			&.contract-division {
-				background: transparent;
-			}
-
+			&.current-menu-parent,
+			&.current-menu-item,
 			&.open {
 				> a {
 					text-shadow: $text-shadow-hover;
@@ -128,6 +126,14 @@
 
 		.langs {
 			margin-bottom: 40px;
+		}
+
+		.socials {
+			&:hover {
+				svg {
+					fill: $black;
+				}
+			}
 		}
 	}
 }

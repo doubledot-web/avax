@@ -4,12 +4,17 @@ jQuery(document).ready(function ($) {
 	const $body = $("body");
 	const $homePage = $("body.home");
 	const $productPage = $("body.single-product");
+	const $productArchivePage = $("body.archive.woocommerce");
+	const $contractDivisionPage = $("body.page-template-contract-division");
+	const $projectArchivePage = $("body.tax-project_type");
 	const $cartPage = $("body.woocommerce-cart");
 	const $siteHeader = $(".site-header");
 	const $accordionModalMenu = $(".modal-menu .accordion");
 	const $searchForm = $(".search-form");
 	const $searchFormMobile = $(".search-form-mobile");
 	let scrollBottom = false;
+	const mqSmall = window.matchMedia("(min-width: 640px)");
+	const mqLarge = window.matchMedia("(min-width: 1200px)");
 
 	initActions();
 	onScrollActions();
@@ -24,6 +29,9 @@ jQuery(document).ready(function ($) {
 	createCustomDotsOnProductGallery();
 	formFiltersActions();
 	disableFirstOptionOnCF7();
+	makeProjectCategoriesSticky();
+	makeStickyBreadCrumbsOnProductPage();
+	makeStickyBreadCrumbsOnProductArchivePage();
 	//initLenis();
 
 	function initActions() {
@@ -35,7 +43,8 @@ jQuery(document).ready(function ($) {
 	}
 
 	function onScrollActions() {
-		const $homeSocials = $(".section-hero .socials");
+		//const $homeSocials = $(".section-hero .socials");
+		const $headerSocials = $siteHeader.find(".desktop-navbar .socials");
 		const INVISIBLE_CLASS = "invisible";
 		const HEADER_CLASS = "header-on-scroll";
 		const HEADER_WHITE = "header-white";
@@ -55,6 +64,7 @@ jQuery(document).ready(function ($) {
 				}
 			} else {
 				$siteHeader.removeClass(HEADER_CLASS);
+
 				if (initialHeaderWhite) {
 					$siteHeader.addClass(HEADER_WHITE);
 				} else {
@@ -62,10 +72,13 @@ jQuery(document).ready(function ($) {
 				}
 			}
 
-			if (scrollTop > 200) {
-				$homeSocials.addClass(INVISIBLE_CLASS);
+			if (scrollTop > 0) {
+				//if (scrollTop > 200) {
+				//$homeSocials.addClass(INVISIBLE_CLASS);
+				$headerSocials.addClass(INVISIBLE_CLASS);
 			} else {
-				$homeSocials.removeClass(INVISIBLE_CLASS);
+				//$homeSocials.removeClass(INVISIBLE_CLASS);
+				$headerSocials.removeClass(INVISIBLE_CLASS);
 			}
 		});
 	}
@@ -342,6 +355,99 @@ jQuery(document).ready(function ($) {
 		}
 
 		requestAnimationFrame(raf);
+	}
+
+	function makeProjectCategoriesSticky() {
+		if ($contractDivisionPage.length) {
+			let height = 70;
+			if (mqSmall.matches) {
+				height = 100;
+			}
+			const projectTypes = UIkit.sticky(".section-project-types", {
+				offset: height,
+			});
+
+			$window.on("resize", function () {
+				let height = 70;
+				if (mqSmall.matches) {
+					height = 100;
+				}
+				projectTypes.offset = height;
+			});
+		}
+
+		if ($projectArchivePage.length) {
+			let height = 70;
+			if (mqLarge.matches) {
+				height = 160;
+			} else if (mqSmall.matches) {
+				height = 100;
+			}
+			const projectTypes = UIkit.sticky(".section-project-types", {
+				offset: height,
+			});
+
+			$window.on("resize", function () {
+				let height = 70;
+				if (mqLarge.matches) {
+					height = 160;
+				} else if (mqSmall.matches) {
+					height = 100;
+				}
+				projectTypes.offset = height;
+			});
+		}
+	}
+
+	function makeStickyBreadCrumbsOnProductPage() {
+		if ($productPage.length) {
+			let height = 70;
+			if (mqLarge.matches) {
+				height = 160;
+			} else if (mqSmall.matches) {
+				height = 100;
+			}
+			const projectTypes = UIkit.sticky(
+				".woocommerce-breadcrumb-wrapper",
+				{
+					offset: height,
+				}
+			);
+
+			$window.on("resize", function () {
+				let height = 70;
+				if (mqLarge.matches) {
+					height = 160;
+				} else if (mqSmall.matches) {
+					height = 100;
+				}
+				projectTypes.offset = height;
+			});
+		}
+	}
+
+	function makeStickyBreadCrumbsOnProductArchivePage() {
+		if ($productArchivePage.length) {
+			let height = 70;
+			if (mqLarge.matches) {
+				height = 160;
+			} else if (mqSmall.matches) {
+				height = 100;
+			}
+			const projectTypes = UIkit.sticky(".breadcrumbs-sorting-wrapper", {
+				offset: height,
+			});
+
+			$window.on("resize", function () {
+				let height = 70;
+				if (mqLarge.matches) {
+					height = 160;
+				} else if (mqSmall.matches) {
+					height = 100;
+				}
+				projectTypes.offset = height;
+			});
+		}
 	}
 });
 

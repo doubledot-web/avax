@@ -24,8 +24,11 @@ $base-selection-color: $white;
 $global-color: $black;
 $global-font-family: $sans-serif;
 $base-em-color: $global-color;
-$global-link-color: $gray;
-$global-link-hover-color: darken($global-link-color, 10%);
+//$global-link-color: $gray;
+//$global-link-hover-color: darken($global-link-color, 10%);
+$global-link-color: $black;
+$global-link-hover-color: $black;
+
 $base-heading-color: $black;
 
 $global-font-size: 16px; //20px

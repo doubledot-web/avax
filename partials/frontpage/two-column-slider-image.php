@@ -25,7 +25,7 @@ $label                = get_field( 'labels' )['fifth_section_label'];
 								foreach ( $fifth_section_slides as $slide ) :
 									?>
 									<li class="uk-width-1-1">
-										<a class="text-black text-black-hover" href="<?php echo esc_url( $slide['product'] ); ?>">
+										<a class="text-black text-black-hover text-shadow-hover" href="<?php echo esc_url( $slide['product'] ); ?>">
 											<figure class="uk-text-center uk-margin-remove">
 												<?php echo wp_get_attachment_image( $slide['image'], 'full' ); ?>
 											</figure>

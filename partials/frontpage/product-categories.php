@@ -25,7 +25,7 @@ $label        = get_field( 'labels' )['second_section_label'];
 					$cat_img_id = get_field( 'featured_image_home', $acf_term );
 					?>
 					<li class="uk-width-3-4 uk-width-2-5@s uk-width-auto@l">
-						<a href="<?php echo esc_url( get_term_link( $cat_id ) ); ?>">
+						<a class="text-shadow-hover" href="<?php echo esc_url( get_term_link( $cat_id ) ); ?>">
 							<figure class="uk-margin-remove">
 								<?php
 								echo wp_get_attachment_image( $cat_img_id, 'full', false, array( 'class' => 'object-fit-cover' ) );

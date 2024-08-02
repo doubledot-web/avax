@@ -8,7 +8,7 @@
 				foreach ( $cols as $col ) :
 					?>
 					<div class="uk-width-1-2@s">
-						<a class="text-black text-black-hover" href="<?php echo esc_url( $col['page_link'] ); ?>">
+						<a class="text-black text-black-hover text-shadow-hover" href="<?php echo esc_url( $col['page_link'] ); ?>">
 							<figure class="uk-margin-remove">
 								<?php echo wp_get_attachment_image( $col['image'], 'full', false, array( 'class' => 'object-fit-cover uk-width-1-1' ) ); ?>
 							</figure>

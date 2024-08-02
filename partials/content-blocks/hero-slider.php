@@ -1,7 +1,7 @@
 <?php
 $queried_id         = isset( $args['current_term'] ) ? $args['current_term']->taxonomy . '_' . $args['current_term']->term_id : '';
 $hero_fields        = get_field( 'hero_fields', $queried_id );
-$header_color_white = $hero_fields['header_color_white'];
+//$header_color_white = $hero_fields['header_color_white'];
 $slides             = $hero_fields['slides'];
 ?>
 
@@ -50,7 +50,7 @@ $slides             = $hero_fields['slides'];
 		</ul>
 	</div>
 	<?php
-	if ( is_front_page() ) :
+	/*if ( is_front_page() ) :
 		get_template_part(
 			'partials/socials',
 			null,
@@ -58,6 +58,6 @@ $slides             = $hero_fields['slides'];
 				'header_color_white' => $header_color_white,
 			)
 		);
-	endif;
+	endif;*/
 	?>
 </section>
