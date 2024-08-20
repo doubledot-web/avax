@@ -45,6 +45,7 @@ jQuery(document).ready(function ($) {
 	function onScrollActions() {
 		//const $homeSocials = $(".section-hero .socials");
 		const $headerSocials = $siteHeader.find(".desktop-navbar .socials");
+		const $woocommerceResultCount = $(".woocommerce-result-count");
 		const INVISIBLE_CLASS = "invisible";
 		const HEADER_CLASS = "header-on-scroll";
 		const HEADER_WHITE = "header-white";
@@ -76,9 +77,11 @@ jQuery(document).ready(function ($) {
 				//if (scrollTop > 200) {
 				//$homeSocials.addClass(INVISIBLE_CLASS);
 				$headerSocials.addClass(INVISIBLE_CLASS);
+				$woocommerceResultCount.addClass(INVISIBLE_CLASS);
 			} else {
 				//$homeSocials.removeClass(INVISIBLE_CLASS);
 				$headerSocials.removeClass(INVISIBLE_CLASS);
+				$woocommerceResultCount.removeClass(INVISIBLE_CLASS);
 			}
 		});
 	}
