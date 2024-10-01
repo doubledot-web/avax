@@ -1,8 +1,9 @@
 <?php
-$fifth_section        = get_field( 'fifth_section_home' );
-$fifth_section_img    = $fifth_section['image'];
-$fifth_section_slides = $fifth_section['slides'];
-$label                = get_field( 'labels' )['fifth_section_label'];
+$fifth_section          = get_field( 'fifth_section_home' );
+$fifth_section_img      = $fifth_section['image'];
+$fifth_section_img_link = $fifth_section['image_link'];
+$fifth_section_slides   = $fifth_section['slides'];
+$label                  = get_field( 'labels' )['fifth_section_label'];
 ?>
 
 <section class="section section-two-columns-slider-image uk-margin-large-bottom">
@@ -54,7 +55,13 @@ $label                = get_field( 'labels' )['fifth_section_label'];
 
 			<div class="uk-width-1-2@m">
 				<figure class="uk-text-center uk-margin-remove">
+					<?php if ( $fifth_section_img_link ) : ?>
+						<a class="uk-display-block" href="<?php echo esc_url( $fifth_section_img_link ); ?>">
+					<?php endif; ?>
 					<?php echo wp_get_attachment_image( $fifth_section_img, 'full', false, array( 'class' => 'uk-width-1-1' ) ); ?>
+					<?php if ( $fifth_section_img_link ) : ?>
+						</a>
+					<?php endif; ?>
 				</figure>
 			</div>
 		</div>

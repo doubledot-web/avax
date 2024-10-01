@@ -321,6 +321,23 @@
                                             "wpml_cf_preferences": 3,
                                             "default_value": "",
                                             "placeholder": ""
+                                        },
+                                        {
+                                            "key": "field_66fbcc5c8da80",
+                                            "label": "Link",
+                                            "name": "link",
+                                            "aria-label": "",
+                                            "type": "link",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "wpml_cf_preferences": 3,
+                                            "return_format": "array"
                                         }
                                     ]
                                 }
@@ -425,5 +442,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "advanced",
-    "modified": 1722502408
+    "modified": 1727777900
 }

@@ -441,10 +441,10 @@
                                 },
                                 {
                                     "key": "field_656ef57c665e9",
-                                    "label": "Product",
+                                    "label": "Image Link",
                                     "name": "product",
                                     "aria-label": "",
-                                    "type": "page_link",
+                                    "type": "link",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -454,14 +454,7 @@
                                         "id": ""
                                     },
                                     "wpml_cf_preferences": 3,
-                                    "post_type": [
-                                        "product"
-                                    ],
-                                    "post_status": "",
-                                    "taxonomy": "",
-                                    "allow_archives": 0,
-                                    "multiple": 0,
-                                    "allow_null": 0
+                                    "return_format": "url"
                                 }
                             ],
                             "min": "",
@@ -497,6 +490,23 @@
                     "max_size": "",
                     "mime_types": "",
                     "preview_size": "medium"
+                },
+                {
+                    "key": "field_66fbab0a3b326",
+                    "label": "Image Link",
+                    "name": "image_link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 3,
+                    "return_format": "url"
                 }
             ]
         }
@@ -520,5 +530,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "advanced",
-    "modified": 1721117548
+    "modified": 1727770309
 }
