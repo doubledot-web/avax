@@ -323,6 +323,24 @@
                                             "placeholder": ""
                                         },
                                         {
+                                            "key": "field_66fc1c77d1210",
+                                            "label": "Video Mobile URL",
+                                            "name": "video_mobile_url",
+                                            "aria-label": "",
+                                            "type": "url",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "wpml_cf_preferences": 3,
+                                            "default_value": "",
+                                            "placeholder": ""
+                                        },
+                                        {
                                             "key": "field_66fbcc5c8da80",
                                             "label": "Link",
                                             "name": "link",
@@ -442,5 +460,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "advanced",
-    "modified": 1727777900
+    "modified": 1727798416
 }

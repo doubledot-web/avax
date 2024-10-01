@@ -36,17 +36,19 @@ $slides             = $hero_fields['slides'];
 						<?php endif; ?>
 						<?php
 					elseif ( 'video' === $type ) :
-						$video_info = $slide['video_info'];
-						$video_url  = $video_info['video_url'];
-						$video_img  = $video_info['poster_image'];
-						$link       = $video_info['link'];
+						$video_info       = $slide['video_info'];
+						$video_url        = $video_info['video_url'];
+						$video_mobile_url = $video_info['video_mobile_url'];
+						$video_img        = $video_info['poster_image'];
+						$link             = $video_info['link'];
 						?>
 						<?php if ( $link['url'] && $link['title'] ) : ?>
 							<a class="btn-white uk-button uk-button-default uk-position-bottom-center" href="<?php echo esc_url( $link['url'] ); ?>">
 								<?php echo esc_html( $link['title'] ); ?>
 							</a>
 						<?php endif; ?>
-						<video src="<?php echo esc_url( $video_url ); ?>" poster="<?php echo esc_url( $video_img['url'] ); ?>" autoplay loop muted playsinline uk-cover ></video>
+						<video class="uk-visible@s" src="<?php echo esc_url( $video_url ); ?>" poster="<?php echo esc_url( $video_img ); ?>" autoplay loop muted playsinline uk-cover ></video>
+						<video class="uk-hidden@s" src="<?php echo esc_url( $video_mobile_url ); ?>" poster="<?php echo esc_url( $video_img ); ?>" autoplay loop muted playsinline uk-cover ></video>
 						<?php
 					endif;
 					?>
