@@ -57,6 +57,16 @@ $header_extra_classes = $header_position_class . $header_color_class;
 				<?php /*MENU RIGHT*/ ?>
 				<?php /*TEMP*/ ?>
 				<div class="menu-right uk-navbar-right">
+					<button class="open-search-form btn-base uk-margin-small-right" aria-label="<?php esc_attr_e( 'Open search form', 'wpcanvas' ); ?>" type="button">
+						<svg width="21" height="22" aria-hidden="true">
+							<use xlink:href="#search"></use>
+						</svg>
+					</button>
+					<button class="close-search-form btn-base" aria-label="<?php esc_attr_e( 'Close search form', 'wpcanvas' ); ?>" type="button">
+						<svg width="17" height="17" aria-hidden="true">
+							<use xlink:href="#close"></use>
+						</svg>
+					</button>
 					<?php
 					/*<?php get_template_part( 'partials/menu-langs' ); ?>
 					<button class="open-search-form btn-base uk-margin-small-right" aria-label="<?php esc_attr_e( 'Open search form', 'wpcanvas' ); ?>" type="button">
